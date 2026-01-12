@@ -1,0 +1,683 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Copyright" href="Copying.html" /><link rel="prev" title="Security Policy" href="Security.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>News &amp; Release Notes - art_modern 1.3.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">art_modern 1.3.3 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">art_modern 1.3.3 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README_NEW.html"><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage-art_modern.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage-apb.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide.html">Guide on Miscellaneous Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions (FAQs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Design.html">Design Topics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Contributing.html">Developing &amp; Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Developing &amp; Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MakefileTargets.html">Toplevel Makefile Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TODO.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Security.html">Security Policy</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">News &amp; Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copying.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../License.html">GNU GENERAL PUBLIC LICENSE</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/src/docs/News.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="news-release-notes">
+<h1>News &amp; Release Notes<a class="headerlink" href="#news-release-notes" title="Link to this heading">¶</a></h1>
+<section id="v-1-3-3-section">
+<span id="id1"></span><h2>1.3.3 (2026/01/08)<a class="headerlink" href="#v-1-3-3-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Software Engineering:</p>
+<ul>
+<li><p><strong>EXPERIMENTAL</strong> Added NCBI SRA support to <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>. Not enabled by default; Add <code class="docutils literal notranslate"><span class="pre">-DWITH_NCBI_NGS=ON</span></code> to CMake options to enable this feature.</p></li>
+<li><p>Added CRAM support to <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string_dup</span></code> in bundled HTSLib renamed to <code class="docutils literal notranslate"><span class="pre">htslib_string_dup</span></code> to avoid symbol conflicts with NCBI NGS library.</p></li>
+<li><p>Bumped bundled <code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code> to <a class="reference external" href="https://github.com/bshoshany/thread-pool/releases/tag/v5.1.0"><code class="docutils literal notranslate"><span class="pre">v5.1.0</span></code></a>.</p></li>
+</ul>
+</li>
+<li><p>Implementation:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>: Added <code class="docutils literal notranslate"><span class="pre">--first_n_reads</span></code> to control the number of reads to be processed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>: Added <code class="docutils literal notranslate"><span class="pre">--i-format</span></code> to control the input format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Added <code class="docutils literal notranslate"><span class="pre">--o-sam-without_tag_MD</span></code>, <code class="docutils literal notranslate"><span class="pre">--o-sam-without_tag_NM</span></code>, <code class="docutils literal notranslate"><span class="pre">--o-hl_sam-without_tag_OA</span></code>, and <code class="docutils literal notranslate"><span class="pre">--o-sam-no_qual</span></code>, to control tags of (Headless) SAM/BAM output.</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-3-2-section">
+<span id="id2"></span><h2>1.3.2 (2025/12/23)<a class="headerlink" href="#v-1-3-2-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Bug fixes:</p>
+<ul>
+<li><p>The bugs affecting <a class="reference internal" href="#v-1-3-0-section"><code class="docutils literal notranslate"><span class="pre">1.3.0</span></code></a> and <a class="reference internal" href="#v-1-3-1-section"><code class="docutils literal notranslate"><span class="pre">1.3.1</span></code></a> should be fixed.</p></li>
+<li><p>Bug involved in parsing CMake option <code class="docutils literal notranslate"><span class="pre">-DREPRODUCIBLE_BUILDS</span></code> fixed.</p></li>
+<li><p>A severe bug that prevents <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> from loading custom error profiles has been fixed.</p></li>
+</ul>
+</li>
+<li><p>Software Engineering:</p>
+<ul>
+<li><p>Bumped bundled HTSLib to <a class="reference external" href="https://github.com/samtools/htslib/releases/tag/1.23"><code class="docutils literal notranslate"><span class="pre">1.23</span></code></a>.</p></li>
+</ul>
+</li>
+<li><p>Implementation:</p>
+<ul>
+<li><p>The speed of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> improved by using a single-producer-multi-consumer queue. The improvement will be more obvious to SAM/BAM files and would reduce computational burden when parsing FASTQ files.</p></li>
+<li><p>Queue size parameters added to <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> and <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> to control the size of internal queues. Users may tune these parameters to achieve better performance or reduce memory usage.</p></li>
+<li><p>The performance of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> under Intel OneMKL random generator further improved by generating more random numbers in bulk.</p></li>
+<li><p>A seed allocation algorithm is implemented; Flag <code class="docutils literal notranslate"><span class="pre">--i-seed</span></code> added to set a fixed seed for reproduction.</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-3-1-section">
+<span id="id3"></span><h2>1.3.1 (2025/12/15)<a class="headerlink" href="#v-1-3-1-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>KNOWN BUGS</strong></p>
+<ul>
+<li><p>Non-reproducible stucks, with no clear reason. Currently seen in both MPI and non-MPI mode. Seen in LLVM and Intel C++/DPC++ compilers. Currently, only seen in <code class="docutils literal notranslate"><span class="pre">pbsim3_transcripts</span></code>, <code class="docutils literal notranslate"><span class="pre">template</span></code> mode with unequal read1/read2 lengths specified. The author is working on fixing this issue.</p></li>
+</ul>
+</li>
+<li><p>Software Engineering:</p>
+<ul>
+<li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> to <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/12.1.0"><code class="docutils literal notranslate"><span class="pre">12.1.0</span></code></a>.</p></li>
+<li><p>A possibly unidentified bug in the CMake build system when trying to compile a static version of testing C source code while the project is being configured is fixed.</p></li>
+<li><p>The minimal test code for libdeflate, zlib, libbz2, and liblzma is reimplemented in a unified style. The new behavior is more robust, as it would generate random strings, compress them, decompress them, and check whether the decompressed strings are identical to the original ones.</p></li>
+<li><p>Bundled LibCEU routines can recognize more compilers &amp; architectures &amp; libraries.</p></li>
+</ul>
+</li>
+<li><p>Implementation:</p>
+<ul>
+<li><p>A possibly unidentified bug that would emerge when generating quality below 10 (for N bases) using Intel OneMKL random generator is fixed.</p></li>
+<li><p>Several changes were made to the reporting system, increasing CPU utilization rate.</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-3-0-section">
+<span id="id4"></span><h2>1.3.0 (2025/11/14)<a class="headerlink" href="#v-1-3-0-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>BREAKING CHANGE</strong></p>
+<ul>
+<li><p>If a 2-column (unstranded) coverage file is provided to template mode, the coverage will be interpreted as positive coverage. Prior versions would divide the coverage by 2 for each strand.</p></li>
+</ul>
+</li>
+<li><p><strong>KNOWN BUGS</strong></p>
+<ul>
+<li><p>The MPI mode may suffer from non-reproducible stucks, with no clear reason. This issue is not seen in non-MPI mode. The author is working on fixing this issue.</p></li>
+</ul>
+</li>
+<li><p>Algorithm:</p>
+<ul>
+<li><p>Introduced <a class="reference external" href="https://github.com/Wunkolo/qreverse">https://github.com/Wunkolo/qreverse</a> to accelerate array reversing. Use <code class="docutils literal notranslate"><span class="pre">-DAM_NO_Q_REVERSE=ON</span></code> in CMake options to disable this feature.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STL</span></code> quality generation algorithm deprecated and removed. Also deprecated CMake option <code class="docutils literal notranslate"><span class="pre">USE_QUAL_GEN</span></code>. Now <code class="docutils literal notranslate"><span class="pre">WALKER</span></code> is the only quality generation algorithm available.</p></li>
+<li><p>Several low-level C++ features re-done in C to improve compilation speed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PCG</span></code> random generator: CMake option <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=PCG</span></code> now uses a minimal PCG random generator while <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=SYSTEM_PCG</span></code> uses an external header-only PCG random generator in C++.</p></li>
+</ul>
+</li>
+<li><p>Interface:</p>
+<ul>
+<li><p><strong>EXPERIMENTAL</strong> <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> and <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> now support different lengths of read 1 and 2 in paired-end simulation using <code class="docutils literal notranslate"><span class="pre">--read_len_1</span></code> and <code class="docutils literal notranslate"><span class="pre">--read_len_2</span></code> options.</p>
+<ul>
+<li><p><strong>NOTE</strong> For <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Currently, different read length works for PE Template mode only. Using such on SE/MP or other modes will generate an error message when you use it.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Some defaults added to options. <code class="docutils literal notranslate"><span class="pre">--builtin_qual_file</span></code> now default to <code class="docutils literal notranslate"><span class="pre">HiSeq2500_150bp</span></code>; <code class="docutils literal notranslate"><span class="pre">--lc</span></code> now default to <code class="docutils literal notranslate"><span class="pre">se</span></code>; <code class="docutils literal notranslate"><span class="pre">--mode</span></code> now default to <code class="docutils literal notranslate"><span class="pre">wgs</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Packing:</p>
+<ul>
+<li><p><strong>EXPERIMENTAL</strong> <code class="docutils literal notranslate"><span class="pre">-DFIND_RANDOM_MKL_THROUGH_PKGCONF</span></code> added to CMake options to find Intel OneMKL through <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libtcmalloc</span></code> and <code class="docutils literal notranslate"><span class="pre">libtcmalloc_minimal</span></code> supported as an alternative <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementation.</p></li>
+<li><p>Google Abseil removed from dependencies. Also deprecated CMake option <code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">--version</span></code> and ctest minitests removed from <code class="docutils literal notranslate"><span class="pre">debug</span></code>/<code class="docutils literal notranslate"><span class="pre">release</span></code> Makefile quick build targets and their MPI-enabled variant. Use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testsmall</span></code>/variants instead.</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-2-1-section">
+<span id="id5"></span><h2>1.2.1 (2025/11/06)<a class="headerlink" href="#v-1-2-1-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The GNU Scientific Library (GSL) random generator was removed.</p></li>
+<li><p>For Intel OneMKL random generator: The bit generation routine changed to <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_SFMT19937</span></code>, which is faster. Also, more random numbers are generated in bulk to reduce overhead.</p></li>
+<li><p>Makefile integration test targets <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> and <code class="docutils literal notranslate"><span class="pre">testbuild-mpi</span></code> reimplemented in Python to make them run faster.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> would now raise an error if the input SAM/BAM/FASTQ files are malformed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>:</p>
+<ul>
+<li><p>Option <code class="docutils literal notranslate"><span class="pre">--reporting_interval-job_executor</span></code> and <code class="docutils literal notranslate"><span class="pre">--reporting_interval-job_pool</span></code> added to control the reporting interval of job executor and job pool status.</p></li>
+<li><p>Memory performance of <code class="docutils literal notranslate"><span class="pre">stream</span></code> FASTA parser largely improved.</p></li>
+</ul>
+</li>
+<li><p><strong>EXPERIMENTAL</strong> Packing: DEB package variant using OpenMPI added.</p></li>
+<li><p>Documentation largely revised.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-2-0-section">
+<span id="id6"></span><h2>1.2.0 (2025/10/21)<a class="headerlink" href="#v-1-2-0-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Main repo slimmed.</p>
+<ul>
+<li><p>Random number benchmark module moved to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_bench_rand">https://github.com/YU-Zhejian/art_modern_bench_rand</a>.</p></li>
+<li><p>Benchmark of other simulators moved to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators">https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators</a>.</p></li>
+</ul>
+</li>
+<li><p>The GNU Scientific Library (GSL) random generator is marked deprecated due to performance issues. They will be removed in the next release.</p></li>
+<li><p><strong>EXPERIMENTAL</strong> Support over MPI added.</p>
+<ul>
+<li><p>Currently tested MPI vendors:</p>
+<ul>
+<li><p>Debian OpenMPI, <code class="docutils literal notranslate"><span class="pre">ident:</span> <span class="pre">4.1.6,</span> <span class="pre">repo</span> <span class="pre">rev:</span> <span class="pre">v4.1.6,</span> <span class="pre">Sep</span> <span class="pre">30,</span> <span class="pre">2023</span></code>, std. 3.1.</p></li>
+<li><p>Intel(R) MPI Library <code class="docutils literal notranslate"><span class="pre">2021.16</span> <span class="pre">for</span> <span class="pre">Linux*</span> <span class="pre">OS</span></code>, std. 4.1.</p></li>
+</ul>
+</li>
+<li><p>MPI-related revisions:</p>
+<ul>
+<li><p>Seeding of random number generators revised to avoid seed collision across different threads and processes.</p></li>
+<li><p>The number of reads generated from each contig is now calculated using complicated rounding instead of flooring.</p></li>
+<li><p>Makefile quick build targets <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">release</span></code> have their MPI counterparts: <code class="docutils literal notranslate"><span class="pre">debug-mpi</span></code> and <code class="docutils literal notranslate"><span class="pre">release-mpi</span></code>.</p></li>
+<li><p>Makefile integration test targets <code class="docutils literal notranslate"><span class="pre">testsmall</span></code>, <code class="docutils literal notranslate"><span class="pre">testsmall-release</span></code>, <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> have their MPI counterparts: <code class="docutils literal notranslate"><span class="pre">testsmall-mpi</span></code>, <code class="docutils literal notranslate"><span class="pre">testsmall-release-mpi</span></code>, and <code class="docutils literal notranslate"><span class="pre">testbuild-mpi</span></code>.</p></li>
+<li><p>Integration test <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> revised to make it run faster.</p></li>
+<li><p>CMake option <code class="docutils literal notranslate"><span class="pre">WITH_MPI</span></code> added to enable MPI support. This option is by default <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>NOTE</strong> The author currently has no access to computing clusters with MPI, so the MPI parallelization on an actual multi-node cluster may be problematic and suboptimal. Users are welcome to report bugs or tell the author how to simulate an MPI-enabled cluster using a laptop to improve the MPI support.</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-10-section">
+<span id="id7"></span><h2>1.1.10 (2025/10/12)<a class="headerlink" href="#v-1-1-10-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed #7. In details:</p>
+<ul>
+<li><p>Some build failures under Mac OS X using Apple Clang 18 have been fixed.</p></li>
+<li><p>More tests added to pure-Clang/LLVM build.</p></li>
+</ul>
+</li>
+<li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> to <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/12.0.0"><code class="docutils literal notranslate"><span class="pre">12.0.0</span></code></a>.</p></li>
+<li><p>Update bundled Abseil to <a class="reference external" href="https://github.com/abseil/abseil-cpp/releases/tag/20250814.1"><code class="docutils literal notranslate"><span class="pre">20250814.1</span></code></a>.</p></li>
+<li><p>Debian/Ubuntu/Alpine builder container updated to the latest versions.</p></li>
+</ul>
+</section>
+<section id="v-1-1-9-section">
+<span id="id8"></span><h2>1.1.9 (2025/10/11)<a class="headerlink" href="#v-1-1-9-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>BAM output routines are largely accelerated by replacing string streams with pre-allocated strings.</p></li>
+<li><p>Implemented <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>, a C++ tool to build ART/<code class="docutils literal notranslate"><span class="pre">art_modern</span></code> profiles out of FASTQ or SAM/BAM files with quality scores.</p></li>
+<li><p>Extensively revised installation documentation.</p></li>
+<li><p>The simulator now supports <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> or an empty file as input.</p></li>
+<li><p>Static libraries removed from Alpine Linux build to reduce download size.</p></li>
+<li><p>HTSLib lower bound bumped to <a class="reference external" href="https://github.com/samtools/htslib/releases/tag/1.17"><code class="docutils literal notranslate"><span class="pre">1.17</span></code></a>.</p></li>
+<li><p>Boost::Thread removed from required dependencies.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-8-section">
+<span id="id9"></span><h2>1.1.8 (2025/09/29)<a class="headerlink" href="#v-1-1-8-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed issue #5. In details:</p>
+<ul>
+<li><p>On prior versions, the program will crash when trying to create simulated output in the current working directory without the <code class="docutils literal notranslate"><span class="pre">./</span></code> prefix.</p></li>
+<li><p>Duplicated read IDs observed in prior versions.</p></li>
+<li><p>Inconsistencies in read quality between SAM/BAM and FASTQ output were observed in prior versions.</p></li>
+<li><p>Missing <code class="docutils literal notranslate"><span class="pre">/1</span></code> and <code class="docutils literal notranslate"><span class="pre">/2</span></code> suffixes in read IDs of paired-end reads observed in prior versions.</p></li>
+</ul>
+</li>
+<li><p>Documentation largely revised.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-7-section">
+<span id="id10"></span><h2>1.1.7 (2025/09/18)<a class="headerlink" href="#v-1-1-7-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Support for <code class="docutils literal notranslate"><span class="pre">ccache</span></code> is deprecated and removed, which also deprecated the CMake option <code class="docutils literal notranslate"><span class="pre">USE_CCACHE</span></code>.</p></li>
+<li><p>Update bundled Abseil to <a class="reference external" href="https://github.com/abseil/abseil-cpp/releases/tag/20250814.0">20250814.0</a>.</p></li>
+<li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> to the current latest version (<a class="reference external" href="https://github.com/cameron314/concurrentqueue/commit/c68072129c8a5b4025122ca5a0c82ab14b30cb03"><code class="docutils literal notranslate"><span class="pre">c680721</span></code></a>).</p></li>
+<li><p>Updated bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> to <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/11.2.0">11.2.0</a>.</p></li>
+<li><p>Some files without a clear license were removed. Unused files from bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code>, <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code>, and HTSLib removed.</p></li>
+<li><p>CMake options to use system shipped dependencies instead of bundled ones are added to comply with Debian policies. Namely, <code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code>, and <code class="docutils literal notranslate"><span class="pre">REPRODUCIBLE_BUILDS</span></code>.</p></li>
+<li><p>Separated CMake flag that controls building of mini benchmarks to <code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code>.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-6-section">
+<span id="id11"></span><h2>1.1.6 (2025/09/12)<a class="headerlink" href="#v-1-1-6-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A severe bug in the CMakefile of <code class="docutils literal notranslate"><span class="pre">labw_slim_htslib</span></code> was fixed.</p></li>
+<li><p><strong>EXPERIMENTAL</strong> Debian DEB package built under Linux Mint 22 Wilma.</p></li>
+</ul>
+</section>
+<section id="v-1-1-5-section">
+<span id="id12"></span><h2>1.1.5 (2025/09/12)<a class="headerlink" href="#v-1-1-5-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Bumped bundled HTSLib to <a class="reference external" href="https://github.com/samtools/htslib/releases/tag/1.22.1"><code class="docutils literal notranslate"><span class="pre">1.22.1</span></code></a>.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-4-section">
+<span id="id13"></span><h2>1.1.4 (2025/08/31)<a class="headerlink" href="#v-1-1-4-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>2 environment variables, <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> and <code class="docutils literal notranslate"><span class="pre">ART_LOG_DIR</span></code>, now control the behavior of log directory creation.</p></li>
+<li><p>Some files without a clear license were removed.</p></li>
+<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code>. <strong>NOTE</strong> Currently, only built libraries and binaries will be installed. Documentation and header files are not included yet.</p></li>
+<li><p>The package is published on BioConda. See <a class="reference external" href="https://bioconda.github.io/recipes/art_modern/README.html">here</a> for details.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-3-section">
+<span id="id14"></span><h2>1.1.3 (2025/03/05)<a class="headerlink" href="#v-1-1-3-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A severe bug in built-in profiles has been fixed. Now all built-in profiles should be usable without problems. Also eliminated <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Woverlength-strings">-Woverlength-strings</a> warning.</p></li>
+<li><p>Built-in profiles no longer being represented in base64. They’re now gzip-compressed instead.</p></li>
+<li><p><strong>EXPERIMENTAL</strong> <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>-generated documentation added.</p></li>
+<li><p>Compiler flag <code class="docutils literal notranslate"><span class="pre">-Ofast</span></code> switched back to <code class="docutils literal notranslate"><span class="pre">-O3</span></code> for release build.</p></li>
+<li><p>CMake option <code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code> added to address newer mechanisms of Boost configuration.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-2-section">
+<span id="id15"></span><h2>1.1.2 (2025/02/16)<a class="headerlink" href="#v-1-1-2-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The performance of the core simulation algorithm was improved using <a class="reference external" href="https://doi.org/10.1145/355744.355749">Walker’s Algorithm</a> on generating discrete distributions. The implementation was adapted from the C version of <a class="reference external" href="https://www.gnu.org/software/gsl/">GNU Scientific Library</a>.</p></li>
+<li><p>Support for B-Tree was dropped. Its performance was found to be worse than STL map in corrected benchmarks.</p></li>
+<li><p>The performance of <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> was improved using producer and consumer tokens. However, since the queue is sufficiently fast without tokens, this improvement may not be significant.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-1-1-section">
+<span id="id16"></span><h2>1.1.1 (2025/02/02)<a class="headerlink" href="#v-1-1-1-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>~~Possible build acceleration using <a class="reference external" href="https://ccache.dev/">ccache</a> supported.~~</p></li>
+<li><p>Alternate <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementations like <a class="reference external" href="https://github.com/jemalloc/jemalloc">jemalloc</a> and <a class="reference external" href="https://github.com/microsoft/mimalloc">mi-malloc</a> are supported.</p></li>
+<li><p>Formatting engine of FASTQ changed to <a class="reference external" href="https://github.com/fmtlib/fmt"><code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a>, which is slightly faster.</p></li>
+<li><p>FASTA output format supported.</p></li>
+<li><p>If the output consists only of FASTA or FASTQ, pairwise alignment will not be computed.</p></li>
+<li><p>The default random generator for the Intel MKL library changed from <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_MT19937</span></code> to <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_SFMT19937</span></code>, which is slightly faster.</p></li>
+<li><p><a class="reference external" href="https://www.pcg-random.org/">PCG</a> added as an alternative random number generator. <strong>THIS GENERATOR MAY NOT WORK UNDER MAC OS X.</strong></p></li>
+<li><p>~~<a class="reference external" href="https://github.com/Kronuz/cpp-btree">C++ B+ Tree</a> added for accelerated map implementation.~~</p></li>
+</ul>
+</section>
+<section id="v-1-1-0-section">
+<span id="id17"></span><h2>1.1.0 (2025/01/23)<a class="headerlink" href="#v-1-1-0-section" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--builtin_qual_file</span></code> option added back. Python 3 is needed as a build dependency.</p></li>
+<li><p><a class="reference external" href="https://github.com/bshoshany/thread-pool"><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code></a> added as an alternate thread pool implementation for Boost less than or equal with 1.65.</p></li>
+<li><p>Tested Ubuntu 18.04 x86_64 with GCC 7.4.0, Clang 5.0.1, and Boost 1.65.1.</p></li>
+<li><p>Tested Mac OS X Sequoia 15.2 with Command Line Tools for Xcode 16.2 (Clang 16.0.0 for target <code class="docutils literal notranslate"><span class="pre">x86_64-apple-darwin24.2.0</span></code>), CMake 3.31.4, and Boost 1.87.0. Fixed #3.</p></li>
+<li><p>Bumped bundled HTSLib to <a class="reference external" href="https://github.com/samtools/htslib/releases/tag/1.21"><code class="docutils literal notranslate"><span class="pre">1.21</span></code></a>.</p></li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
+<section id="v-1-0-1-section">
+<span id="id18"></span><h2>1.0.1 (2025/01/17)<a class="headerlink" href="#v-1-0-1-section" title="Link to this heading">¶</a></h2>
+<p>Fixed miscellaneous bugs.</p>
+<ul class="simple">
+<li><p>Further fixed issue #2.</p></li>
+<li><p>More compiler versions tested; The software now supports Clang 10.0.0+, GCC 9.5.0+, and AOCC 3.2.0+.</p></li>
+</ul>
+</section>
+<section id="v-1-0-0-section">
+<span id="id19"></span><h2>1.0.0 (2025/01/17)<a class="headerlink" href="#v-1-0-0-section" title="Link to this heading">¶</a></h2>
+<p>The first release of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>.</p>
+<p><strong>NOTE</strong> This version does <strong>NOT</strong> come with MPI support.</p>
+<p>Changes in software function:</p>
+<ul class="simple">
+<li><p>Supports 3 modes: <code class="docutils literal notranslate"><span class="pre">wgs</span></code>, <code class="docutils literal notranslate"><span class="pre">trans</span></code>, and <code class="docutils literal notranslate"><span class="pre">templ</span></code>, similar to <code class="docutils literal notranslate"><span class="pre">pbsim3</span></code>.</p></li>
+<li><p>Supports 3 FASTA parsers: <code class="docutils literal notranslate"><span class="pre">memory</span></code>, <code class="docutils literal notranslate"><span class="pre">htslib</span></code>, and <code class="docutils literal notranslate"><span class="pre">stream</span></code>.</p></li>
+<li><p>Supports 3 library construction methods: <code class="docutils literal notranslate"><span class="pre">se</span></code>, <code class="docutils literal notranslate"><span class="pre">pe</span></code>, and <code class="docutils literal notranslate"><span class="pre">mp</span></code>.</p></li>
+<li><p>Except for FASTQ, support output in SAM and BAM format through HTSLib.</p></li>
+<li><p>Support for masking detection was temporarily suspended.</p></li>
+<li><p>Support for sequencers except Illumina dropped.</p></li>
+<li><p>Support for the <code class="docutils literal notranslate"><span class="pre">aln</span></code> output format was dropped.</p></li>
+<li><p>Built-in profiles are no longer supported. Users must specify the path to the existing profile they want to use.</p></li>
+<li><p>Parallelization using Boost::ASIO.</p></li>
+</ul>
+<p>Changes in software implementation:</p>
+<ul class="simple">
+<li><p>Build systems changed to CMake.</p></li>
+<li><p>All C++ code was re-implemented in C++17 with radical removal of duplicated or unused code.</p></li>
+<li><p>More random number generation libraries were supported.</p></li>
+<li><p>Logging re-implemented using Boost.</p></li>
+<li><p>Multithreading support implemented using Boost.</p></li>
+<li><p>Largely eliminated POSIX-only routines by Boost.</p></li>
+<li><p>Argument parser implemented in Boost.</p></li>
+<li><p>Output writers were made asynchronous using <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code>.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="Copying.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Copyright</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Security.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Security Policy</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">News &amp; Release Notes</a><ul>
+<li><a class="reference internal" href="#v-1-3-3-section">1.3.3 (2026/01/08)</a></li>
+<li><a class="reference internal" href="#v-1-3-2-section">1.3.2 (2025/12/23)</a></li>
+<li><a class="reference internal" href="#v-1-3-1-section">1.3.1 (2025/12/15)</a></li>
+<li><a class="reference internal" href="#v-1-3-0-section">1.3.0 (2025/11/14)</a></li>
+<li><a class="reference internal" href="#v-1-2-1-section">1.2.1 (2025/11/06)</a></li>
+<li><a class="reference internal" href="#v-1-2-0-section">1.2.0 (2025/10/21)</a></li>
+<li><a class="reference internal" href="#v-1-1-10-section">1.1.10 (2025/10/12)</a></li>
+<li><a class="reference internal" href="#v-1-1-9-section">1.1.9 (2025/10/11)</a></li>
+<li><a class="reference internal" href="#v-1-1-8-section">1.1.8 (2025/09/29)</a></li>
+<li><a class="reference internal" href="#v-1-1-7-section">1.1.7 (2025/09/18)</a></li>
+<li><a class="reference internal" href="#v-1-1-6-section">1.1.6 (2025/09/12)</a></li>
+<li><a class="reference internal" href="#v-1-1-5-section">1.1.5 (2025/09/12)</a></li>
+<li><a class="reference internal" href="#v-1-1-4-section">1.1.4 (2025/08/31)</a></li>
+<li><a class="reference internal" href="#v-1-1-3-section">1.1.3 (2025/03/05)</a></li>
+<li><a class="reference internal" href="#v-1-1-2-section">1.1.2 (2025/02/16)</a></li>
+<li><a class="reference internal" href="#v-1-1-1-section">1.1.1 (2025/02/02)</a></li>
+<li><a class="reference internal" href="#v-1-1-0-section">1.1.0 (2025/01/23)</a></li>
+<li><a class="reference internal" href="#v-1-0-1-section">1.0.1 (2025/01/17)</a></li>
+<li><a class="reference internal" href="#v-1-0-0-section">1.0.0 (2025/01/17)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=28d163b9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

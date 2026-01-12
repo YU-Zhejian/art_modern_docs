@@ -1,0 +1,226 @@
+# Toplevel Makefile Documentation
+
+## Variables
+
+### `MAKEFLAGS`
+
+**Help:** Add -R to make to clear buitin variables
+
+### `CMAKE_FLAGS`
+
+**Help:** Additional CMake flags for CMake-related tasks
+
+### `JOBS`
+
+**Help:** Number of parallel jobs for building.
+Defaults to number of CPU cores detected using `nproc`.
+
+### `BASH`
+
+**Help:** Shell to use for shell scripts
+
+### `PYTHON`
+
+**Help:** Python interpreter to use for Python scripts
+
+### `MPIEXEC`
+
+**Help:** MPI launcher command. Used in MPI-related tests only
+NOTE: Setting this target does NOT enable MPI build!
+Use release-mpi or debug-mpi targets to build with MPI support.
+
+### `OPT_DIR`
+
+**Help:** Output directory for build artifacts
+
+### `ARCH`
+
+**Help:** System architecture
+
+### `PACKAGE_VERSION`
+
+**Help:** Package version, derived from the latest git tag if not set
+
+## Targets
+
+### `help`
+
+**Depends on:** None
+
+**Help:** Generate help message from Makefile comments
+
+### `dumpvar`
+
+**Depends on:** None
+
+**Help:** List all variables using .VARIABLES
+
+### `build`
+
+**Depends on:** `debug`
+
+**Help:** build as an alias to debug
+
+### `debug`
+
+**Depends on:** None
+
+**Help:** Generates debug build with tests enabled
+
+### `debug-mpi`
+
+**Depends on:** None
+
+**Help:** debug with MPI
+
+### `release`
+
+**Depends on:** None
+
+**Help:** Generates release build with native optimizations
+
+### `release-mpi`
+
+**Depends on:** None
+
+**Help:** release with MPI
+
+### `rel_with_dbg_alpine`
+
+**Depends on:** None
+
+**Help:** Generates RelWithDebInfo build without native optimizations
+for fully-static-linked build on Alpine Linux
+
+### `fmt`
+
+**Depends on:** None
+
+**Help:** Run code formatting checks and auto-formatting
+Format the code using [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html), [`sh`](https://github.com/mvdan/sh), [Black](https://black.readthedocs.io/en/stable/), [`cmake-format`](https://cmake-format.readthedocs.io/), and [`dos2unix`](https://www.freebsd.org/cgi/man.cgi?query=dos2unix&sektion=1).
+
+### `scc`
+
+**Depends on:** None
+
+**Help:** Run source code counting
+Note that this excludes third-party codes so should be preferred over pure `scc` in project root.
+
+### `testsmall`
+
+**Depends on:** `testsmall-debug`
+
+**Help:** Alias to testsmall-debug
+
+### `testsmall-mpi`
+
+**Depends on:** `testsmall-debug-mpi`
+
+**Help:** Alias to testsmall-debug-mpi
+
+### `testsmall-debug`
+
+**Depends on:** `debug`, `raw_data`
+
+**Help:** Run (not necessiarily) small integration tests with debug build. Also tests `art_profile_builder`.
+Env. Flags:
+
+- FORMAT_ONLY=1: Stop after testing all output formats is working
+- NO_FASTQC=1: Do not run FASTQC
+
+### `testsmall-debug-mpi`
+
+**Depends on:** `debug-mpi`, `raw_data`
+
+**Help:** testsmall with MPI
+
+### `testsmall-release`
+
+**Depends on:** `release`, `raw_data`
+
+**Help:** Run small tests with release build
+
+### `testsmall-release-mpi`
+
+**Depends on:** `release-mpi`, `raw_data`
+
+**Help:** testsmall-release with MPI
+
+### `testsmall-conda`
+
+**Depends on:** `raw_data`
+
+**Help:** Run small tests with conda-installed art_modern
+
+### `testsmall-conda-mpi`
+
+**Depends on:** `raw_data`
+
+**Help:** testsmall-conda with MPI
+
+### `raw_data`
+
+**Depends on:** None
+
+**Help:** Download raw data required for tests
+
+### `clean`
+
+**Depends on:** None
+
+**Help:** Clean all build artifacts
+
+### `testbuild`
+
+**Depends on:** None
+
+**Help:** Test building using diverse conditions
+
+### `testbuild-mpi`
+
+**Depends on:** None
+
+**Help:** testbuild with MPI
+
+### `testbuild-small`
+
+**Depends on:** None
+
+**Help:** Test building using diverse conditions with testsmall configurations
+
+### `testbuild-small-mpi`
+
+**Depends on:** None
+
+**Help:** testbuild with MPI with testsmall configurations
+
+### `doc`
+
+**Depends on:** None
+
+**Help:** Build documentation
+
+### `cleandoc`
+
+**Depends on:** None
+
+**Help:** Clean and build documentation
+
+### `serve-doc`
+
+**Depends on:** None
+
+**Help:** Serve built documentation at <http://localhost:8000>
+
+### `packing`
+
+**Depends on:** None
+
+**Help:** Create binary packages
+
+### `packing-update-containers`
+
+**Depends on:** None
+
+**Help:** Update Docker and Singularity containers used for packing
+

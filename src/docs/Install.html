@@ -1,0 +1,940 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Usage of art_modern" href="Usage-art_modern.html" /><link rel="prev" title="art_modern: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads" href="../README_NEW.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Installing art_modern - art_modern 1.3.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">art_modern 1.3.3 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">art_modern 1.3.3 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README_NEW.html"><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage-art_modern.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage-apb.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide.html">Guide on Miscellaneous Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions (FAQs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Design.html">Design Topics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Contributing.html">Developing &amp; Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Developing &amp; Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MakefileTargets.html">Toplevel Makefile Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TODO.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Security.html">Security Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="News.html">News &amp; Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copying.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../License.html">GNU GENERAL PUBLIC LICENSE</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/src/docs/Install.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="installing-art-modern">
+<h1>Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code><a class="headerlink" href="#installing-art-modern" title="Link to this heading">¶</a></h1>
+<p>Here provides a detailed installation guide for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>.</p>
+<p><strong>NOTE</strong> All “at least” in this guide are inclusive.</p>
+<section id="operating-system">
+<h2>Operating System<a class="headerlink" href="#operating-system" title="Link to this heading">¶</a></h2>
+<p>The project assumes <a class="reference external" href="https://en.wikipedia.org/wiki/X86-64">x86_64</a> (aka., Intel 64, AMD64, x64, with chips manufactured by Intel, AMD, VIA, Zhaoxin, etc.) platforms. Support on other platforms (including 32-bit CPUs) are not guaranteed.</p>
+<p>The project assumes modern GNU/Linux distributions that are still under official support. For example, Ubuntu 16.04 LTS (Xenial Xerus) had already reached its end-of-life in <a class="reference external" href="https://help.ubuntu.com/community/EOL#Ubuntu_16.04_Xenial_Xerus">Apr. 2021</a>. Other POSIX platforms like *BSD, and patent UNIX are theoretically supported but not tested. POSIX-on-Windows platforms like <a class="reference external" href="https://cygwin.com/">Cygwin</a>, <a class="reference external" href="https://www.msys2.org/">MSYS2</a>, <a class="reference external" href="https://sourceforge.net/projects/mingw/">MinGW</a>, <a class="reference external" href="https://www.mingw-w64.org/">MinGW-w64</a> are neither supported nor tested.</p>
+</section>
+<section id="c-c-compilers">
+<h2>C/C++ Compilers<a class="headerlink" href="#c-c-compilers" title="Link to this heading">¶</a></h2>
+<section id="checking-c11-and-c-17-compatibility">
+<h3>Checking C11 and C++17 Compatibility<a class="headerlink" href="#checking-c11-and-c-17-compatibility" title="Link to this heading">¶</a></h3>
+<p>This project requires a working C++ compiler that supports C++17 and a working C compiler that supports C11. You may test whether your compiler (GCC, for example) supports such standard using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;int main(){}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gcc<span class="w"> </span>--std<span class="o">=</span>c11<span class="w"> </span>-x<span class="w"> </span>c<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/dev/null
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;int main(){}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>g++<span class="w"> </span>--std<span class="o">=</span>c++17<span class="w"> </span>-x<span class="w"> </span>c++<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/dev/null
+</pre></div>
+</div>
+<p><strong>NOTE</strong> This is a very rough test. The compiler may still fail to compile the project due to the lack of support of some specific features. In other words, if there’s no error, the compiler <strong>MIGHT</strong> be supported. If there’s an error, the compiler is definitely <strong>NOT</strong> supported.</p>
+<p><strong>NOTE</strong> The CMake build scripts inside this project contains a script that tests compiler compatibility which will be automatically executed when configuring the project.</p>
+<p>For a table of the minimum compiler version that supports those versions, see also:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.cppreference.com/w/c/11">This cppreference article for C11</a>.</p></li>
+<li><p><a class="reference external" href="https://en.cppreference.com/w/cpp/17">This cppreference article for C++17</a>.</p></li>
+</ul>
+</section>
+<section id="gcc">
+<h3>GCC<a class="headerlink" href="#gcc" title="Link to this heading">¶</a></h3>
+<p>GNU Compiler Collections (GCC) (<a class="reference external" href="https://gcc.gnu.org/">homepage</a>) is the most widely used compiler for GNU/Linux that provides the best compatibility and error-tolerance. At least <a class="reference external" href="https://gcc.gnu.org/gcc-7/changes.html#GCC7.4">7.4.0</a> is required.</p>
+<p><strong>NOTE</strong> GCC supports diverse programming languages. Please ensure that your GCC installation comes with C++ support. You need at least <code class="docutils literal notranslate"><span class="pre">g++</span></code> program (Test with <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>) and a working GNU C++ Standard Library (<a class="reference external" href="https://gcc.gnu.org/onlinedocs/libstdc++/"><code class="docutils literal notranslate"><span class="pre">libstdc++</span></code></a>).</p>
+<p>See also:</p>
+<ul class="simple">
+<li><p>GCC support over <a class="reference external" href="https://gcc.gnu.org/projects/cxx-status.html#cxx17">C++17</a> and <a class="reference external" href="https://gcc.gnu.org/wiki/C11Status">C11</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libstdc++</span></code> support over <a class="reference external" href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/status.html#status.iso.2017">C++17</a>.</p></li>
+</ul>
+</section>
+<section id="clang">
+<h3>Clang<a class="headerlink" href="#clang" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://clang.llvm.org/">Clang</a> is another popular compiler for GNU/Linux that uses Low-Level Virtual Machine (<a class="reference external" href="https://llvm.org/">LLVM</a>) toolchain. Also, the default C++ compiler for FreeBSD and Apple Mac OS X. At least <a class="reference external" href="https://releases.llvm.org/5.0.1/tools/clang/docs/ReleaseNotes.html">5.0.1</a> is required.</p>
+<p><strong>NOTE</strong> Clang may need GCC to work properly due to the need of the compiler runtime library (e.g., <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html"><code class="docutils literal notranslate"><span class="pre">libgcc</span></code>/<code class="docutils literal notranslate"><span class="pre">libgcc_s</span></code></a> and <a class="reference external" href="https://gcc.gnu.org/wiki/Atomic/GCCMM"><code class="docutils literal notranslate"><span class="pre">libatomic</span></code></a>). See <a class="reference external" href="https://clang.llvm.org/docs/Toolchain.html">this LLVM article</a> for detailed instructions on selecting GNU- or LLVM-based variants of each toolchain component for Clang.</p>
+<p>See also:</p>
+<ul class="simple">
+<li><p>Clang support over <a class="reference external" href="https://clang.llvm.org/cxx_status.html#cxx17">C++17</a> and <a class="reference external" href="https://clang.llvm.org/c_status.html#c11">C11</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libc++</span></code> support over <a class="reference external" href="https://libcxx.llvm.org/Status/Cxx17.html">C++17</a> if you wish to use libc++ (LLVM Standard C++ library) instead of <code class="docutils literal notranslate"><span class="pre">libstdc++</span></code> (GNU C++ Standard Library).</p></li>
+</ul>
+</section>
+<section id="intel-oneapi-dpc-c-compiler">
+<h3>Intel OneAPI DPC++/C++ Compiler<a class="headerlink" href="#intel-oneapi-dpc-c-compiler" title="Link to this heading">¶</a></h3>
+<p>The compiler (<a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html">homepage</a>) can build accelerated binaries on Intel CPUs. Compatibilities on the latest version of this compiler will be tested.</p>
+<p><strong>NOTE</strong> Here we refer to the LLVM-based one (with programs named <code class="docutils literal notranslate"><span class="pre">icx</span></code> and <code class="docutils literal notranslate"><span class="pre">icpx</span></code>) instead of the old Intel C++ Compiler Classic (ICC, with programs named <code class="docutils literal notranslate"><span class="pre">icc</span></code> and <code class="docutils literal notranslate"><span class="pre">icpc</span></code>).</p>
+<p><strong>NOTE</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p>
+<p><strong>NOTE</strong> Distributing binaries built with this compiler may require you to comply with Intel’s license and/or breaking the GPL.</p>
+</section>
+<section id="other-compilers">
+<h3>Other Compilers<a class="headerlink" href="#other-compilers" title="Link to this heading">¶</a></h3>
+<p>Although not tested, the following compilers can also theoretically be of use:</p>
+<ul class="simple">
+<li><p>Intel C++ Compiler Classic (ICC) <strong>MAY</strong> work with legacy systems and Boost libraries.</p></li>
+<li><p><a class="reference external" href="https://developer.nvidia.com/hpc-compilers">NVIDIA HPC compilers</a> should work as all versions of this compiler support C++17.</p>
+<ul>
+<li><p><strong>NOTE</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.amd.com/en/developer/aocc.html">AMD Optimizing C/C++ and Fortran Compilers (AOCC)</a> should work as all versions of this compiler support C++17. Specifically,</p>
+<ul>
+<li><p>Its first version, 3.2.0 (<code class="docutils literal notranslate"><span class="pre">AMD</span> <span class="pre">Clang</span> <span class="pre">13.0.0</span> <span class="pre">(CLANG:</span> <span class="pre">AOCC_3.2.0-Build#128</span> <span class="pre">2021_11_12)</span></code>), was tested.</p></li>
+<li><p>Its latest version, 5.0.0 (<code class="docutils literal notranslate"><span class="pre">AMD</span> <span class="pre">Clang</span> <span class="pre">17.0.6</span> <span class="pre">(CLANG:</span> <span class="pre">AOCC_5.0.0-Build#1377</span> <span class="pre">2024_09_24)</span></code>), was tested.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developer.arm.com/Tools%20and%20Software/Arm%20Compiler%20for%20Linux#Downloads">Arm C/C++/Fortran Compiler</a> should work. Tested using Arm C/C++/Fortran Compiler version 24.10.1 (build number 4) (based on LLVM 19.1.0) on an ARM development board.</p></li>
+</ul>
+</section>
+</section>
+<section id="essential-tools-for-building">
+<h2>Essential Tools for Building<a class="headerlink" href="#essential-tools-for-building" title="Link to this heading">¶</a></h2>
+<section id="cmake">
+<h3>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://cmake.org/">CMake</a> is a cross-platform build system. It is required to build the project. At least <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.17.html">3.17</a> is required.</p>
+<p><strong>NOTE</strong> Lots of EOL distributions do not ship with a recent version of CMake. You may download CMake 3.17 in a binary form for x86_64 GNU/Linux or Mac OS X from <a class="reference external" href="https://cmake.org/files/v3.17/">CMake officially-built binaries</a>.</p>
+</section>
+<section id="dependencies-of-cmake-build-system">
+<h3>Dependencies of CMake Build System<a class="headerlink" href="#dependencies-of-cmake-build-system" title="Link to this heading">¶</a></h3>
+<p>CMake requires a <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">CMake Generator</a>, which is used to perform the build. Under GNU/Linux and other POSIX systems (e.g., Mac OS X, FreeBSD), <a class="reference external" href="https://ninja-build.org/">Ninja</a> is preferred. <a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> is also acceptable. BSD-flavored <code class="docutils literal notranslate"><span class="pre">make</span></code> will <strong>NOT</strong> work.</p>
+<p>This project requires <a class="reference external" href="https://www.python.org/">Python</a> at least 3.7 when building the package, for embedding bundled Illumina profiles and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code>. Python is not required at runtime.</p>
+</section>
+<section id="linkers-assemblers-archivers-etc">
+<h3>Linkers, Assemblers, Archivers, etc<a class="headerlink" href="#linkers-assemblers-archivers-etc" title="Link to this heading">¶</a></h3>
+<p>You need either <a class="reference external" href="https://www.gnu.org/software/binutils/">GNU BinUtils</a> or <a class="reference external" href="https://llvm.org/docs/CommandGuide/#gnu-binutils-replacements">LLVM BinUtils Replacements</a> to perform assembling and linking. Under normal circumstances, they should come together with your compiler if you install them using your package management systems. The latter may require additional CMake variables to be set.</p>
+</section>
+<section id="c-library">
+<h3>C Library<a class="headerlink" href="#c-library" title="Link to this heading">¶</a></h3>
+<p>This project were tested working using <a class="reference external" href="https://www.gnu.org/software/libc/">GNU C Library</a> and <a class="reference external" href="https://musl.libc.org/">MUSL C Library</a>. Other C libraries are not tested. However, C libraries that satisfy POSIX.1-2008 and C11 should work.</p>
+<p><strong>NOTE</strong> <a class="reference external" href="https://libc.llvm.org/">LLVM C Library</a> is neither supported nor tested.</p>
+<p><strong>NOTE</strong> Most C libraries bundles a copy of POSIX threads library (<a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread(7)</a>, usually named <code class="docutils literal notranslate"><span class="pre">libpthread.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libpthread.a</span></code> if statically linked) and math library (Usually named <code class="docutils literal notranslate"><span class="pre">libm.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libm.a</span></code>). Those libraries are required by this project.</p>
+<p><strong>NOTE</strong> Here, we assume that <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindThreads.html"><code class="docutils literal notranslate"><span class="pre">FindThread</span></code></a> of CMake will find pthread.</p>
+</section>
+<section id="pkgconf-or-pkg-config">
+<h3><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code> or <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code><a class="headerlink" href="#pkgconf-or-pkg-config" title="Link to this heading">¶</a></h3>
+<p>The project may take advantage <a class="reference external" href="https://www.freedesktop.org/wiki/Software/pkg-config/"><code class="docutils literal notranslate"><span class="pre">pkg-config</span></code></a> or its modern replacement (<strong>RECOMMENDED</strong>) <a class="reference external" href="https://github.com/pkgconf/pkgconf"><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code></a> to locate the dependencies. Installing such is <strong>HIGHLY</strong> recommended.</p>
+<p><strong>NOTE</strong> You may need to set up environment variable <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> to allow those tools to find the dependencies.</p>
+</section>
+<section id="command-line-utilities">
+<h3>Command-Line Utilities<a class="headerlink" href="#command-line-utilities" title="Link to this heading">¶</a></h3>
+<p>For Apple Mac OS X, FreeBSD, Alpine Linux, and other GNU/Linux distributions with obsolete packages, please consider checking the version of the following tools:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a> (At least 8.28) for the use of <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">-C</span></code> (introduced in 8.28) and <code class="docutils literal notranslate"><span class="pre">readlink</span> <span class="pre">-f</span></code> (introduced in 8.0).</p>
+<ul>
+<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU CoreUtils.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash</a> (At least 4.2) for the possible use of advanced array operations.</p>
+<ul>
+<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU Bash.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> as the BSD variant is known to be incompatible.</p>
+<ul>
+<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU Make if you use GNU Make as CMake Generator.</p></li>
+</ul>
+</li>
+</ul>
+<p>As your original system tools shipped with the operating system/BusyBox may <strong>NOT</strong> work.</p>
+</section>
+</section>
+<section id="required-external-libraries">
+<h2>Required External Libraries<a class="headerlink" href="#required-external-libraries" title="Link to this heading">¶</a></h2>
+<p>Dependencies are those libraries or tools that should be installed on your system before building the project. If you’re using a personal computer with root privilege, consider installing them using your system’s package manager like <a class="reference external" href="https://wiki.debian.org/Apt">APT</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Yum">YUM</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Dnf">DNF</a>, <a class="reference external" href="https://wiki.archlinux.org/title/Pacman"><code class="docutils literal notranslate"><span class="pre">pacman</span></code></a>, and <a class="reference external" href="https://docs.conda.io/">Conda</a> etc. Otherwise, contact your system administrator for where to find them or build them from source.</p>
+<section id="boost-c-library">
+<h3>Boost C++ Library<a class="headerlink" href="#boost-c-library" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://www.boost.org/">Boost</a> is an umbrella project of diverse small modules that can be used independently. Except Boost header-only libraries, the compiled modules used in this project are:</p>
+<ul class="simple">
+<li><p>Essential header-only modules, including:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">boost/version.hpp</span></code>.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/math/doc/html/index.html">Math</a>. For calculation of the probability density function (PDF), cumulative distribution function (CDF), and inverse CDFs.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/exception/doc/boost-exception.html">Exception</a>. For better exception handling.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/algorithm/doc/html/index.html">Algorithm</a>. For simple string algorithm used in non-performance-critical situations.</p></li>
+</ul>
+</li>
+<li><p>Essential modules that would be linked to the final executable:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/filesystem/">FileSystem</a>. See <a class="reference internal" href="Design.html#filesystem-section"><span class="std std-ref">this Design section</span></a> for why this module instead of C++17 <code class="docutils literal notranslate"><span class="pre">&lt;filesystem&gt;</span></code> is required.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/program_options/">Program Options</a>. For parsing command-line options.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/log/">Log</a>. For logging support.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTE</strong> A boost module may depend on other boost modules in either header-only or compiled form. CMake should be able to find those dependencies automatically.</p>
+<p>Boost modules are found through <code class="docutils literal notranslate"><span class="pre">find_package(Boost</span> <span class="pre">...)</span></code> command of CMake. This usually requires the presence of <code class="docutils literal notranslate"><span class="pre">BoostConfig.cmake</span></code> (Provided by Boost) or <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindBoost.html"><code class="docutils literal notranslate"><span class="pre">FindBoost.cmake</span></code></a> (provided by CMake) file. See <a class="reference internal" href="#boost-config-provided-by-boost-section"><code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code> CMake variable</a> mentioned below for details.</p>
+</section>
+<section id="zlib">
+<h3>zlib<a class="headerlink" href="#zlib" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://www.zlib.net/">zlib</a> performs compression and decompression bundled ART error profiles. At least <a class="reference internal" href="News.html#v-1-2-0-section"><span class="std std-ref">1.2.0</span></a> is required. zlib is also required by <a class="reference internal" href="#htslib-section">bundled HTSLib</a>.</p>
+<p>The project will firstly try to find zlib using <code class="docutils literal notranslate"><span class="pre">pkgconf</span></code>. That usually requires the presence of <code class="docutils literal notranslate"><span class="pre">zlib.pc</span></code> file. If failed, will fall back to <code class="docutils literal notranslate"><span class="pre">libz.so</span></code>/<code class="docutils literal notranslate"><span class="pre">libz.a</span></code> with optional version suffixes.</p>
+</section>
+</section>
+<section id="optional-external-libraries">
+<h2>Optional External Libraries<a class="headerlink" href="#optional-external-libraries" title="Link to this heading">¶</a></h2>
+<p>The following dependencies are optional. You may choose to install them if you want to improve the performance, adaptability, or user-friendliness of the program.</p>
+<section id="optional-boost-components">
+<span id="id1"></span><h3>Optional Boost Components<a class="headerlink" href="#optional-boost-components" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/doc/html/stacktrace.html">StackTrace</a>: For a more developer-friendly stack trace. Can be absent for non-developers.</p>
+<ul>
+<li><p>See also: <a class="reference external" href="https://www.boost.org/doc/libs/latest/doc/html/stacktrace/configuration_and_build.html">configuring Boost::StackTrace</a> for platform-specific configuration instructions for this library.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/test/">Test</a>: For unit testing only. Can be absent for non-developers.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/timer/">Timer</a>: For displaying CPU time, wall-clock time, and average CPU utilization at the end of the program. Can be absent if you do not care about performance.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/random/index.html">Random</a>: For random number generation if you choose to use Boost random number generators (See <a class="reference internal" href="#use-random-generator-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a> below). Can be absent if you do not choose to use Boost random number generators.</p></li>
+</ul>
+<p>If benchmarking (See <a class="reference internal" href="#build-art-modern-benchmarks-section">CMake variable <code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code></a>) is required, you may also install:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/doc/html/container.html">Container</a>.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/doc/html/lockfree.html">LockFree</a>.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/doc/html/process.html">Process</a>.</p></li>
+<li><p>Random.</p></li>
+</ul>
+</section>
+<section id="accelerated-random-number-generators">
+<span id="id2"></span><h3>Accelerated Random Number Generators<a class="headerlink" href="#accelerated-random-number-generators" title="Link to this heading">¶</a></h3>
+<p>Users on Intel/AMD CPUs are highly recommended to use <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">Intel OneAPI Math Kernel Library (OneMKL)</a>. To use this option, set <a class="reference internal" href="#use-random-generator-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a> to <code class="docutils literal notranslate"><span class="pre">ONEMKL</span></code>.</p>
+<p>OneMKL can be found through CMake. This requires you to install the Intel OneAPI Base Toolkit, which provides <code class="docutils literal notranslate"><span class="pre">MKLConfig.cmake</span></code>. See <a class="reference external" href="https://www.intel.com/content/www/us/en/docs/onemkl/developer-guide-linux/2025-2/using-the-cmake-config-file.html">official docs for 2025.2</a> for more details.</p>
+<p>OneMKL can also be found through <code class="docutils literal notranslate"><span class="pre">pkgconf</span></code>. For example, Debian packing of Intel MKL <a class="reference external" href="https://packages.debian.org/sid/libmkl-dev"><code class="docutils literal notranslate"><span class="pre">libmkl-dev</span></code></a> provides <code class="docutils literal notranslate"><span class="pre">mkl-sdl-lp64.pc</span></code>. Intel OneAPI MKL installation provides <code class="docutils literal notranslate"><span class="pre">mkl-sdl.pc</span></code>. To use MKL specified using <code class="docutils literal notranslate"><span class="pre">pkgconf</span></code> instead of CMake, see <a class="reference internal" href="#find-random-mkl-through-pkgconf-section">CMake variable <code class="docutils literal notranslate"><span class="pre">FIND_RANDOM_MKL_THROUGH_PKGCONF</span></code></a> below.</p>
+<p><strong>NOTE</strong> OneMKL is property software. Distributing binaries built with this library may require you to comply with Intel’s license and/or breaking the GPL.</p>
+<p><a class="reference external" href="https://www.pcg-random.org/">PCG</a> is used as an alternative to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine.html"><code class="docutils literal notranslate"><span class="pre">std::mt19937</span></code></a> for random number generation. File <code class="docutils literal notranslate"><span class="pre">&lt;pcg_random.hpp&gt;</span></code> is required. This file usually located in <code class="docutils literal notranslate"><span class="pre">/usr/include/pcg_random.hpp</span></code> if you installed Debian package <a class="reference external" href="https://packages.debian.org/sid/all/libpcg-cpp-dev"><code class="docutils literal notranslate"><span class="pre">libpcg-cpp-dev</span></code></a>. To use this option, set <a class="reference internal" href="#use-random-generator-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a> to <code class="docutils literal notranslate"><span class="pre">SYSTEM_PCG</span></code>. Note that we also provide a bundled minified version of PCG random number generators under the name of <code class="docutils literal notranslate"><span class="pre">PCG</span></code>.</p>
+</section>
+<section id="alternate-malloc-free-implementations">
+<span id="alt-malloc-section"></span><h3>Alternate <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> Implementations<a class="headerlink" href="#alternate-malloc-free-implementations" title="Link to this heading">¶</a></h3>
+<p>Users may use either <a class="reference external" href="https://github.com/microsoft/mimalloc">mi-malloc</a>, <a class="reference external" href="https://github.com/jemalloc/jemalloc">jemalloc</a>, or <a class="reference external" href="https://github.com/gperftools/gperftools">tcmalloc</a> to slightly improve the performance of memory allocation and deallocation and check for potential memory leaks.</p>
+<ul class="simple">
+<li><p>For jemalloc, <code class="docutils literal notranslate"><span class="pre">jemalloc.pc</span></code> file is required.</p></li>
+<li><p>For mi-malloc, <code class="docutils literal notranslate"><span class="pre">mimalloc-config.cmake</span></code> file is required.</p></li>
+<li><p>For tcmalloc, <code class="docutils literal notranslate"><span class="pre">libtcmalloc.pc</span></code> or <code class="docutils literal notranslate"><span class="pre">libtcmalloc_minimal.pc</span></code> is required. Under Debian GNU/Linux, this file is provided by <a class="reference external" href="https://packages.debian.org/sid/libgoogle-perftools-dev"><code class="docutils literal notranslate"><span class="pre">libgoogle-perftools-dev</span></code></a> package.</p></li>
+</ul>
+<p>See also: <a class="reference internal" href="#use-malloc-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_MALLOC</span></code></a> below.</p>
+<p><strong>NOTE</strong> If you already compiled the binary without those libraries, you may still link them at run-time using <code class="docutils literal notranslate"><span class="pre">LD_PRELOAD</span></code>.</p>
+</section>
+<section id="message-passing-interface-mpi-library">
+<span id="mpi-section"></span><h3>Message Passing Interface (MPI) Library<a class="headerlink" href="#message-passing-interface-mpi-library" title="Link to this heading">¶</a></h3>
+<p>The MPI standard required in this project is MPI 1.0, which is published in 1994. Thus, most MPI libraries should work. MPI libraries from the following vendors are supported for MPI-based parallelization:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.open-mpi.org/">OpenMPI</a>.</p></li>
+<li><p><a class="reference external" href="https://www.mpich.org/">MPICH</a>.</p></li>
+<li><p><a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html">Intel MPI</a>.</p></li>
+</ul>
+<p>The system should theoretically support:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mvapich.cse.ohio-state.edu/">MVAPICH2</a>.</p></li>
+</ul>
+<p>The MPI installation with MPI C API should be locatable using CMake module <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindMPI.html"><code class="docutils literal notranslate"><span class="pre">FindMPI.cmake</span></code></a>, which is shipped with CMake. We do <strong>NOT</strong> need the MPI C++ API, which is deprecated in later MPI standards.</p>
+<p>See also: <a class="reference internal" href="#with-mpi-section">CMake variable <code class="docutils literal notranslate"><span class="pre">WITH_MPI</span></code></a> below.</p>
+</section>
+<section id="ncbi-ngs-libraries">
+<span id="optional-ncbi-ngs-components"></span><h3>NCBI NGS Libraries<a class="headerlink" href="#ncbi-ngs-libraries" title="Link to this heading">¶</a></h3>
+<p>For enabling NCBI Short Read Archive (SRA) support in <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>. Requires <code class="docutils literal notranslate"><span class="pre">libncbi-ngs.so</span></code>/<code class="docutils literal notranslate"><span class="pre">libncbi-ngs.a</span></code>, with its development headers.</p>
+<p>Available at <a class="reference external" href="https://github.com/ncbi/sra-tools">https://github.com/ncbi/sra-tools</a>.</p>
+<p>Available since <a class="reference internal" href="News.html#v-1-3-3-section"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">1.3.3</span></code></span></a>.</p>
+<p>See also: <a class="reference internal" href="#with-ncbi-ngs-section">CMake variable <code class="docutils literal notranslate"><span class="pre">WITH_NCBI_NGS</span></code></a> below.</p>
+<p><strong>NOTE</strong> If you would like to use NCBI NGS Library, you <strong>MUST</strong> use bundled HTSLib due to symbol conflicts.</p>
+</section>
+</section>
+<section id="required-bundled-external-libraries">
+<h2>Required Bundled/External Libraries<a class="headerlink" href="#required-bundled-external-libraries" title="Link to this heading">¶</a></h2>
+<p>The following dependencies are bundled with the project. You do not need to install them manually. However, you may choose to use external ones if you have them installed in your system. Consult your system administrator if you do not know whether and where those libraries are installed.</p>
+<p><strong>NOTE</strong> Using bundled dependencies may introduce security vulnerabilities.</p>
+<p>See also: <a class="reference internal" href="Copying.html"><span class="std std-doc">Copying.md</span></a> for the licenses and versions of those bundled dependencies.</p>
+<section id="htslib">
+<span id="htslib-section"></span><h3><a class="reference external" href="https://www.htslib.org/">HTSLib</a><a class="headerlink" href="#htslib" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://www.htslib.org/">HTSLib</a> is used for reading large FASTA files and generating SAM/BAM files.</p>
+<p>See also: <a class="reference internal" href="#use-htslib-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_HTSLIB</span></code></a> mentioned below.</p>
+<section id="bundled">
+<span id="bundled-htslib-section"></span><h4>Bundled<a class="headerlink" href="#bundled" title="Link to this heading">¶</a></h4>
+<p>This bundled HTSLib is a trimmed down version of the original HTSLib with the following changes:</p>
+<ul class="simple">
+<li><p>Removed GNU Autotools &amp; Makefile-based building system and use CMake instead.</p></li>
+<li><p>Dropped support for <code class="docutils literal notranslate"><span class="pre">libcurl</span></code>.</p></li>
+<li><p>Removed the plugin system.</p></li>
+<li><p>All files unused in <code class="docutils literal notranslate"><span class="pre">htscodecs</span></code> are removed.</p></li>
+<li><p>Support for external HTSCodecs and OpenSSL (For calculating MD5) are removed.</p></li>
+</ul>
+<p>To build bundled HTSLib sources, you need to have:</p>
+<ul class="simple">
+<li><p><strong>REQUIRED</strong> zlib, which is also required by this project.</p></li>
+<li><p><strong>REQUIRED</strong> pthread. See above section for C libraries bundling pthread.</p></li>
+<li><p><strong>HIGHLY RECOMMENDED</strong> <a class="reference external" href="https://github.com/ebiggers/libdeflate">libdeflate</a>: This library accelerates compressed BAM output.</p></li>
+<li><p><strong>OPTIONAL</strong> <a class="reference external" href="http://www.bzip.org/">libbz2</a>: For CRAM compression.</p></li>
+<li><p><strong>OPTIONAL</strong> <a class="reference external" href="https://tukaani.org/xz/">liblzma</a>: For CRAM compression.</p></li>
+</ul>
+<p><strong>NOTE</strong> The CRAM format is currently not supported as an output format for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>.</p>
+<p>See <a class="reference external" href="https://github.com/samtools/samtools/blob/master/INSTALL">official HTSLib documentation</a> for more details.</p>
+</section>
+<section id="external">
+<span id="external-htslib-section"></span><h4>External<a class="headerlink" href="#external" title="Link to this heading">¶</a></h4>
+<p>HTSLib at least <a class="reference external" href="https://github.com/samtools/htslib/releases/tag/1.17">1.17</a> is required due to the use of <code class="docutils literal notranslate"><span class="pre">sam_flush</span></code> (1.14) and <code class="docutils literal notranslate"><span class="pre">faidx_seq_len64</span></code> (1.17).</p>
+<p>The project will firstly try to find HTSLib using pkgconf. That usually requires the presence of <code class="docutils literal notranslate"><span class="pre">htslib.pc</span></code> file. If failed, will fall back to <code class="docutils literal notranslate"><span class="pre">lib[val].so</span></code>/<code class="docutils literal notranslate"><span class="pre">lib[val].a</span></code> with optional version suffixes where <code class="docutils literal notranslate"><span class="pre">[val]</span></code> is the value of <a class="reference internal" href="#use-htslib-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_HTSLIB</span></code></a>.</p>
+<p><strong>NOTE</strong> Remote reference file is not supported.</p>
+</section>
+</section>
+<section id="moodycamel-concurrentqueue-t">
+<h3><code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code><a class="headerlink" href="#moodycamel-concurrentqueue-t" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/cameron314/concurrentqueue"><code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code></a> is used for multi-producer single-consumer output queue.</p>
+<p>See also: <a class="reference internal" href="#use-concurrent-queue-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code></a> mentioned below.</p>
+<section id="bundled-concurrent-queue-section">
+<span id="id3"></span><h4>Bundled<a class="headerlink" href="#bundled-concurrent-queue-section" title="Link to this heading">¶</a></h4>
+<p>No additional dependency is required.</p>
+</section>
+<section id="external-concurrent-queue-section">
+<span id="id4"></span><h4>External<a class="headerlink" href="#external-concurrent-queue-section" title="Link to this heading">¶</a></h4>
+<p>The library is header-only, so only the path to <code class="docutils literal notranslate"><span class="pre">concurrentqueue.h</span></code> is required. At least <a class="reference external" href="https://github.com/cameron314/concurrentqueue/releases/tag/v1.0.4">1.0.4</a> is required.</p>
+</section>
+</section>
+<section id="fmt">
+<h3><code class="docutils literal notranslate"><span class="pre">{fmt}</span></code><a class="headerlink" href="#fmt" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/fmtlib/fmt"><code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a> is used for high-speed formatting FASTA and FASTQ output.</p>
+<p>See also: <a class="reference internal" href="#use-libfmt-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code></a> mentioned below.</p>
+<section id="bundled-libfmt-section">
+<span id="id5"></span><h4>Bundled<a class="headerlink" href="#bundled-libfmt-section" title="Link to this heading">¶</a></h4>
+<p>No additional dependency is required.</p>
+</section>
+<section id="external-libfmt-section">
+<span id="id6"></span><h4>External<a class="headerlink" href="#external-libfmt-section" title="Link to this heading">¶</a></h4>
+<p>The project will firstly try to find <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> using pkgconf. That usually requires the presence of <code class="docutils literal notranslate"><span class="pre">fmt.pc</span></code> file. If failefd, will fall back to <code class="docutils literal notranslate"><span class="pre">lib[val].so</span></code>/<code class="docutils literal notranslate"><span class="pre">lib[val].a</span></code> with optional version suffixes, where <code class="docutils literal notranslate"><span class="pre">[val]</span></code> is the value of <code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code> CMake variable. At least <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/7.1.3">7.1.3</a> is required.</p>
+</section>
+</section>
+</section>
+<section id="optional-bundled-external-dependencies">
+<h2>Optional Bundled/External Dependencies<a class="headerlink" href="#optional-bundled-external-dependencies" title="Link to this heading">¶</a></h2>
+<p>Not any.</p>
+</section>
+<section id="required-bundled-dependencies">
+<h2>Required Bundled Dependencies<a class="headerlink" href="#required-bundled-dependencies" title="Link to this heading">¶</a></h2>
+<p>The required bundled dependencies of this project is <code class="docutils literal notranslate"><span class="pre">libceu</span></code>. No additional dependency is required.</p>
+</section>
+<section id="optional-bundled-dependencies">
+<h2>Optional Bundled Dependencies<a class="headerlink" href="#optional-bundled-dependencies" title="Link to this heading">¶</a></h2>
+<section id="bs-thread-pool">
+<span id="bs-thread-pool-section"></span><h3><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code><a class="headerlink" href="#bs-thread-pool" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/bshoshany/thread-pool"><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code></a> is used as an alternative to Boost.ASIO for older Boost versions where a thread pool is not available.</p>
+<p>No additional dependency is required.</p>
+<p>See also: <a class="reference internal" href="#use-thread-parallel-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_THREAD_PARALLEL</span></code></a> mentioned below.</p>
+</section>
+</section>
+<section id="cmake-variables">
+<h2>CMake Variables<a class="headerlink" href="#cmake-variables" title="Link to this heading">¶</a></h2>
+<p>This project relies on diverse CMake variables that control the build behavior. If you want a specific build (e.g., with accelerated random number generation, with or without debugging information), you should set them accordingly. They should be set when invoking <code class="docutils literal notranslate"><span class="pre">cmake</span></code>. For example,</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DBUILD_SHARED_LIBS<span class="o">=</span>ON
+</pre></div>
+</div>
+<p>sets <code class="docutils literal notranslate"><span class="pre">BUILD_SHARED_LIBS</span></code> to <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
+<p>Following is a list of CMake variables used in this project:</p>
+<section id="build-shared-libs">
+<h3><code class="docutils literal notranslate"><span class="pre">BUILD_SHARED_LIBS</span></code><a class="headerlink" href="#build-shared-libs" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>This instructs CMake whether to build shared libraries. It will also affect behavior while searching for libraries.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ON</span></code> (DEFAULT): Will search for shared libraries and use dynamic linking.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OFF</span></code>: Will search for static libraries and use static linking.</p></li>
+</ul>
+<p>The project should be able to be compiled into a fully static binary on <a class="reference external" href="https://alpinelinux.org/">Alpine Linux</a> or <a class="reference external" href="https://voidlinux.org/">Void Linux</a> with <a class="reference external" href="https://musl.libc.org/">musl libc</a> as the standard C library. See <a class="reference external" href="https://lh3.github.io/2014/07/12/about-static-linking">this blog by Li Heng</a> for why static linking may simplify distribution and deployment of bioinformatics software. However, this may lead to a larger binary size and security risks. See <a class="reference external" href="https://wiki.debian.org/StaticLinking">this Debian Wiki</a> for more details.</p>
+<p>See also: <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/BUILD_SHARED_LIBS.html">Official CMake documentation</a>.</p>
+</section>
+<section id="cmake-build-type">
+<span id="cmake-build-type-section"></span><h3><code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code><a class="headerlink" href="#cmake-build-type" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>This instructs CMake to build executables/libraries with different optimization and debugging levels.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Debug</span></code> (DEFAULT): For developers with debugging needs.</strong></p>
+<ul>
+<li><p><strong>NOTE</strong> Very, very slow with tons of extra checks.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Release</span></code>: Optimized executables/libraries without debug symbols. Used for daily use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code>: Optimized executables/libraries with debug symbols. Used for profiling.</p></li>
+</ul>
+<p>See also: <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html">Official CMake documentation</a>.</p>
+</section>
+<section id="python3-executable">
+<h3><code class="docutils literal notranslate"><span class="pre">Python3_EXECUTABLE</span></code><a class="headerlink" href="#python3-executable" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-1-section"><span class="std std-ref">1.1.1</span></a>.</p>
+<p>Path to the Python interpreter. Required for adding bundled error profiles to the executable. Default to <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
+<p>See also: <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindPython3.html">Official CMake documentation</a>.</p>
+</section>
+<section id="ceu-cm-should-use-native">
+<h3><code class="docutils literal notranslate"><span class="pre">CEU_CM_SHOULD_USE_NATIVE</span></code><a class="headerlink" href="#ceu-cm-should-use-native" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>Whether to build the binaries using <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc-14.1.0/gcc/x86-Options.html#index-march-16"><code class="docutils literal notranslate"><span class="pre">-mtune=native</span></code></a>, if possible. This would result in faster executable with impaired portability (i.e., do not run on other machines).</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OFF</span></code> (DEFAULT): Will not build native executables/libraries.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span></code>: Will build native executables/libraries.</p></li>
+</ul>
+</section>
+<section id="ceu-cm-should-enable-test">
+<h3><code class="docutils literal notranslate"><span class="pre">CEU_CM_SHOULD_ENABLE_TEST</span></code><a class="headerlink" href="#ceu-cm-should-enable-test" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>Whether test should be enabled.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Set to <code class="docutils literal notranslate"><span class="pre">ON</span></code> if the CMake variable <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> is not <code class="docutils literal notranslate"><span class="pre">Release</span></code>, <code class="docutils literal notranslate"><span class="pre">OFF</span></code> otherwise.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OFF</span></code>: Will disable test.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span></code>: Will enable test.</p></li>
+</ul>
+</section>
+<section id="use-htslib">
+<span id="use-htslib-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_HTSLIB</span></code><a class="headerlink" href="#use-htslib" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>Use which HTSLib implementation.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will use bundled HTSLib.</strong> See <a class="reference internal" href="#bundled-htslib-section">Bundled HTSLib</a> for requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hts</span></code>: Will use the HTSLib found in the system. See <a class="reference internal" href="#external-htslib-section">External HTSLib</a> for requirements.</p></li>
+<li><p>Any other value <code class="docutils literal notranslate"><span class="pre">[val]</span></code>: Will use the HTSLib of other names (<code class="docutils literal notranslate"><span class="pre">lib[val].so</span></code>/<code class="docutils literal notranslate"><span class="pre">lib[val].a</span></code>) found in the system. See <a class="reference internal" href="#external-htslib-section">External HTSLib</a> for requirements.</p></li>
+</ul>
+</section>
+<section id="use-random-generator">
+<span id="use-random-generator-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code><a class="headerlink" href="#use-random-generator" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>The random number generator used.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">STL</span></code> (DEFAULT): Use STL random generators.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PCG</span></code>: PCG random generators. This uses a minimal version of PCG random generators. Available since <a class="reference internal" href="News.html#v-1-1-1-section"><span class="std std-ref">1.1.1</span></a>.</p>
+<ul>
+<li><p>Before <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>, this uses a bundled full-featured PCG random generators in C++.</p></li>
+<li><p>After <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>, this uses a minimal version of PCG random generators.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYSTEM_PCG</span></code>: Use PCG random generators found in the system. See See <a class="reference internal" href="#accelerated-random-number-generators">Accelerated Random Number Generators</a> for requirements. Available since <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BOOST</span></code>: Use Boost random generators. See <a class="reference internal" href="#optional-boost-components">Optional Boost Components</a> for requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ONEMKL</span></code>: Use Intel OneAPI MKL random generators. See <a class="reference internal" href="#accelerated-random-number-generators">Accelerated Random Number Generators</a> for requirements. See also <a class="reference internal" href="#find-random-mkl-through-pkgconf-section">CMake variable <code class="docutils literal notranslate"><span class="pre">FIND_RANDOM_MKL_THROUGH_PKGCONF</span></code></a> below.</p></li>
+</ul>
+<p>On my system (13th Gen Intel(R) Core(TM) <a class="reference external" href="https://www.intel.com/content/www/us/en/products/sku/232128/intel-core-i713700h-processor-24m-cache-up-to-5-00-ghz/specifications.html">i7-13700H</a>, Intel OneAPI BaseKit 2025.2) for generating filling 1024 random 32-bit unsigned integers 1024 times with 200 replicate, the performance is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>       MKL::VSL_BRNG_SFMT19937(32 bits): gmean:        286; mean/sd:           286/3 us
+         MKL::VSL_BRNG_MT19937(32 bits): gmean:        435; mean/sd:         446/132 us
+               PCG::pcg32_fast(32 bits): gmean:        848; mean/sd:           848/5 us
+          absl::InsecureBitGen(64 bits): gmean:      1,486; mean/sd:        1,486/33 us
+        boost::random::mt19937(32 bits): gmean:      1,756; mean/sd:        1,756/19 us
+                  std::mt19937(32 bits): gmean:      1,852; mean/sd:        1,853/59 us
+                  GSL::mt19937(32 bits): gmean:      2,420; mean/sd:       2,422/114 us
+                  absl::BitGen(64 bits): gmean:      3,543; mean/sd:       3,548/202 us
+</pre></div>
+</div>
+<p>On another <a class="reference external" href="http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-3B.html">OrangePi 3B</a> ARM development board (Rockchip RK3566 quad-core 64-bit CPU, Arm C/C++/Fortran Compiler version 24.10.1 (build number 4) (based on LLVM 19.1.0)), the performance is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>               PCG::pcg32_fast(32 bits): gmean:       4,452; mean/sd:        4,452/30 us
+          absl::InsecureBitGen(64 bits): gmean:      12,787; mean/sd:       12,787/66 us
+        boost::random::mt19937(32 bits): gmean:      15,489; mean/sd:      15,490/117 us
+                  std::mt19937(32 bits): gmean:      17,848; mean/sd:      17,848/137 us
+                  GSL::mt19937(32 bits): gmean:      20,802; mean/sd:      20,802/144 us
+                  absl::BitGen(64 bits): gmean:      29,104; mean/sd:      29,104/112 us
+</pre></div>
+</div>
+<p><strong>NOTE</strong> The performance may vary on different platforms.</p>
+<p>Benchmark code available at <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_bench_rand">https://github.com/YU-Zhejian/art_modern_bench_rand</a>.</p>
+</section>
+<section id="use-thread-parallel">
+<span id="use-thread-parallel-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_THREAD_PARALLEL</span></code><a class="headerlink" href="#use-thread-parallel" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-0-0-section"><span class="std std-ref">1.0.0</span></a>.</p>
+<p>The thread-level parallelism strategy.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ASIO</span></code> (DEFAULT): Will use Boost.ASIO for thread-based parallelism.</strong></p>
+<ul>
+<li><p><strong>NOTE</strong> This is only available in Boost at least 1.66.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BS</span></code>: Will use <code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code>. Available since <a class="reference internal" href="News.html#v-1-1-1-section"><span class="std std-ref">1.1.1</span></a>. See <a class="reference internal" href="#bs-thread-pool-section"><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code></a> for requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOP</span></code>: Will not use thread-based parallelism. Useful for debugging.</p></li>
+</ul>
+</section>
+<section id="boost-config-provided-by-boost">
+<span id="boost-config-provided-by-boost-section"></span><h3><code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code><a class="headerlink" href="#boost-config-provided-by-boost" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-3-section"><span class="std std-ref">1.1.3</span></a>.</p>
+<p>Configures the behavior of CMake policy <a class="reference external" href="https://cmake.org/cmake/help/latest/policy/CMP0167.html"><code class="docutils literal notranslate"><span class="pre">CMP0167</span></code></a>. There’s usually no need to change this. You only need to set this switch to <code class="docutils literal notranslate"><span class="pre">OFF</span></code> if you have Boost earlier than 1.69 with CMake at least 3.30.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ON</span></code> (DEFAULT): Will use the set the policy to <code class="docutils literal notranslate"><span class="pre">NEW</span></code>.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OFF</span></code>: Will use the set the policy to <code class="docutils literal notranslate"><span class="pre">OLD</span></code>.</p></li>
+</ul>
+</section>
+<section id="use-malloc">
+<span id="use-malloc-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_MALLOC</span></code><a class="headerlink" href="#use-malloc" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-1-section"><span class="std std-ref">1.1.1</span></a>.</p>
+<p>Whether to use alternative high-performance <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementations like mi-malloc, jemalloc, or tcmalloc (see above). Using those implementations can improve the performance of the program but slightly increase memory consumption.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">AUTO</span></code> (DEFAULT): Will use jemalloc and then mi-malloc, then tcmalloc, finally minimal tcmalloc if possible.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JEMALLOC</span></code>: Find and use jemalloc, and fail if not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIMALLOC</span></code>: Find and use mi-malloc, and fail if not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TCMALLOC</span></code>: Find and use tcmalloc, and fail if not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TCMALLOC_MINIMAL</span></code>: Find and use minimal version of tcmalloc, and fail if not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOP</span></code>: Will not use alternative <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementations. I.e., use the system-provided <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementations.</p></li>
+</ul>
+<p>See <a class="reference internal" href="#alt-malloc-section">Alternate <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> Implementations</a> for requirements.</p>
+</section>
+<section id="use-libfmt">
+<span id="use-libfmt-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code><a class="headerlink" href="#use-libfmt" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-7-section"><span class="std std-ref">1.1.7</span></a>.</p>
+<p>Whether to use bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> library for formatting strings.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will use bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code>.</strong> See <a class="reference internal" href="#bundled-libfmt-section">Bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a> for requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code>: Will use the <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> found in the system. See <a class="reference internal" href="#external-libfmt-section">External <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a> for requirements.</p></li>
+<li><p>Any other value <code class="docutils literal notranslate"><span class="pre">[val]</span></code>: Will use the <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> of other names (<code class="docutils literal notranslate"><span class="pre">lib[val].so</span></code>) found in the system. See <a class="reference internal" href="#external-libfmt-section">External <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a> for requirements.</p></li>
+</ul>
+</section>
+<section id="use-concurrent-queue">
+<span id="use-concurrent-queue-section"></span><h3><code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code><a class="headerlink" href="#use-concurrent-queue" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-7-section"><span class="std std-ref">1.1.7</span></a>.</p>
+<p>Whether to use bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code>. Specifically, where <code class="docutils literal notranslate"><span class="pre">concurrentqueue.h</span></code> is located. For example, if you use Debian GNU/Linux and installed <a class="reference external" href="https://packages.debian.org/sid/libconcurrentqueue-dev"><code class="docutils literal notranslate"><span class="pre">libconcurrentqueue-dev</span></code></a>, you may set this variable to <code class="docutils literal notranslate"><span class="pre">/usr/include/concurrentqueue/moodycamel/</span></code> or <code class="docutils literal notranslate"><span class="pre">/usr/include/concurrentqueue/</span></code>.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will use bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code>.</strong> See <a class="reference internal" href="#bundled-concurrent-queue-section">Bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code></a> for requirements.</p></li>
+<li><p>Any value <code class="docutils literal notranslate"><span class="pre">[val]</span></code>: Will search for <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> at including path <code class="docutils literal notranslate"><span class="pre">[val]</span></code>. See <a class="reference internal" href="#external-concurrent-queue-section">External <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code></a> for requirements.</p></li>
+</ul>
+</section>
+<section id="reproducible-builds">
+<h3><code class="docutils literal notranslate"><span class="pre">REPRODUCIBLE_BUILDS</span></code><a class="headerlink" href="#reproducible-builds" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-7-section"><span class="std std-ref">1.1.7</span></a>.</p>
+<p>Whether to enable reproducible builds. This complies Debian policies.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will not enable reproducible builds.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span></code>: Will enable reproducible builds. All used <code class="docutils literal notranslate"><span class="pre">__DATE__</span></code> and <code class="docutils literal notranslate"><span class="pre">__TIME__</span></code> macros will be replaced with fixed values.</p></li>
+</ul>
+<p>See also:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gcc.gnu.org/onlinedocs/cpp/Standard-Predefined-Macros.html"><code class="docutils literal notranslate"><span class="pre">__DATE__</span></code> and <code class="docutils literal notranslate"><span class="pre">__TIME__</span></code> in GNU C Preprocessor</a>.</p></li>
+<li><p><a class="reference external" href="https://clang.llvm.org/docs/DiagnosticsReference.html#wdate-time"><code class="docutils literal notranslate"><span class="pre">-Wdate-time</span></code> compiler flag in Clang</a>.</p></li>
+<li><p><a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc-14.3.0/gcc/Warning-Options.html#index-Wdate-time"><code class="docutils literal notranslate"><span class="pre">-Wdate-time</span></code> compiler flag in GCC 14.3.0</a>.</p></li>
+</ul>
+</section>
+<section id="build-art-modern-benchmarks">
+<span id="build-art-modern-benchmarks-section"></span><h3><code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code><a class="headerlink" href="#build-art-modern-benchmarks" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-1-7-section"><span class="std std-ref">1.1.7</span></a>.</p>
+<p>Whether to build mini benchmarks executable.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will not build benchmarks.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span></code>: Will build benchmarks.</p></li>
+</ul>
+</section>
+<section id="with-mpi">
+<span id="with-mpi-section"></span><h3><code class="docutils literal notranslate"><span class="pre">WITH_MPI</span></code><a class="headerlink" href="#with-mpi" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-2-0-section"><span class="std std-ref">1.2.0</span></a>.</p>
+<p>Whether to enable MPI-based parallelization.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT)/OFF: Will not enable MPI-based parallelization.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span></code>: Will enable MPI-based parallelization.</p></li>
+</ul>
+<p>See <a class="reference internal" href="#mpi-section">MPI Library</a> for requirements.</p>
+</section>
+<section id="find-random-mkl-through-pkgconf">
+<span id="find-random-mkl-through-pkgconf-section"></span><h3><code class="docutils literal notranslate"><span class="pre">FIND_RANDOM_MKL_THROUGH_PKGCONF</span></code><a class="headerlink" href="#find-random-mkl-through-pkgconf" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>.</p>
+<p>Find Intel OneAPI MKL through pkgconf. Must be specified with <a class="reference internal" href="#use-random-generator-section">CMake variable <code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a> set to <code class="docutils literal notranslate"><span class="pre">ONEMKL</span></code>.</p>
+<ul class="simple">
+<li><p><strong>Unset (DEFAULT): Will not find Intel OneAPI MKL through pkgconf.</strong></p></li>
+<li><p>Any value <code class="docutils literal notranslate"><span class="pre">[val]</span></code>: Will find Intel OneAPI MKL through pkgconf with the name <code class="docutils literal notranslate"><span class="pre">[val]</span></code>. This requires the presence of <code class="docutils literal notranslate"><span class="pre">[val].pc</span></code> file.</p></li>
+</ul>
+</section>
+<section id="with-ncbi-ngs">
+<span id="with-ncbi-ngs-section"></span><h3><code class="docutils literal notranslate"><span class="pre">WITH_NCBI_NGS</span></code><a class="headerlink" href="#with-ncbi-ngs" title="Link to this heading">¶</a></h3>
+<p>Available since <a class="reference internal" href="News.html#v-1-3-3-section"><span class="std std-ref">1.3.3</span></a>.</p>
+<p>Enable NCBI SRA parsing to <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>.</p>
+<p>See also <a class="reference internal" href="#optional-ncbi-ngs-components">NCBI NGS Libraries</a> for requirements.</p>
+</section>
+<section id="deprecated-options">
+<h3>Deprecated Options<a class="headerlink" href="#deprecated-options" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_BTREE_MAP</span></code> was deprecated in <a class="reference internal" href="News.html#v-1-1-2-section"><span class="std std-ref">1.1.2</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_CCACHE</span></code> was deprecated in <a class="reference internal" href="News.html#v-1-1-7-section"><span class="std std-ref">1.1.7</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSL</span></code> option of <a class="reference internal" href="#use-random-generator-section"><code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a> was deprecated in <a class="reference internal" href="News.html#v-1-2-0-section"><span class="std std-ref">1.2.0</span></a> and removed in <a class="reference internal" href="News.html#v-1-2-1-section"><span class="std std-ref">1.2.1</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code> was deprecated and removed in <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_QUAL_GEN</span></code> was deprecated and removed in <a class="reference internal" href="News.html#v-1-3-0-section"><span class="std std-ref">1.3.0</span></a>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="Usage-art_modern.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../README_NEW.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a><ul>
+<li><a class="reference internal" href="#operating-system">Operating System</a></li>
+<li><a class="reference internal" href="#c-c-compilers">C/C++ Compilers</a><ul>
+<li><a class="reference internal" href="#checking-c11-and-c-17-compatibility">Checking C11 and C++17 Compatibility</a></li>
+<li><a class="reference internal" href="#gcc">GCC</a></li>
+<li><a class="reference internal" href="#clang">Clang</a></li>
+<li><a class="reference internal" href="#intel-oneapi-dpc-c-compiler">Intel OneAPI DPC++/C++ Compiler</a></li>
+<li><a class="reference internal" href="#other-compilers">Other Compilers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#essential-tools-for-building">Essential Tools for Building</a><ul>
+<li><a class="reference internal" href="#cmake">CMake</a></li>
+<li><a class="reference internal" href="#dependencies-of-cmake-build-system">Dependencies of CMake Build System</a></li>
+<li><a class="reference internal" href="#linkers-assemblers-archivers-etc">Linkers, Assemblers, Archivers, etc</a></li>
+<li><a class="reference internal" href="#c-library">C Library</a></li>
+<li><a class="reference internal" href="#pkgconf-or-pkg-config"><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code> or <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code></a></li>
+<li><a class="reference internal" href="#command-line-utilities">Command-Line Utilities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#required-external-libraries">Required External Libraries</a><ul>
+<li><a class="reference internal" href="#boost-c-library">Boost C++ Library</a></li>
+<li><a class="reference internal" href="#zlib">zlib</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optional-external-libraries">Optional External Libraries</a><ul>
+<li><a class="reference internal" href="#optional-boost-components">Optional Boost Components</a></li>
+<li><a class="reference internal" href="#accelerated-random-number-generators">Accelerated Random Number Generators</a></li>
+<li><a class="reference internal" href="#alternate-malloc-free-implementations">Alternate <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> Implementations</a></li>
+<li><a class="reference internal" href="#message-passing-interface-mpi-library">Message Passing Interface (MPI) Library</a></li>
+<li><a class="reference internal" href="#ncbi-ngs-libraries">NCBI NGS Libraries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#required-bundled-external-libraries">Required Bundled/External Libraries</a><ul>
+<li><a class="reference internal" href="#htslib">HTSLib</a><ul>
+<li><a class="reference internal" href="#bundled">Bundled</a></li>
+<li><a class="reference internal" href="#external">External</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moodycamel-concurrentqueue-t"><code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code></a><ul>
+<li><a class="reference internal" href="#bundled-concurrent-queue-section">Bundled</a></li>
+<li><a class="reference internal" href="#external-concurrent-queue-section">External</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fmt"><code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a><ul>
+<li><a class="reference internal" href="#bundled-libfmt-section">Bundled</a></li>
+<li><a class="reference internal" href="#external-libfmt-section">External</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optional-bundled-external-dependencies">Optional Bundled/External Dependencies</a></li>
+<li><a class="reference internal" href="#required-bundled-dependencies">Required Bundled Dependencies</a></li>
+<li><a class="reference internal" href="#optional-bundled-dependencies">Optional Bundled Dependencies</a><ul>
+<li><a class="reference internal" href="#bs-thread-pool"><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cmake-variables">CMake Variables</a><ul>
+<li><a class="reference internal" href="#build-shared-libs"><code class="docutils literal notranslate"><span class="pre">BUILD_SHARED_LIBS</span></code></a></li>
+<li><a class="reference internal" href="#cmake-build-type"><code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code></a></li>
+<li><a class="reference internal" href="#python3-executable"><code class="docutils literal notranslate"><span class="pre">Python3_EXECUTABLE</span></code></a></li>
+<li><a class="reference internal" href="#ceu-cm-should-use-native"><code class="docutils literal notranslate"><span class="pre">CEU_CM_SHOULD_USE_NATIVE</span></code></a></li>
+<li><a class="reference internal" href="#ceu-cm-should-enable-test"><code class="docutils literal notranslate"><span class="pre">CEU_CM_SHOULD_ENABLE_TEST</span></code></a></li>
+<li><a class="reference internal" href="#use-htslib"><code class="docutils literal notranslate"><span class="pre">USE_HTSLIB</span></code></a></li>
+<li><a class="reference internal" href="#use-random-generator"><code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></a></li>
+<li><a class="reference internal" href="#use-thread-parallel"><code class="docutils literal notranslate"><span class="pre">USE_THREAD_PARALLEL</span></code></a></li>
+<li><a class="reference internal" href="#boost-config-provided-by-boost"><code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code></a></li>
+<li><a class="reference internal" href="#use-malloc"><code class="docutils literal notranslate"><span class="pre">USE_MALLOC</span></code></a></li>
+<li><a class="reference internal" href="#use-libfmt"><code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code></a></li>
+<li><a class="reference internal" href="#use-concurrent-queue"><code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code></a></li>
+<li><a class="reference internal" href="#reproducible-builds"><code class="docutils literal notranslate"><span class="pre">REPRODUCIBLE_BUILDS</span></code></a></li>
+<li><a class="reference internal" href="#build-art-modern-benchmarks"><code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code></a></li>
+<li><a class="reference internal" href="#with-mpi"><code class="docutils literal notranslate"><span class="pre">WITH_MPI</span></code></a></li>
+<li><a class="reference internal" href="#find-random-mkl-through-pkgconf"><code class="docutils literal notranslate"><span class="pre">FIND_RANDOM_MKL_THROUGH_PKGCONF</span></code></a></li>
+<li><a class="reference internal" href="#with-ncbi-ngs"><code class="docutils literal notranslate"><span class="pre">WITH_NCBI_NGS</span></code></a></li>
+<li><a class="reference internal" href="#deprecated-options">Deprecated Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=28d163b9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
