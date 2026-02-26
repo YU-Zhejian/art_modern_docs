@@ -1,3 +1,3 @@
-- Sphinx: `8.2.3`
-- Python: `3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:09:32) [GCC 14.3.0]`
-- `myst_parser`: `4.0.1`
+- Sphinx: `9.1.0`
+- Python: `3.13.12 | packaged by conda-forge | (main, Feb  5 2026, 05:53:46) [GCC 14.3.0]`
+- `myst_parser`: `5.0.0`

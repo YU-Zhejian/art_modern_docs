@@ -3,10 +3,10 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Design Topics" href="Design.html"><link rel="prev" title="Guide on Miscellaneous Topics" href="Guide.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Guide on Miscellaneous Topics" href="Guide.html"><link rel="prev" title="Usage of art_profile_builder" href="Usage-apb.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Frequently Asked Questions (FAQs) - art_modern 1.3.4 documentation</title>
+        <title>Usage of am_compress - art_modern 1.3.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -197,9 +197,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Usage-art_modern.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Usage-apb.html">Usage of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Usage-amc.html">Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code></a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Guide.html">Guide on Miscellaneous Topics</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Frequently Asked Questions (FAQs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions (FAQs)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Design.html">Design Topics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Contributing.html">Developing &amp; Contributing</a><input aria-label="Toggle navigation of Developing &amp; Contributing" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MakefileTargets.html">Toplevel Makefile Documentation</a></li>
@@ -231,7 +231,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../../_sources/src/docs/FAQ.md.txt" title="View this page">
+  <a class="muted-link" href="../../_sources/src/docs/Usage-amc.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -249,78 +249,113 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section class="tex2jax_ignore mathjax_ignore" id="frequently-asked-questions-faqs">
-<h1>Frequently Asked Questions (FAQs)<a class="headerlink" href="#frequently-asked-questions-faqs" title="Link to this heading">¶</a></h1>
-<section id="simulation">
-<h2>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">¶</a></h2>
-<section id="how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files">
-<span id="fastq-split-section"></span><h3>How to split produced pair-end/mate-pair sequencing results to 2 FASTQ files?<a class="headerlink" href="#how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files" title="Link to this heading">¶</a></h3>
-<p>This can be done through <a class="reference external" href="https://github.com/lh3/seqtk"><code class="docutils literal notranslate"><span class="pre">seqtk</span></code></a>. For example, to split <code class="docutils literal notranslate"><span class="pre">a.fq</span></code>:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read 1</span>
-seqtk<span class="w"> </span>seq<span class="w"> </span>a.fq<span class="w"> </span>-1<span class="w"> </span>&gt;<span class="w"> </span>a_1.fq
-<span class="c1"># Read 2</span>
-seqtk<span class="w"> </span>seq<span class="w"> </span>a.fq<span class="w"> </span>-2<span class="w"> </span>&gt;<span class="w"> </span>a_2.fq
-</pre></div>
-</div>
-<p>You may also generate SAM/BAM files and extract PE FASTQ from them using <code class="docutils literal notranslate"><span class="pre">samtools</span></code>. For example:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>samtools<span class="w"> </span>fastq<span class="w"> </span>-1<span class="w"> </span>a_1.fq<span class="w"> </span>-2<span class="w"> </span>a_2.fq<span class="w"> </span>-N<span class="w"> </span>a.sam
-seqkit<span class="w"> </span>sort<span class="w"> </span>a_1.fq<span class="w"> </span>&gt;<span class="w"> </span>a_sorted_1.fq
-seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w"> </span>&gt;<span class="w"> </span>a_sorted_2.fq
-</pre></div>
-</div>
-<p><strong>NOTE</strong> Please sort the generated FASTQ files using <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">sort</span></code> to ensure reads with the same name are in the same order.</p>
+          <section class="tex2jax_ignore mathjax_ignore" id="usage-of-am-compress">
+<span id="am-compress-usage-section"></span><h1>Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code><a class="headerlink" href="#usage-of-am-compress" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">am_compress</span></code> is a compression tool that allows the user to compress arbitrary files to GZip and BGZip. Added in <a class="reference internal" href="News.html#v-1-3-4-section"><span class="std std-ref">1.3.4</span></a>.</p>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">¶</a></h2>
+<p>This program in fact provides a user interface to <code class="docutils literal notranslate"><span class="pre">bgzf</span></code> data structure in HTSLib. Further compression algorithms can be added on request.</p>
+<p>The input buffer size is always 4kb.</p>
 </section>
-<section id="how-to-add-adaptors-primers-to-the-reads">
-<h3>How to add adaptors &amp; primers to the reads?<a class="headerlink" href="#how-to-add-adaptors-primers-to-the-reads" title="Link to this heading">¶</a></h3>
-<p>Currently, there’s no support for such features in the simulator. However, you may manually chop your reference genome, add adaptors to them, and use template mode to introduce sequencing errors.</p>
-</section>
-<section id="how-to-support-new-illumina-models">
-<h3>How to support new Illumina models?<a class="headerlink" href="#how-to-support-new-illumina-models" title="Link to this heading">¶</a></h3>
-<p>See the documentation of <a class="reference internal" href="Usage-apb.html#art-profile-builder-usage-section"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></span></a> to build new profiles from real sequencing data.</p>
-</section>
-</section>
-<section id="software-engineering">
-<h2>Software Engineering<a class="headerlink" href="#software-engineering" title="Link to this heading">¶</a></h2>
-<section id="what-kinds-of-cpus-are-supported-by-the-simulator">
-<h3>What kinds of CPUs are supported by the simulator?<a class="headerlink" href="#what-kinds-of-cpus-are-supported-by-the-simulator" title="Link to this heading">¶</a></h3>
-<p>Although this application should theoretically support both endianness, only little endian is tested. That is, if you’re working on an Intel or AMD CPU, this application should work fine.</p>
-</section>
-<section id="does-this-program-support-cross-compilation">
-<h3>Does this program support cross-compilation?<a class="headerlink" href="#does-this-program-support-cross-compilation" title="Link to this heading">¶</a></h3>
-<p>Currently, it does not due to the extensive use of <code class="docutils literal notranslate"><span class="pre">test_run</span></code> in CMake scripts.</p>
-</section>
-<section id="i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug">
-<h3>I am using platforms other than x86_64 (e.g., ARM, RISC-V, LoongArch, etc.), and spotted a bug<a class="headerlink" href="#i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug" title="Link to this heading">¶</a></h3>
-<p>Please submit a bug-report with instructions on how I may emulate your platform using free emulators like <a class="reference external" href="https://www.qemu.org/">QEMU</a>.</p>
-</section>
-</section>
-<section id="community">
-<h2>Community<a class="headerlink" href="#community" title="Link to this heading">¶</a></h2>
-<section id="i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report">
-<h3>I am new to GNU/Linux. How can I gather required information for a bug report?<a class="headerlink" href="#i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report" title="Link to this heading">¶</a></h3>
-<p>Where you may find the required information:</p>
-<ul>
-<li><p>Name and version of your current operating system in a human-readable way.</p>
-<p>You may find that out by reading <code class="docutils literal notranslate"><span class="pre">/etc/lsb-release</span></code> or use tools like <a class="reference external" href="https://github.com/dylanaraps/neofetch">neofetch</a>, <a class="reference external" href="https://github.com/KittyKatt/screenFetch">screenFetch</a>, or <a class="reference external" href="https://github.com/fastfetch-cli/fastfetch">fastfetch</a>.</p>
-</li>
-<li><p>Version of the kernel.</p>
-<p>Easy, just run <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code>, or <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/proc/version</span></code>.</p>
-</li>
-<li><p>Version of the compiler.</p>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>If your CMake correctly identifies your compiler, you may put the first several lines of CMake output to the bug report.</p></li>
-<li><p>If you use GCC, it will be <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>.</p></li>
-<li><p>If you use LLVM Clang, it will be <code class="docutils literal notranslate"><span class="pre">clang++</span> <span class="pre">--version</span></code>.</p></li>
-<li><p>If you use Intel (R) OneAPI DPC++/C++ Compiler, it will be <code class="docutils literal notranslate"><span class="pre">icpx</span> <span class="pre">--version</span></code>. You may need to set environment variables through e.g., <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/intel/oneapi/setvars.sh</span></code> (if you install it in default location using APT), before invoking this command.</p></li>
-<li><p>Consult your compiler’s documentation for other compilers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed</span></code>: Output file name of the compressed data stream.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-compression</span></code>: Compression algorithm. Can be <code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">bgzip</span></code> or <code class="docutils literal notranslate"><span class="pre">none</span></code>. If not set, will infer from extension.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-compression_level</span></code>: Compression level. Can be 1 (fastest) to 9 (best compression).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-buffer_size</span></code>: Buffer used for compression.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-num_threads</span></code>: Number of threads used in compression. Only used for BGZip algorithm.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--i-file</span></code>: Input file.</p></li>
 </ul>
-</li>
-</ul>
+<p>The program would emit warning if the output file extension does not match the desired algorithm.</p>
 </section>
-</section>
-<section id="my-question-is-still-unanswered">
-<h2>My question is still unanswered<a class="headerlink" href="#my-question-is-still-unanswered" title="Link to this heading">¶</a></h2>
-<p>Please feel free to open an issue on GitHub or E-mail the maintainer.</p>
+<section id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gzip<span class="w"> </span>--version
+<span class="c1"># gzip 1.12</span>
+<span class="c1"># Copyright (C) 2018 Free Software Foundation, Inc.</span>
+<span class="c1"># Copyright (C) 1993 Jean-loup Gailly.</span>
+<span class="c1"># This is free software.  You may redistribute copies of it under the terms of</span>
+<span class="c1"># the GNU General Public License &lt;https://www.gnu.org/licenses/gpl.html&gt;.</span>
+<span class="c1"># There is NO WARRANTY, to the extent permitted by law.</span>
+
+<span class="c1"># Written by Jean-loup Gailly.</span>
+
+libdeflate-gzip<span class="w"> </span>-V
+<span class="c1"># gzip compression program v1.24</span>
+<span class="c1"># Copyright 2016 Eric Biggers</span>
+
+<span class="c1"># This program is free software which may be modified and/or redistributed</span>
+<span class="c1"># under the terms of the MIT license.  There is NO WARRANTY, to the extent</span>
+<span class="c1"># permitted by law.  See the COPYING file for details.</span>
+
+pigz<span class="w"> </span>--version
+<span class="c1"># pigz 2.8</span>
+
+bgzip<span class="w"> </span>--version
+<span class="c1"># bgzip (htslib) 1.22.1</span>
+<span class="c1"># Copyright (C) 2025 Genome Research Ltd.</span>
+
+igzip<span class="w"> </span>--version
+<span class="c1"># igzip command line interface 2.31.1</span>
+
+<span class="nb">time</span><span class="w"> </span>gzip<span class="w"> </span>-k<span class="w"> </span>-f<span class="w"> </span>-9<span class="w"> </span>SRR30113744_1.fastq
+<span class="c1"># real    5m21.201s</span>
+<span class="c1"># user    5m20.821s</span>
+<span class="c1"># sys     0m0.340s</span>
+
+<span class="nb">time</span><span class="w"> </span>libdeflate-gzip<span class="w"> </span>-k<span class="w"> </span>-f<span class="w"> </span>-9<span class="w"> </span>SRR30113744_1.fastq
+<span class="c1"># real    1m7.275s</span>
+<span class="c1"># user    1m6.885s</span>
+<span class="c1"># sys     0m0.292s</span>
+
+<span class="nb">time</span><span class="w"> </span>pigz<span class="w"> </span>-k<span class="w"> </span>-f<span class="w"> </span>-9<span class="w"> </span>SRR30113744_1.fastq
+<span class="c1"># real    0m16.392s</span>
+<span class="c1"># user    5m19.205s</span>
+<span class="c1"># sys     0m0.730s</span>
+
+<span class="nb">time</span><span class="w"> </span>bgzip<span class="w"> </span>-k<span class="w"> </span>-f<span class="w"> </span>-l<span class="w"> </span><span class="m">9</span><span class="w"> </span>-@<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>nproc<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>SRR30113744_1.fastq
+<span class="c1"># real    0m59.490s</span>
+<span class="c1"># user    19m23.586s</span>
+<span class="c1"># sys     0m1.468s</span>
+
+<span class="nb">time</span><span class="w"> </span>igzip<span class="w"> </span>-k<span class="w"> </span>-f<span class="w"> </span>-3<span class="w"> </span>-T<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>nproc<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>SRR30113744_1.fastq
+<span class="c1"># real    0m6.299s</span>
+<span class="c1"># user    0m4.569s</span>
+<span class="c1"># sys     0m0.454s</span>
+
+<span class="nb">time</span><span class="w"> </span>am_compress<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--i-file<span class="w"> </span>SRR30113744_1.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed<span class="w"> </span>SRR30113744_1.fastq.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression_level<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression<span class="w"> </span>gzip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-num_threads<span class="w"> </span><span class="m">1</span>
+<span class="c1"># With libdeflate as underlying implementation</span>
+<span class="c1"># real    1m6.822s</span>
+<span class="c1"># user    1m6.439s</span>
+<span class="c1"># sys     0m0.347s</span>
+
+<span class="nb">time</span><span class="w"> </span>am_compress<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--i-file<span class="w"> </span>SRR30113744_1.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed<span class="w"> </span>SRR30113744_1.fastq.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression_level<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression<span class="w"> </span>gzip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-num_threads<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>nproc<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c1"># real    1m4.961s</span>
+<span class="c1"># user    1m4.545s</span>
+<span class="c1"># sys     0m0.412s</span>
+
+<span class="nb">time</span><span class="w"> </span>am_compress<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--i-file<span class="w"> </span>SRR30113744_1.fastq<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed<span class="w"> </span>SRR30113744_1.fastq.bgz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression_level<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-compression<span class="w"> </span>bgzip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--o-compressed-num_threads<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>nproc<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c1"># real    1m4.701s</span>
+<span class="c1"># user    19m44.769s</span>
+<span class="c1"># sys     0m22.885s</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -329,23 +364,23 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Design.html">
+          <a class="next-page" href="Guide.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Design Topics</div>
+                <div class="title">Guide on Miscellaneous Topics</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Guide.html">
+          <a class="prev-page" href="Usage-apb.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Guide on Miscellaneous Topics</div>
+                <div class="title">Usage of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></div>
                 
               </div>
             </a>
@@ -379,24 +414,10 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w">
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Frequently Asked Questions (FAQs)</a><ul>
-<li><a class="reference internal" href="#simulation">Simulation</a><ul>
-<li><a class="reference internal" href="#how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files">How to split produced pair-end/mate-pair sequencing results to 2 FASTQ files?</a></li>
-<li><a class="reference internal" href="#how-to-add-adaptors-primers-to-the-reads">How to add adaptors &amp; primers to the reads?</a></li>
-<li><a class="reference internal" href="#how-to-support-new-illumina-models">How to support new Illumina models?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#software-engineering">Software Engineering</a><ul>
-<li><a class="reference internal" href="#what-kinds-of-cpus-are-supported-by-the-simulator">What kinds of CPUs are supported by the simulator?</a></li>
-<li><a class="reference internal" href="#does-this-program-support-cross-compilation">Does this program support cross-compilation?</a></li>
-<li><a class="reference internal" href="#i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug">I am using platforms other than x86_64 (e.g., ARM, RISC-V, LoongArch, etc.), and spotted a bug</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#community">Community</a><ul>
-<li><a class="reference internal" href="#i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report">I am new to GNU/Linux. How can I gather required information for a bug report?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#my-question-is-still-unanswered">My question is still unanswered</a></li>
+<li><a class="reference internal" href="#">Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code></a><ul>
+<li><a class="reference internal" href="#implementation">Implementation</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#usage-example">Usage Example</a></li>
 </ul>
 </li>
 </ul>

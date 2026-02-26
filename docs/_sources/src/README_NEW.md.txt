@@ -1,31 +1,33 @@
 # `art_modern`: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads
 
 `art_modern` badges:
-[![GitHub Release](3b580b67240dbe23b6ce75aadcc75d39f632adcb7e7e291439a4456fb774a179.svg)](https://github.com/YU-Zhejian/art_modern/releases)
-[![GitHub Downloads](106586c359f238636a34dd0f3ec5ce70a880a7a2ff50318152359dd2f731c97a.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
+[![GitHub Release](ab2e0050047768f7425cb0fed08a043734f77f50126079be230ce1ddd5ae4bc3.svg)](https://github.com/YU-Zhejian/art_modern/releases)
+[![GitHub Downloads](e9cfcb420a6c05c01482e7a9af0ff46588e164bfd619baa24f0a1e609639a042.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
 [![License](02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg)](https://www.gnu.org/licenses/)
-[![Code style: black](87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg)](https://webkit.org/code-style-guidelines/)
+[![Code style: WebKit](87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg)](https://webkit.org/code-style-guidelines/)
 
 `art_modern` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern/README.html)
-[![Conda Version](f273fb3970eb1a93e3ee9638dfc1b370b698ba61647155dce1d27176c129f01a.svg)](https://anaconda.org/bioconda/art_modern)
-[![Conda Downloads](64b1f271b987eec4b7e8d63f27bce8561d6a65342190e3320f442a63c0f3f50c.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Version](68f99b933923ea6a9cde4b06c8e0c89964691679a41a4a610b541c790c9436bb.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Downloads](6613593f667ae5bedc4e6ba18d0ed43fe50fb57a6dcb7a618ad2e562287838fe.svg)](https://anaconda.org/bioconda/art_modern)
 
 `art_modern-openmpi` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern-openmpi/README.html)
-[![Conda Version](f273fb3970eb1a93e3ee9638dfc1b370b698ba61647155dce1d27176c129f01a.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
-[![Conda Downloads](2ae36d2d0d5dae94ba73c39024143ef80278d8a844dd7f8512a9c4cf968d6a0f.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Version](68f99b933923ea6a9cde4b06c8e0c89964691679a41a4a610b541c790c9436bb.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Downloads](5ad6ffe293d5b7201ef6c50b80bcb5b2e67ad0e98f2ab67e6e51309c68f499a5.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
 
 `art-modern-utils` badges:
-[![GitHub Release](d076239cd6c5f6c75e1304f19870d0074725990f016e011f4b38d21cc6127af2.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
-[![GitHub Downloads](af4dc95cfded5b82691e0def6276ce584d0eb8da7b958fb2ecbf7f7ffac5c2b3.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
+[![GitHub Release](8022cf810dab756ddf60c3236e15db083dfc719681656a9a190541916490fea1.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
 [![License](02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg)](https://www.gnu.org/licenses/)
 [![Code style: black](df7eb81555aeff7c24f7b0a7dddecaa0e3101fe69d89eb396c5cece24b6cba72.svg)](https://github.com/psf/black)
 
 `art-modern-utils` on PyPI:
 [![Python version](f9d50342dcc593cc5fbd8795660fff4d432f5b18b73613a39544dff8b0909567.svg)](https://www.python.org/downloads/)
-[![PyPI - Version](53a22f6fd45e106c78a83e30b36c5778db8464a7297fb5bc3b742f6e1b5f1636.svg)](https://pypi.org/project/art-modern-utils/)
-[![PyPI - Downloads](b1e7cefcb7322eacd5232d889d522747d11ecdf0483b4edac3042f6bf2f92e1d.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Version](8dd7f253e3ab3a7a002b7ee4904da003eabbcdb03ce05b4aa654e0d2ad2bc66d.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Downloads](c91d3c682350108a90700bd2d8fc35a225b2b893a2060967b1b963212fe0f86b.svg)](https://pypi.org/project/art-modern-utils/)
 
-[![Catalogued on GSR](https://surveillance.cancer.gov/gsr/static/img/gsr_tile.jpg)](https://surveillance.cancer.gov/genetic-simulation-resources/packages/art_modern/)
+[![Docs on GitHub Pages](1935404f4900ad5aadc06cf68207a036c36ed1e35485a106c84d98a533c54ec7.svg)](https://yu-zhejian.github.io/art_modern_docs/index.html)
+[![bioRxiv](2b5cf5f6c13dc52dcf3066596e90da939b23dbbed80a2f7439e25d419b5440ea.svg)](https://doi.org/10.64898/2026.02.20.707060)
+
+[![Catalogued on GSR](24f7d25e7780219dcf92a2e7ff463bb1b7846d7506c4baf25365e2c77a41bdbd.jpg)](https://surveillance.cancer.gov/genetic-simulation-resources/packages/art_modern/)
 
 ## Introduction
 
@@ -41,7 +43,7 @@ Here we introduce `art_modern`, a modern re-implementation of the popular [ART](
 
 #### Using Fully Static Build
 
-In each release, there will be a file named `build_rel_with_dbg_alpine-x86_64.tar.gz` in the [Releases](https://github.com/YU-Zhejian/art_modern/releases) section. The file contains fully static linked libraries and executable binaries built under x86\_64 Alpine Linux, which should work on most x86\_64 Linux distributions. Unzip it, and you're good to go.
+In each release, there will be a file named `build_rel_with_dbg_alpine-x86_64.tar.gz` in the [Releases](https://github.com/YU-Zhejian/art_modern/releases) section. The file contains fully static linked executable binaries built under x86\_64 Alpine Linux, which should work on most x86\_64 Linux distributions. Unzip it, and you're good to go.
 
 **WARNING** Static builds may lead to compromised security.
 
@@ -311,6 +313,8 @@ Please wait for a while for the compression to finish.
 
 **NOTE** Pipelines and redirections are not supported in MPI mode mentioned below.
 
+**TIPS** You may find program [`pv(1)`](https://www.man7.org/linux/man-pages/man1/pv.1.html) useful when working with pipelines.
+
 ### Using MPI
 
 Message Passing Interface ([MPI](https://www.mpi-forum.org/)) is a standard for parallel computing on a high-performance cluster (HPC). It allows processes to communicate with each other through intranet. If you're working on a cluster with MPI installed, you can use the MPI version of `art_modern` to speed up the simulation by executing `art_modern` on different nodes in parallel.
@@ -437,3 +441,26 @@ This simulator is based on the works of [Weichun Huang](mailto:whduke@gmail.com)
 - W. Huang, L. Li, J. R. Myers, and G. T. Marth, _ART: a next-generation sequencing read simulator_, Bioinformatics (Oxford, England), vol. 28, no. 4, pp. 593--594, Feb. 2012, DOI: [10.1093/bioinformatics/btr708](https://doi.org/10.1093/bioinformatics/btr708).
 
 Bundled libraries in this project are distributed under their own licenses. See [Copying](docs/Copying.md) for details.
+
+## Citing This Work
+
+Following is the bioRxiv preprint of this work.
+
+```bibtex
+@article {YU2026.02.20.707060,
+	author = {YU, Zhejian},
+	title = {art_modern: An Accelerated ART Simulator of Diverse Next-Generation Sequencing Reads},
+	elocation-id = {2026.02.20.707060},
+	year = {2026},
+	doi = {10.64898/2026.02.20.707060},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2026/02/23/2026.02.20.707060},
+	eprint = {https://www.biorxiv.org/content/early/2026/02/23/2026.02.20.707060.full.pdf},
+	journal = {bioRxiv}
+}
+
+```
+
+## Stargazers Over Time
+
+[![Stargazers over time](4777c66b257549aec29cb68b971c46086a51f6ed7b383199ba7a2821743241e2.svg)](https://starchart.cc/YU-Zhejian/art_modern)
