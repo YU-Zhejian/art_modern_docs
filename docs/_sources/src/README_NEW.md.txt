@@ -1,18 +1,18 @@
 # `art_modern`: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads
 
 `art_modern` badges:
-[![GitHub Release](ab2e0050047768f7425cb0fed08a043734f77f50126079be230ce1ddd5ae4bc3.svg)](https://github.com/YU-Zhejian/art_modern/releases)
-[![GitHub Downloads](e9cfcb420a6c05c01482e7a9af0ff46588e164bfd619baa24f0a1e609639a042.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
+[![GitHub Release](03cfafc80178b1efeb965e42c2c6e58e1f8b3898872d7699d3ae4a75f21e86a6.svg)](https://github.com/YU-Zhejian/art_modern/releases)
+[![GitHub Downloads](cfadda62f08a5a4d28f4ac7bd745ae78bee5d6cb14d3afdeb22c6e88d00978c2.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
 [![License](02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg)](https://www.gnu.org/licenses/)
 [![Code style: WebKit](87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg)](https://webkit.org/code-style-guidelines/)
 
 `art_modern` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern/README.html)
-[![Conda Version](68f99b933923ea6a9cde4b06c8e0c89964691679a41a4a610b541c790c9436bb.svg)](https://anaconda.org/bioconda/art_modern)
-[![Conda Downloads](6613593f667ae5bedc4e6ba18d0ed43fe50fb57a6dcb7a618ad2e562287838fe.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Version](88a34973522f43ac69ae8beef14fa147a9a5a72a3e29a6b340e527f9848db1dd.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Downloads](07db44832699f18c3527379da1b655a54fb5ce143186076f5e58bbb58598682e.svg)](https://anaconda.org/bioconda/art_modern)
 
 `art_modern-openmpi` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern-openmpi/README.html)
-[![Conda Version](68f99b933923ea6a9cde4b06c8e0c89964691679a41a4a610b541c790c9436bb.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
-[![Conda Downloads](5ad6ffe293d5b7201ef6c50b80bcb5b2e67ad0e98f2ab67e6e51309c68f499a5.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Version](88a34973522f43ac69ae8beef14fa147a9a5a72a3e29a6b340e527f9848db1dd.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Downloads](c7f341465d5cb194cea2558dfed2122890d9ae7f21f0ab93deab07ba06e6a70b.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
 
 `art-modern-utils` badges:
 [![GitHub Release](8022cf810dab756ddf60c3236e15db083dfc719681656a9a190541916490fea1.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
@@ -21,8 +21,8 @@
 
 `art-modern-utils` on PyPI:
 [![Python version](f9d50342dcc593cc5fbd8795660fff4d432f5b18b73613a39544dff8b0909567.svg)](https://www.python.org/downloads/)
-[![PyPI - Version](8dd7f253e3ab3a7a002b7ee4904da003eabbcdb03ce05b4aa654e0d2ad2bc66d.svg)](https://pypi.org/project/art-modern-utils/)
-[![PyPI - Downloads](c91d3c682350108a90700bd2d8fc35a225b2b893a2060967b1b963212fe0f86b.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Version](59a7393aef86085b6bbcb1f6d855f656c79df187e29c3110f98b3be06f6f4ffd.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Downloads](90230550ec59ac5f35cabfa1a41a3f6be2972893c6fff035055bf2ed5bda52c6.svg)](https://pypi.org/project/art-modern-utils/)
 
 [![Docs on GitHub Pages](1935404f4900ad5aadc06cf68207a036c36ed1e35485a106c84d98a533c54ec7.svg)](https://yu-zhejian.github.io/art_modern_docs/index.html)
 [![bioRxiv](2b5cf5f6c13dc52dcf3066596e90da939b23dbbed80a2f7439e25d419b5440ea.svg)](https://doi.org/10.64898/2026.02.20.707060)
@@ -117,7 +117,7 @@ opt/build_release/art_modern --help
 opt/build_release/art_modern --version
 ```
 
-### Simulating WGS Data using _E. Coli_ Genome
+### Simulating WGS Data using _E. coli_ Genome
 
 Download _E. coli_ reference genome from NCBI. Here, we'll use the K-12 strand MG1655 sub-strand as an example.
 
@@ -125,9 +125,10 @@ Download _E. coli_ reference genome from NCBI. Here, we'll use the K-12 strand M
 mkdir -p opt/data/
 ACCESSION="GCF_000005845.2_ASM584v2"
 BASEURL="https://ftp.ncbi.nlm.nih.gov/genomes/all"
-wget -O opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz -4 \
+curl -L  \
     "${BASEURL}"/GCF/000/005/845/"${ACCESSION}"/"${ACCESSION}"_genomic.fna.gz \
-    
+    > opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
+
 gunzip -n -k opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
 # -n used to supress restoration of original timestamp.
 ```
@@ -285,7 +286,7 @@ Please note that the mean and standard deviation of fragment length is not speci
 
 - If a unified coverage file is provided, the coverage will be interpreted as positive coverage instead of being divided equally into both strands.
 - If a 2-column (unstranded) coverage file is provided, the coverage will be interpreted as positive coverage.
-- If a 3-column (stranded) coverage file or input in format of `pvsim3_transcripts` is provided, the coverage will be interpreted as-is.
+- If a 3-column (stranded) coverage file or input in a format of `pvsim3_transcripts` is provided, the coverage will be interpreted as-is.
 
 ## Advanced Topics
 
@@ -434,6 +435,13 @@ The project provides diverse documentations to satisfy your needs.
 - For a comparison of this project with other simulators, see [Benchmark](https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators).
 - The original ART documentation is copied to [here](https://github.com/YU-Zhejian/art_modern/tree/master/docs/original_art_docs).
 
+## Limitations
+
+`art_modern` is an accelerated version of ART -- It does not revise ART's algorithms. This would lead `art_modern` inferior in the following:
+
+- `art_modern` cannot simulate the Indel bias and GC bias of Illumina sequencers.
+- The latest Illumina models uses **Quality Score Binning.** See [Illumina White paper](https://www.illumina.com/documents/products/whitepapers/whitepaper_datacompression.pdf) and [Illumina documentation for quality binning on NovaSeq 6000 systems](https://www.illumina.com/content/dam/illumina-marketing/documents/products/appnotes/novaseq-hiseq-q30-app-note-770-2017-010.pdf) for more details. **WE ARE UNSURE WHETHER THE PROGRAM CAN RELIABLY SIMULATE SUCH DATA.** Our current policy on such is to warn user if the provided quality profile have less than 10 bins, and reject the profile with less than 4 bins.
+
 ## Acknowledgements
 
 This simulator is based on the works of [Weichun Huang](mailto:whduke@gmail.com) _et al._, under [GNU GPL v3](https://www.gnu.org/licenses/) license. The software is originally distributed [here](https://www.niehs.nih.gov/research/resources/software/biostatistics/art) with the following reference:
@@ -463,4 +471,4 @@ Following is the bioRxiv preprint of this work.
 
 ## Stargazers Over Time
 
-[![Stargazers over time](4777c66b257549aec29cb68b971c46086a51f6ed7b383199ba7a2821743241e2.svg)](https://starchart.cc/YU-Zhejian/art_modern)
+[![Stargazers over time](1560f8dcf3352d7a870866242f3d8d7ab9b4cc161046ae9682675eebfbca1b3d.svg)](https://starchart.cc/YU-Zhejian/art_modern)

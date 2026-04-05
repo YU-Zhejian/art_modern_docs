@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>art_modern: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads - art_modern 1.3.4 documentation</title>
+        <title>art_modern: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads - art_modern 1.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">art_modern 1.3.4 documentation</div></a>
+      <a href="../index.html"><div class="brand">art_modern 1.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
-  <span class="sidebar-brand-text">art_modern 1.3.4 documentation</span>
+  <span class="sidebar-brand-text">art_modern 1.4.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -344,14 +344,15 @@ opt/build_release/art_modern<span class="w"> </span>--version
 </section>
 </section>
 <section id="simulating-wgs-data-using-e-coli-genome">
-<h3>Simulating WGS Data using <em>E. Coli</em> Genome<a class="headerlink" href="#simulating-wgs-data-using-e-coli-genome" title="Link to this heading">¶</a></h3>
+<h3>Simulating WGS Data using <em>E. coli</em> Genome<a class="headerlink" href="#simulating-wgs-data-using-e-coli-genome" title="Link to this heading">¶</a></h3>
 <p>Download <em>E. coli</em> reference genome from NCBI. Here, we’ll use the K-12 strand MG1655 sub-strand as an example.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>opt/data/
 <span class="nv">ACCESSION</span><span class="o">=</span><span class="s2">&quot;GCF_000005845.2_ASM584v2&quot;</span>
 <span class="nv">BASEURL</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/genomes/all&quot;</span>
-wget<span class="w"> </span>-O<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz<span class="w"> </span>-4<span class="w"> </span><span class="se">\</span>
+curl<span class="w"> </span>-L<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASEURL</span><span class="si">}</span><span class="s2">&quot;</span>/GCF/000/005/845/<span class="s2">&quot;</span><span class="si">${</span><span class="nv">ACCESSION</span><span class="si">}</span><span class="s2">&quot;</span>/<span class="s2">&quot;</span><span class="si">${</span><span class="nv">ACCESSION</span><span class="si">}</span><span class="s2">&quot;</span>_genomic.fna.gz<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>
+<span class="w">    </span>&gt;<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
+
 gunzip<span class="w"> </span>-n<span class="w"> </span>-k<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
 <span class="c1"># -n used to supress restoration of original timestamp.</span>
 </pre></div>
@@ -489,7 +490,7 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <ul class="simple">
 <li><p>If a unified coverage file is provided, the coverage will be interpreted as positive coverage instead of being divided equally into both strands.</p></li>
 <li><p>If a 2-column (unstranded) coverage file is provided, the coverage will be interpreted as positive coverage.</p></li>
-<li><p>If a 3-column (stranded) coverage file or input in format of <code class="docutils literal notranslate"><span class="pre">pvsim3_transcripts</span></code> is provided, the coverage will be interpreted as-is.</p></li>
+<li><p>If a 3-column (stranded) coverage file or input in a format of <code class="docutils literal notranslate"><span class="pre">pvsim3_transcripts</span></code> is provided, the coverage will be interpreted as-is.</p></li>
 </ul>
 </section>
 </section>
@@ -626,6 +627,14 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 <li><p>The original ART documentation is copied to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern/tree/master/docs/original_art_docs">here</a>.</p></li>
 </ul>
 </section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> is an accelerated version of ART – It does not revise ART’s algorithms. This would lead <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> inferior in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> cannot simulate the Indel bias and GC bias of Illumina sequencers.</p></li>
+<li><p>The latest Illumina models uses <strong>Quality Score Binning.</strong> See <a class="reference external" href="https://www.illumina.com/documents/products/whitepapers/whitepaper_datacompression.pdf">Illumina White paper</a> and <a class="reference external" href="https://www.illumina.com/content/dam/illumina-marketing/documents/products/appnotes/novaseq-hiseq-q30-app-note-770-2017-010.pdf">Illumina documentation for quality binning on NovaSeq 6000 systems</a> for more details. <strong>WE ARE UNSURE WHETHER THE PROGRAM CAN RELIABLY SIMULATE SUCH DATA.</strong> Our current policy on such is to warn user if the provided quality profile have less than 10 bins, and reject the profile with less than 4 bins.</p></li>
+</ul>
+</section>
 <section id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">¶</a></h2>
 <p>This simulator is based on the works of <a class="reference external" href="mailto:whduke&#37;&#52;&#48;gmail&#46;com">Weichun Huang</a> <em>et al.</em>, under <a class="reference external" href="https://www.gnu.org/licenses/">GNU GPL v3</a> license. The software is originally distributed <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">here</a> with the following reference:</p>
@@ -705,7 +714,7 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 <li><a class="reference internal" href="#compiling-the-source-code">Compiling the Source Code</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#simulating-wgs-data-using-e-coli-genome">Simulating WGS Data using <em>E. Coli</em> Genome</a></li>
+<li><a class="reference internal" href="#simulating-wgs-data-using-e-coli-genome">Simulating WGS Data using <em>E. coli</em> Genome</a></li>
 <li><a class="reference internal" href="#simulating-rna-seq-data-using-c-elegans-transcriptome">Simulating RNA-Seq Data using <em>C. Elegans</em> Transcriptome</a><ul>
 <li><a class="reference internal" href="#unified-coverage">Unified Coverage</a></li>
 <li><a class="reference internal" href="#unstranded-coverage">Unstranded Coverage</a></li>
@@ -728,6 +737,7 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 </li>
 <li><a class="reference internal" href="#building-art-art-modern-profiles">Building ART/<code class="docutils literal notranslate"><span class="pre">art_modern</span></code> Profiles</a></li>
 <li><a class="reference internal" href="#what-s-next">What’s Next?</a></li>
+<li><a class="reference internal" href="#limitations">Limitations</a></li>
 <li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
 <li><a class="reference internal" href="#citing-this-work">Citing This Work</a></li>
 <li><a class="reference internal" href="#stargazers-over-time">Stargazers Over Time</a></li>
@@ -742,7 +752,7 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=e358f374"></script>
+</div><script src="../_static/documentation_options.js?v=9172181d"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

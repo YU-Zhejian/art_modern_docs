@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Frequently Asked Questions (FAQs)" href="FAQ.html"><link rel="prev" title="Usage of am_compress" href="Usage-amc.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Guide on Miscellaneous Topics - art_modern 1.3.4 documentation</title>
+        <title>Guide on Miscellaneous Topics - art_modern 1.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">art_modern 1.3.4 documentation</div></a>
+      <a href="../../index.html"><div class="brand">art_modern 1.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">art_modern 1.3.4 documentation</span>
+  <span class="sidebar-brand-text">art_modern 1.4.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -438,7 +438,8 @@ mingw-w64-clang-x86_64-samtools
 <h3>Installing Boost from Source<a class="headerlink" href="#installing-boost-from-source" title="Link to this heading">¶</a></h3>
 <p>If your system Boost library does not exist (e.g., on brand-new Apple Mac OS X), is too old (e.g., older than 1.65.0) or ABI incompatible (e.g., compiled with GCC, but you want to use Clang/LLVM), you may install Boost from source. Here is an example of installing Boost 1.89.0 using Clang/LLVM toolchain to <code class="docutils literal notranslate"><span class="pre">&quot;${HOME}&quot;/opt/boost-1.89.0-clang</span></code>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume we&#39;re using Boost 1.89.0</span>
-wget<span class="w"> </span>https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz
+curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>boost_1_89_0.tar.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz
 tar<span class="w"> </span>xvzf<span class="w"> </span>boost_1_89_0.tar.gz
 <span class="nb">cd</span><span class="w"> </span>boost_1_89_0
 ./bootstrap.sh<span class="w"> </span><span class="c1"># Build b2. There&#39;s no point to build b2 using Clang.</span>
@@ -464,7 +465,8 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DBoost_DIR<span class="o
 </section>
 <section id="installing-fmt-from-source">
 <h3>Installing <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> from Source<a class="headerlink" href="#installing-fmt-from-source" title="Link to this heading">¶</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/fmtlib/fmt/releases/download/12.0.0/fmt-12.0.0.zip
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>fmt-12.0.0.zip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://github.com/fmtlib/fmt/releases/download/12.0.0/fmt-12.0.0.zip
 unzip<span class="w"> </span>fmt-12.0.0.zip
 <span class="nb">cd</span><span class="w"> </span>fmt-12.0.0
 mkdir<span class="w"> </span>-p<span class="w"> </span>build
@@ -488,7 +490,8 @@ cmake<span class="w"> </span>--install<span class="w"> </span>.
 <section id="installing-ncbi-ngs-sdk-from-source">
 <h3>Installing NCBI NGS SDK from Source<a class="headerlink" href="#installing-ncbi-ngs-sdk-from-source" title="Link to this heading">¶</a></h3>
 <p>Install NCBI VDB first.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>axel<span class="w"> </span>https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.3.0.zip
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>ncbi-vdb-3.3.0.zip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.3.0.zip
 unzip<span class="w"> </span>ncbi-vdb-3.3.0.zip
 <span class="nb">cd</span><span class="w"> </span>ncbi-vdb-3.3.0
 ./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">&quot;</span>/opt/ncbi-vdb-3.3.0
@@ -498,7 +501,8 @@ make<span class="w"> </span>install
 </pre></div>
 </div>
 <p>Install NCBI NGS SDK as a part of NCBI SRA Toolkit.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>axel<span class="w"> </span>https://github.com/ncbi/sra-tools/archive/refs/tags/3.3.0.zip
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>sra-tools-3.3.0.zip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://github.com/ncbi/sra-tools/archive/refs/tags/3.3.0.zip
 unzip<span class="w"> </span>sra-tools-3.3.0.zip
 <span class="nb">cd</span><span class="w"> </span>sra-tools-3.3.0
 ./configure<span class="w"> </span><span class="se">\</span>
@@ -595,7 +599,7 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="se">\</span>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=e358f374"></script>
+</div><script src="../../_static/documentation_options.js?v=9172181d"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

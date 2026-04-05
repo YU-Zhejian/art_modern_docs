@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Copyright" href="Copying.html"><link rel="prev" title="Security Policy" href="Security.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>News &amp; Release Notes - art_modern 1.3.4 documentation</title>
+        <title>News &amp; Release Notes - art_modern 1.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">art_modern 1.3.4 documentation</div></a>
+      <a href="../../index.html"><div class="brand">art_modern 1.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">art_modern 1.3.4 documentation</span>
+  <span class="sidebar-brand-text">art_modern 1.4.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -251,6 +251,40 @@
         <article role="main" id="furo-main-content">
           <section class="tex2jax_ignore mathjax_ignore" id="news-release-notes">
 <h1>News &amp; Release Notes<a class="headerlink" href="#news-release-notes" title="Link to this heading">¶</a></h1>
+<section id="v1-4-0-2026-04-05">
+<span id="v-1-4-0-section"></span><h2>v1.4.0 (2026/04/05)<a class="headerlink" href="#v1-4-0-2026-04-05" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Software Engineering:</p>
+<ul>
+<li><p>Update bundled HTSLib to <a class="reference external" href="https://github.com/samtools/htslib/releases/1.23.1"><code class="docutils literal notranslate"><span class="pre">1.23.1</span></code></a>.</p></li>
+<li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> to the current latest version (<a class="reference external" href="https://github.com/cameron314/concurrentqueue/commit/593df78ec309be7a7b456b3334025ccade1d2d66"><code class="docutils literal notranslate"><span class="pre">593df78</span></code></a>).</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">explore/packing_status</span></code> to <a class="reference external" href="https://github.com/YU-Zhejian/packing_status">new repo</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code> set as default thread pool implementation.</p></li>
+</ul>
+</li>
+<li><p>Implementation:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>: Added <code class="docutils literal notranslate"><span class="pre">--report_size</span></code> and <code class="docutils literal notranslate"><span class="pre">--batch_size</span></code> option to control reporting intervals.</p></li>
+<li><p>The programs would now warn on quality profiles with less or equal to 10 quality levels, and reject those with less or equal to 4 quality levels. This would, unfortunately, reject most of the latest Illumina models, which have only 4 quality levels. Use <code class="docutils literal notranslate"><span class="pre">art-profile-fastqc</span></code> from <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_utils"><code class="docutils literal notranslate"><span class="pre">art_modern_utils</span></code></a> to check the quality levels of your profiles.</p></li>
+</ul>
+</li>
+<li><p>New profiles:</p>
+<ul>
+<li><p>Illumina MiSeq v3 PE 300bp.</p></li>
+<li><p>PacBio Onso PE 150bp.</p></li>
+<li><p>Illumina GenomeAnalyzer IIx PE 100bp and 150bp.</p></li>
+<li><p>Illumina HiSeq 1500 PE 250bp.</p></li>
+<li><p>BGISEQ-500 PE 150bp.</p></li>
+<li><p>DNBSEQ-T7 PE 150bp.</p></li>
+<li><p>DNBSEQ-G50 PE 150bp.</p></li>
+<li><p>DNBSEQ-G400 PE 150bp, SE 400bp.</p></li>
+<li><p>Illumina HiSeq 4000 PE 150bp (8-bin quality compression).</p></li>
+<li><p>Illumina NextSeq 400 PE 150bp (8-bin quality compression).</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous bug fixes.</p></li>
+</ul>
+</section>
 <section id="v-1-3-4-section">
 <span id="id1"></span><h2>1.3.4 (2026/02/28)<a class="headerlink" href="#v-1-3-4-section" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -655,6 +689,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">News &amp; Release Notes</a><ul>
+<li><a class="reference internal" href="#v1-4-0-2026-04-05">v1.4.0 (2026/04/05)</a></li>
 <li><a class="reference internal" href="#v-1-3-4-section">1.3.4 (2026/02/28)</a></li>
 <li><a class="reference internal" href="#v-1-3-3-section">1.3.3 (2026/01/08)</a></li>
 <li><a class="reference internal" href="#v-1-3-2-section">1.3.2 (2025/12/23)</a></li>
@@ -686,7 +721,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=e358f374"></script>
+</div><script src="../../_static/documentation_options.js?v=9172181d"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
