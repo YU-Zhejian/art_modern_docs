@@ -258,28 +258,28 @@
 <ul>
 <li><p>Update bundled HTSLib to <a class="reference external" href="https://github.com/samtools/htslib/releases/1.23.1"><code class="docutils literal notranslate"><span class="pre">1.23.1</span></code></a>.</p></li>
 <li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> to the current latest version (<a class="reference external" href="https://github.com/cameron314/concurrentqueue/commit/593df78ec309be7a7b456b3334025ccade1d2d66"><code class="docutils literal notranslate"><span class="pre">593df78</span></code></a>).</p></li>
-<li><p>Moved <code class="docutils literal notranslate"><span class="pre">explore/packing_status</span></code> to <a class="reference external" href="https://github.com/YU-Zhejian/packing_status">new repo</a>.</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">explore/packing_status</span></code> to a <a class="reference external" href="https://github.com/YU-Zhejian/packing_status">new repo</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">BS::thread_pool</span></code> set as default thread pool implementation.</p></li>
 </ul>
 </li>
 <li><p>Implementation:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code>: Added <code class="docutils literal notranslate"><span class="pre">--report_size</span></code> and <code class="docutils literal notranslate"><span class="pre">--batch_size</span></code> option to control reporting intervals.</p></li>
-<li><p>The programs would now warn on quality profiles with less or equal to 10 quality levels, and reject those with less or equal to 4 quality levels. This would, unfortunately, reject most of the latest Illumina models, which have only 4 quality levels. Use <code class="docutils literal notranslate"><span class="pre">art-profile-fastqc</span></code> from <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_utils"><code class="docutils literal notranslate"><span class="pre">art_modern_utils</span></code></a> to check the quality levels of your profiles.</p></li>
+<li><p>The programs would now warn on quality profiles with fewer than or equal to 10 quality levels, and reject those with fewer than or equal to 4 quality levels. Unfortunately, this would reject most of the latest Illumina models, which have only 4 quality levels. Use <code class="docutils literal notranslate"><span class="pre">art-profile-fastqc</span></code> from <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_utils"><code class="docutils literal notranslate"><span class="pre">art_modern_utils</span></code></a> to check the quality levels of your profiles.</p></li>
 </ul>
 </li>
 <li><p>New profiles:</p>
 <ul>
-<li><p>Illumina MiSeq v3 PE 300bp.</p></li>
-<li><p>PacBio Onso PE 150bp.</p></li>
-<li><p>Illumina GenomeAnalyzer IIx PE 100bp and 150bp.</p></li>
-<li><p>Illumina HiSeq 1500 PE 250bp.</p></li>
-<li><p>BGISEQ-500 PE 150bp.</p></li>
-<li><p>DNBSEQ-T7 PE 150bp.</p></li>
-<li><p>DNBSEQ-G50 PE 150bp.</p></li>
-<li><p>DNBSEQ-G400 PE 150bp, SE 400bp.</p></li>
-<li><p>Illumina HiSeq 4000 PE 150bp (8-bin quality compression).</p></li>
-<li><p>Illumina NextSeq 400 PE 150bp (8-bin quality compression).</p></li>
+<li><p>Illumina MiSeq v3 PE 300 bp.</p></li>
+<li><p>PacBio Onso PE 150 bp.</p></li>
+<li><p>Illumina GenomeAnalyzer IIx PE 100 bp and 150 bp.</p></li>
+<li><p>Illumina HiSeq 1500 PE 250 bp.</p></li>
+<li><p>BGISEQ-500 PE 150 bp.</p></li>
+<li><p>DNBSEQ-T7 PE 150 bp.</p></li>
+<li><p>DNBSEQ-G50 PE 150 bp.</p></li>
+<li><p>DNBSEQ-G400 PE 150 bp, SE 400 bp.</p></li>
+<li><p>Illumina HiSeq 4000 PE 150 bp (8-bin quality compression).</p></li>
+<li><p>Illumina NextSeq 400 PE 150 bp (8-bin quality compression).</p></li>
 </ul>
 </li>
 <li><p>Miscellaneous bug fixes.</p></li>
@@ -292,7 +292,7 @@
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">-DUSE_LIBFMT=CMAKE</span></code> added to CMake options to find <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> through CMake’s <code class="docutils literal notranslate"><span class="pre">find_package</span></code>.</p></li>
 <li><p>Pre-built HTML docs now hosted at <a class="reference external" href="https://yu-zhejian.github.io/art_modern_docs/index.html">GitHub Pages</a>.</p></li>
-<li><p>Compression of FASTA and FASTQ output using gzip/bgzip supported using HTSLib. The following flags for each format are added (using FASTQ for example):</p>
+<li><p>Compression of FASTA and FASTQ output using gzip/bgzip is supported using HTSLib. The following flags for each format are added (using FASTQ for example):</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-fastq-compression</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-fastq-compression_level</span></code></p></li>
@@ -300,7 +300,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-fastq-num_threads</span></code></p></li>
 </ul>
 </li>
-<li><p>Added utility <code class="docutils literal notranslate"><span class="pre">am_compress</span></code> to compress files using gzip/bgzip. This utility can be used to assess the performance of those compressors on your own system to find optimized parameters.</p></li>
+<li><p>Added utility <code class="docutils literal notranslate"><span class="pre">am_compress</span></code> to compress files using gzip/bgzip. This utility can be used to assess the performance of compressors in your system and find optimized parameters.</p></li>
 </ul>
 </li>
 <li><p>Miscellaneous bug fixes.</p></li>
@@ -346,7 +346,7 @@
 <ul>
 <li><p>The speed of <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> improved by using a single-producer-multi-consumer queue. The improvement will be more obvious to SAM/BAM files and would reduce computational burden when parsing FASTQ files.</p></li>
 <li><p>Queue size parameters added to <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> and <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> to control the size of internal queues. Users may tune these parameters to achieve better performance or reduce memory usage.</p></li>
-<li><p>The performance of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> under Intel OneMKL random generator further improved by generating more random numbers in bulk.</p></li>
+<li><p>The performance of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> under Intel OneMKL random generator was further improved by generating more random numbers in bulk.</p></li>
 <li><p>A seed allocation algorithm is implemented; Flag <code class="docutils literal notranslate"><span class="pre">--i-seed</span></code> added to set a fixed seed for reproduction.</p></li>
 </ul>
 </li>
@@ -364,15 +364,15 @@
 <li><p>Software Engineering:</p>
 <ul>
 <li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> to <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/12.1.0"><code class="docutils literal notranslate"><span class="pre">12.1.0</span></code></a>.</p></li>
-<li><p>A possibly unidentified bug in the CMake build system when trying to compile a static version of testing C source code while the project is being configured is fixed.</p></li>
-<li><p>The minimal test code for libdeflate, zlib, libbz2, and liblzma is reimplemented in a unified style. The new behavior is more robust, as it would generate random strings, compress them, decompress them, and check whether the decompressed strings are identical to the original ones.</p></li>
+<li><p>A possibly unidentified bug in the CMake build system, which occurred when trying to compile a static version of test C source code while the project was being configured, has been fixed.</p></li>
+<li><p>The minimal test code for libdeflate, zlib, libbz2, and liblzma is reimplemented in a unified style. The new behavior is more robust, as it generates random strings, compresses them, decompresses them, and checks whether the decompressed strings are identical to the originals.</p></li>
 <li><p>Bundled LibCEU routines can recognize more compilers &amp; architectures &amp; libraries.</p></li>
 </ul>
 </li>
 <li><p>Implementation:</p>
 <ul>
 <li><p>A possibly unidentified bug that would emerge when generating quality below 10 (for N bases) using Intel OneMKL random generator is fixed.</p></li>
-<li><p>Several changes were made to the reporting system, increasing CPU utilization rate.</p></li>
+<li><p>Several changes to the reporting system increased CPU utilization.</p></li>
 </ul>
 </li>
 <li><p>Miscellaneous bug fixes.</p></li>
@@ -394,9 +394,9 @@
 <li><p>Algorithm:</p>
 <ul>
 <li><p>Introduced <a class="reference external" href="https://github.com/Wunkolo/qreverse">https://github.com/Wunkolo/qreverse</a> to accelerate array reversing. Use <code class="docutils literal notranslate"><span class="pre">-DAM_NO_Q_REVERSE=ON</span></code> in CMake options to disable this feature.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">STL</span></code> quality generation algorithm deprecated and removed. Also deprecated CMake option <code class="docutils literal notranslate"><span class="pre">USE_QUAL_GEN</span></code>. Now <code class="docutils literal notranslate"><span class="pre">WALKER</span></code> is the only quality generation algorithm available.</p></li>
-<li><p>Several low-level C++ features re-done in C to improve compilation speed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PCG</span></code> random generator: CMake option <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=PCG</span></code> now uses a minimal PCG random generator while <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=SYSTEM_PCG</span></code> uses an external header-only PCG random generator in C++.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STL</span></code> quality generation algorithm deprecated and removed. Also deprecated CMake option <code class="docutils literal notranslate"><span class="pre">USE_QUAL_GEN</span></code>. Now, <code class="docutils literal notranslate"><span class="pre">WALKER</span></code> is the only quality-generation algorithm available.</p></li>
+<li><p>Several low-level C++ features were re-done in C to improve compilation speed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PCG</span></code> random generator: CMake option <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=PCG</span></code> now uses a minimal PCG random generator, while <code class="docutils literal notranslate"><span class="pre">-DUSE_RANDOM_GENERATOR=SYSTEM_PCG</span></code> uses an external header-only PCG random generator in C++.</p></li>
 </ul>
 </li>
 <li><p>Interface:</p>
@@ -412,9 +412,9 @@
 <li><p>Packing:</p>
 <ul>
 <li><p><strong>EXPERIMENTAL</strong> <code class="docutils literal notranslate"><span class="pre">-DFIND_RANDOM_MKL_THROUGH_PKGCONF</span></code> added to CMake options to find Intel OneMKL through <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">libtcmalloc</span></code> and <code class="docutils literal notranslate"><span class="pre">libtcmalloc_minimal</span></code> supported as an alternative <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libtcmalloc</span></code> and <code class="docutils literal notranslate"><span class="pre">libtcmalloc_minimal</span></code> are supported as an alternative <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementation.</p></li>
 <li><p>Google Abseil removed from dependencies. Also deprecated CMake option <code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">--version</span></code> and ctest minitests removed from <code class="docutils literal notranslate"><span class="pre">debug</span></code>/<code class="docutils literal notranslate"><span class="pre">release</span></code> Makefile quick build targets and their MPI-enabled variant. Use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testsmall</span></code>/variants instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">--version</span></code> and ctest minitests removed from <code class="docutils literal notranslate"><span class="pre">debug</span></code>/<code class="docutils literal notranslate"><span class="pre">release</span></code> Makefile, quick build targets and their MPI-enabled variant. Use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testsmall</span></code>/variants instead.</p></li>
 </ul>
 </li>
 <li><p>Miscellaneous bug fixes.</p></li>
@@ -425,12 +425,12 @@
 <ul class="simple">
 <li><p>The GNU Scientific Library (GSL) random generator was removed.</p></li>
 <li><p>For Intel OneMKL random generator: The bit generation routine changed to <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_SFMT19937</span></code>, which is faster. Also, more random numbers are generated in bulk to reduce overhead.</p></li>
-<li><p>Makefile integration test targets <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> and <code class="docutils literal notranslate"><span class="pre">testbuild-mpi</span></code> reimplemented in Python to make them run faster.</p></li>
+<li><p>Makefile integration test targets <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> and <code class="docutils literal notranslate"><span class="pre">testbuild-mpi</span></code> were reimplemented in Python to make them run faster.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code> would now raise an error if the input SAM/BAM/FASTQ files are malformed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>:</p>
 <ul>
 <li><p>Option <code class="docutils literal notranslate"><span class="pre">--reporting_interval-job_executor</span></code> and <code class="docutils literal notranslate"><span class="pre">--reporting_interval-job_pool</span></code> added to control the reporting interval of job executor and job pool status.</p></li>
-<li><p>Memory performance of <code class="docutils literal notranslate"><span class="pre">stream</span></code> FASTA parser largely improved.</p></li>
+<li><p>The memory performance of the <code class="docutils literal notranslate"><span class="pre">stream</span></code> FASTA parser has largely improved.</p></li>
 </ul>
 </li>
 <li><p><strong>EXPERIMENTAL</strong> Packing: DEB package variant using OpenMPI added.</p></li>
@@ -443,7 +443,7 @@
 <ul class="simple">
 <li><p>Main repo slimmed.</p>
 <ul>
-<li><p>Random number benchmark module moved to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_bench_rand">https://github.com/YU-Zhejian/art_modern_bench_rand</a>.</p></li>
+<li><p>The random number benchmark module moved to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_bench_rand">https://github.com/YU-Zhejian/art_modern_bench_rand</a>.</p></li>
 <li><p>Benchmark of other simulators moved to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators">https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators</a>.</p></li>
 </ul>
 </li>
@@ -458,15 +458,15 @@
 </li>
 <li><p>MPI-related revisions:</p>
 <ul>
-<li><p>Seeding of random number generators revised to avoid seed collision across different threads and processes.</p></li>
-<li><p>The number of reads generated from each contig is now calculated using complicated rounding instead of flooring.</p></li>
+<li><p>Seeding of random number generators has been revised to avoid seed collision across different threads and processes.</p></li>
+<li><p>The number of reads generated from each contig is now calculated using a more complex rounding method rather than flooring.</p></li>
 <li><p>Makefile quick build targets <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">release</span></code> have their MPI counterparts: <code class="docutils literal notranslate"><span class="pre">debug-mpi</span></code> and <code class="docutils literal notranslate"><span class="pre">release-mpi</span></code>.</p></li>
 <li><p>Makefile integration test targets <code class="docutils literal notranslate"><span class="pre">testsmall</span></code>, <code class="docutils literal notranslate"><span class="pre">testsmall-release</span></code>, <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> have their MPI counterparts: <code class="docutils literal notranslate"><span class="pre">testsmall-mpi</span></code>, <code class="docutils literal notranslate"><span class="pre">testsmall-release-mpi</span></code>, and <code class="docutils literal notranslate"><span class="pre">testbuild-mpi</span></code>.</p></li>
 <li><p>Integration test <code class="docutils literal notranslate"><span class="pre">testbuild</span></code> revised to make it run faster.</p></li>
 <li><p>CMake option <code class="docutils literal notranslate"><span class="pre">WITH_MPI</span></code> added to enable MPI support. This option is by default <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p></li>
 </ul>
 </li>
-<li><p><strong>NOTE</strong> The author currently has no access to computing clusters with MPI, so the MPI parallelization on an actual multi-node cluster may be problematic and suboptimal. Users are welcome to report bugs or tell the author how to simulate an MPI-enabled cluster using a laptop to improve the MPI support.</p></li>
+<li><p><strong>NOTE:</strong> The author currently has no access to computing clusters with MPI, so the MPI parallelization on an actual multi-node cluster may be problematic and suboptimal. Users are welcome to report bugs or to tell the author how to simulate an MPI-enabled cluster on a laptop to improve MPI support.</p></li>
 </ul>
 </li>
 <li><p>Miscellaneous bug fixes.</p></li>
@@ -477,7 +477,7 @@
 <ul class="simple">
 <li><p>Fixed #7. In details:</p>
 <ul>
-<li><p>Some build failures under Mac OS X using Apple Clang 18 have been fixed.</p></li>
+<li><p>Some build failures under macOS using Apple Clang 18 have been fixed.</p></li>
 <li><p>More tests added to pure-Clang/LLVM build.</p></li>
 </ul>
 </li>
@@ -504,7 +504,7 @@
 <ul class="simple">
 <li><p>Fixed issue #5. In details:</p>
 <ul>
-<li><p>On prior versions, the program will crash when trying to create simulated output in the current working directory without the <code class="docutils literal notranslate"><span class="pre">./</span></code> prefix.</p></li>
+<li><p>In prior versions, the program will crash when trying to create simulated output in the current working directory without the <code class="docutils literal notranslate"><span class="pre">./</span></code> prefix.</p></li>
 <li><p>Duplicated read IDs observed in prior versions.</p></li>
 <li><p>Inconsistencies in read quality between SAM/BAM and FASTQ output were observed in prior versions.</p></li>
 <li><p>Missing <code class="docutils literal notranslate"><span class="pre">/1</span></code> and <code class="docutils literal notranslate"><span class="pre">/2</span></code> suffixes in read IDs of paired-end reads observed in prior versions.</p></li>
@@ -522,8 +522,8 @@
 <li><p>Update bundled <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code> to the current latest version (<a class="reference external" href="https://github.com/cameron314/concurrentqueue/commit/c68072129c8a5b4025122ca5a0c82ab14b30cb03"><code class="docutils literal notranslate"><span class="pre">c680721</span></code></a>).</p></li>
 <li><p>Updated bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code> to <a class="reference external" href="https://github.com/fmtlib/fmt/releases/tag/11.2.0">11.2.0</a>.</p></li>
 <li><p>Some files without a clear license were removed. Unused files from bundled <code class="docutils literal notranslate"><span class="pre">{fmt}</span></code>, <code class="docutils literal notranslate"><span class="pre">moodycamel::ConcurrentQueue&lt;T&gt;</span></code>, and HTSLib removed.</p></li>
-<li><p>CMake options to use system shipped dependencies instead of bundled ones are added to comply with Debian policies. Namely, <code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code>, and <code class="docutils literal notranslate"><span class="pre">REPRODUCIBLE_BUILDS</span></code>.</p></li>
-<li><p>Separated CMake flag that controls building of mini benchmarks to <code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code>.</p></li>
+<li><p>CMake options to use system-shipped dependencies instead of bundled ones are added to comply with Debian policies. Namely, <code class="docutils literal notranslate"><span class="pre">USE_LIBFMT</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_CONCURRENT_QUEUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_ABSL</span></code>, and <code class="docutils literal notranslate"><span class="pre">REPRODUCIBLE_BUILDS</span></code>.</p></li>
+<li><p>Creates a CMake flag that controls building of mini benchmarks, <code class="docutils literal notranslate"><span class="pre">BUILD_ART_MODERN_BENCHMARKS</span></code>.</p></li>
 <li><p>Miscellaneous bug fixes.</p></li>
 </ul>
 </section>
@@ -546,7 +546,7 @@
 <ul class="simple">
 <li><p>2 environment variables, <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> and <code class="docutils literal notranslate"><span class="pre">ART_LOG_DIR</span></code>, now control the behavior of log directory creation.</p></li>
 <li><p>Some files without a clear license were removed.</p></li>
-<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code>. <strong>NOTE</strong> Currently, only built libraries and binaries will be installed. Documentation and header files are not included yet.</p></li>
+<li><p>Add support for <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code>. <strong>NOTE:</strong> Currently, only built libraries and binaries will be installed. Documentation and header files are not included yet.</p></li>
 <li><p>The package is published on BioConda. See <a class="reference external" href="https://bioconda.github.io/recipes/art_modern/README.html">here</a> for details.</p></li>
 <li><p>Miscellaneous bug fixes.</p></li>
 </ul>
@@ -574,14 +574,14 @@
 <section id="v-1-1-1-section">
 <span id="id17"></span><h2>1.1.1 (2025/02/02)<a class="headerlink" href="#v-1-1-1-section" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>~~Possible build acceleration using <a class="reference external" href="https://ccache.dev/">ccache</a> supported.~~</p></li>
+<li><p><s>Possible build acceleration using <a class="reference external" href="https://ccache.dev/">ccache</a> supported.</s></p></li>
 <li><p>Alternate <code class="docutils literal notranslate"><span class="pre">malloc</span></code>/<code class="docutils literal notranslate"><span class="pre">free</span></code> implementations like <a class="reference external" href="https://github.com/jemalloc/jemalloc">jemalloc</a> and <a class="reference external" href="https://github.com/microsoft/mimalloc">mi-malloc</a> are supported.</p></li>
 <li><p>Formatting engine of FASTQ changed to <a class="reference external" href="https://github.com/fmtlib/fmt"><code class="docutils literal notranslate"><span class="pre">{fmt}</span></code></a>, which is slightly faster.</p></li>
 <li><p>FASTA output format supported.</p></li>
 <li><p>If the output consists only of FASTA or FASTQ, pairwise alignment will not be computed.</p></li>
 <li><p>The default random generator for the Intel MKL library changed from <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_MT19937</span></code> to <code class="docutils literal notranslate"><span class="pre">VSL_BRNG_SFMT19937</span></code>, which is slightly faster.</p></li>
 <li><p><a class="reference external" href="https://www.pcg-random.org/">PCG</a> added as an alternative random number generator. <strong>THIS GENERATOR MAY NOT WORK UNDER MAC OS X.</strong></p></li>
-<li><p>~~<a class="reference external" href="https://github.com/Kronuz/cpp-btree">C++ B+ Tree</a> added for accelerated map implementation.~~</p></li>
+<li><p><s><a class="reference external" href="https://github.com/Kronuz/cpp-btree">C++ B+ Tree</a> added for accelerated map implementation.</s></p></li>
 </ul>
 </section>
 <section id="v-1-1-0-section">

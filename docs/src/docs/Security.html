@@ -253,7 +253,7 @@
 <h1>Security Policy<a class="headerlink" href="#security-policy" title="Link to this heading">¶</a></h1>
 <section id="reporting-a-vulnerability">
 <h2>Reporting a Vulnerability<a class="headerlink" href="#reporting-a-vulnerability" title="Link to this heading">¶</a></h2>
-<p>Send an E-mail to maintainer in private if vulnerabilities were found.</p>
+<p>Send a private email to the maintainer if vulnerabilities were found.</p>
 </section>
 <section id="known-bugs-in-art-modern">
 <h2>Known Bugs in <code class="docutils literal notranslate"><span class="pre">art_modern</span></code><a class="headerlink" href="#known-bugs-in-art-modern" title="Link to this heading">¶</a></h2>
@@ -261,12 +261,12 @@
 <section id="known-build-time-incompatibilities">
 <h3>Known Build-Time Incompatibilities<a class="headerlink" href="#known-build-time-incompatibilities" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Clang earlier than 9 with Boost later than 1.78 may raise bug when using headers from <code class="docutils literal notranslate"><span class="pre">boost/math</span></code> as boost may misidentify Clang as GCC that does not support C++11. See <a class="reference external" href="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/history2.html#math_toolkit.history2.math_3_0_0_boost_1_76">here</a> for more details.</p></li>
-<li><p>Boost earlier than 1.65 does not contain <code class="docutils literal notranslate"><span class="pre">boost/asio/thread_pool.hpp</span></code> or <code class="docutils literal notranslate"><span class="pre">boost/asio/post.hpp</span></code>. See <a class="reference external" href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/reference/thread_pool.html">here</a> for its first introduction. Under this circumstance, try <code class="docutils literal notranslate"><span class="pre">-DUSE_THREAD_PARALLEL=BS</span></code> in CMake options (introduced below) as an alternative.</p></li>
-<li><p>GCC 13.3.0 on Haiku OS hrev58590 may generate a kernel panic that jam the entire system while building.</p></li>
+<li><p>Clang earlier than 9 with Boost later than 1.78 may raise bugs when using headers from <code class="docutils literal notranslate"><span class="pre">boost/math</span></code>, since Boost may misidentify Clang as an older GCC that does not support C++11. See <a class="reference external" href="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/history2.html#math_toolkit.history2.math_3_0_0_boost_1_76">here</a> for more details.</p></li>
+<li><p>Boost versions earlier than 1.65 do not contain <code class="docutils literal notranslate"><span class="pre">boost/asio/thread_pool.hpp</span></code> or <code class="docutils literal notranslate"><span class="pre">boost/asio/post.hpp</span></code>. See <a class="reference external" href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/reference/thread_pool.html">here</a> for its first introduction. Under these circumstances, try <code class="docutils literal notranslate"><span class="pre">-DUSE_THREAD_PARALLEL=BS</span></code> in CMake options (introduced below) as an alternative.</p></li>
+<li><p>GCC 13.3.0 on Haiku OS hrev58590 may cause a kernel panic that locks up the entire system during builds.</p></li>
 <li><p>GCC would fail on Debian GNU/Hurd.</p></li>
 <li><p>External HTSLib and NCBI NGS library incompatibilities: Both library defines <code class="docutils literal notranslate"><span class="pre">string_dup</span></code>.</p></li>
-<li><p>Builds that uses Intel MKL or Intel C++/DPC++ compilers may be incompatible with <a class="reference external" href="https://www.citrix.com/downloads/workspace-app/">Citrix Workspace app</a> 25.08.10.111 under Linux.</p></li>
+<li><p>Builds that use Intel MKL or Intel C++/DPC++ compilers may be incompatible with <a class="reference external" href="https://www.citrix.com/downloads/workspace-app/">Citrix Workspace app</a> 25.08.10.111 under Linux.</p></li>
 </ul>
 </section>
 </section>
@@ -298,7 +298,7 @@ AGCTAGCTAGCTAGCTAGCT
 AGCTAGCTACAGCTAGCTACAGCTAGCTACAGCTAGCTACAGCTAGCTACAGCTAGCTACTGATCG
 </pre></div>
 </div>
-<p>Create a profile with command:</p>
+<p>Create a profile with the command:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>art_profiler_illumina<span class="w"> </span>opt/noqual_test/noqual_test_<span class="w"> </span>opt/noqual_test<span class="w"> </span>fq
 </pre></div>
 </div>
@@ -321,7 +321,7 @@ CGTAATTATACGCGCATGAG
 &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
 </pre></div>
 </div>
-<p>The qualities of generated file will be <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> (Phred-score 1), instead of <code class="docutils literal notranslate"><span class="pre">!</span></code> (Phred-score 0) in the files where the profile is generated from.</p>
+<p>The qualities of the generated file will be <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> (Phred-score 1), instead of <code class="docutils literal notranslate"><span class="pre">!</span></code> (Phred-score 0) in the files that generate the profile.</p>
 </section>
 </section>
 </section>

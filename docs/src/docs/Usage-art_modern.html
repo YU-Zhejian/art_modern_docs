@@ -251,7 +251,7 @@
         <article role="main" id="furo-main-content">
           <section class="tex2jax_ignore mathjax_ignore" id="usage-of-art-modern">
 <h1>Usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code><a class="headerlink" href="#usage-of-art-modern" title="Link to this heading">¶</a></h1>
-<p>This is the detailed usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>. Every parameter and their combinations are introduced in detail. In this documentation, commands will be represented as <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lFh</span></code> with in-line or block omission represented as <code class="docutils literal notranslate"><span class="pre">[...]</span></code>.</p>
+<p>This is the detailed usage of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>. Every parameter and its combinations are introduced in detail. In this documentation, commands will be represented as <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lFh</span></code> with in-line or block omission represented as <code class="docutils literal notranslate"><span class="pre">[...]</span></code>.</p>
 <section id="parameter-controlling-simulation-behavior">
 <h2>Parameter Controlling Simulation Behavior<a class="headerlink" href="#parameter-controlling-simulation-behavior" title="Link to this heading">¶</a></h2>
 <section id="simulation-modes-mode">
@@ -490,80 +490,178 @@ model error files are provided in the original ART.</p>
 </div>
 <p>The following profiles are built and distributed by <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> maintainers.
 New models from Illumina, BGI/MGI, and PacBio are added.</p>
-<p>| Name (<code class="docutils literal notranslate"><span class="pre">art_modern</span></code>) | R1 <code class="docutils literal notranslate"><span class="pre">txt</span></code> file name | RLen1 | RLen2 | Model Name         | Added in | Source                                                                                                                               |
-|———————|——————–|—–|——-|——-|——————–|———-|————————————————————————————————————————————–|
-| <code class="docutils literal notranslate"><span class="pre">PacbOnso_150bp</span></code>    | <code class="docutils literal notranslate"><span class="pre">PacbOnsoL150R1</span></code>   | 150   | 150   | PacBio Onso        | v1.4.0   | <a class="reference external" href="https://downloads.pacbcloud.com/public/onso/2023Q3/WGS/hg002_30x_WGS/">PacBio</a>                                                      |
-| <code class="docutils literal notranslate"><span class="pre">MiSeq_v3_300bp</span></code>    | <code class="docutils literal notranslate"><span class="pre">MiSeqv3L300R1</span></code>    | 300   | 300   | MiSeq v3           | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR29636774">SRR29636774</a>, <a class="reference external" href="https://doi.org/10.1093/jac/dkaf130">DOI</a>          |
-| <code class="docutils literal notranslate"><span class="pre">GA2X_150bp</span></code>        | <code class="docutils literal notranslate"><span class="pre">GA2XL150R1</span></code>       | 150   | 150   | GenomeAnalyzer IIx | v1.4.0   | <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR038223">ERR038223</a>; <a class="reference external" href="https://www.internationalgenome.org/data-portal/sample/HG00864">1KG</a> |
-| <code class="docutils literal notranslate"><span class="pre">GA2X_100bp</span></code>        | <code class="docutils literal notranslate"><span class="pre">GA2XL100R1</span></code>       | 100   | 100   | GenomeAnalyzer IIx | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/?run=SRR933371">SRR933371</a>; <a class="reference external" href="https://doi.org/10.1128/mbio.00377-13">DOI</a>                      |
-| <code class="docutils literal notranslate"><span class="pre">HiSeq1500_250bp</span></code>   | <code class="docutils literal notranslate"><span class="pre">HiSeq1500L250R1</span></code>  | 250   | 250   | HiSeq 1500         | v1.4.0   | <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR3322785">ERR3322785</a>; <a class="reference external" href="https://doi.org/10.1128/JCM.00768-19">DOI</a>                         |
-| <code class="docutils literal notranslate"><span class="pre">BGISeq500_150bp</span></code>   | <code class="docutils literal notranslate"><span class="pre">BgiSeq500L150R1</span></code>  | 150   | 150   | BGISeq-500         | v1.4.0   | <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR14979854">ERR14979854</a>, <a class="reference external" href="https://doi.org/10.21203/rs.3.rs-6673441/v1">DOI</a>                |
-| <code class="docutils literal notranslate"><span class="pre">DNBSeqT7_150bp</span></code>    | <code class="docutils literal notranslate"><span class="pre">DNBSeqT7L150R1</span></code>   | 150   | 150   | DNBSeq-T7          | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR30016282">SRR30016282</a>, <a class="reference external" href="https://doi.org/10.1093/gigascience/giae099">DOI</a>         |
-| <code class="docutils literal notranslate"><span class="pre">DNBSeqG50_150bp</span></code>   | <code class="docutils literal notranslate"><span class="pre">DNBSG50L150R1</span></code>    | 150   | 150   | DNBSeq-G50         | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR30016282">SRR30016282</a>, <a class="reference external" href="https://doi.org/10.1038/s41598-025-27556-y">DOI</a>          |
-| <code class="docutils literal notranslate"><span class="pre">DNBSeqG400_150bp</span></code>  | <code class="docutils literal notranslate"><span class="pre">DNBSeqG400L150R1</span></code> | 150   | 150   | DNBSeq-G400        | v1.4.0   | <a class="reference external" href="https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/MGISEQ/NA12878_1/">GIAB</a>                                      |
-| <code class="docutils literal notranslate"><span class="pre">DNBSeqG400_400bp</span></code>  | <code class="docutils literal notranslate"><span class="pre">DNBSeqG400L400R1</span></code> | 400   | N/A   | DNBSeq-G400        | v1.4.0   | <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR2888331">ERR2888331</a>, <a class="reference external" href="https://doi.org/10.1186/s12864-020-07255-w">DOI</a>                   |
-| <code class="docutils literal notranslate"><span class="pre">HiSeq4000_150bp</span></code>   | <code class="docutils literal notranslate"><span class="pre">HiSeq4kL150R1</span></code>    | 150   | 150   | HiSeq 4000 (8B)      | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR2664950">SRR2664950</a>, <a class="reference external" href="https://doi.org/10.1155/2016/4169587">DOI</a>                  |
-| <code class="docutils literal notranslate"><span class="pre">NextSeq500_150bp</span></code>  | <code class="docutils literal notranslate"><span class="pre">NextSeq500L150R1</span></code> | 150   | 150   | NextSeq 500 (8B)       | v1.4.0   | <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR9733244">SRR9733244</a>, <a class="reference external" href="https://doi.org/10.3389/fbioe.2020.00817">DOI</a>       |</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name (<code class="docutils literal notranslate"><span class="pre">art_modern</span></code>)</p></th>
+<th class="head"><p>R1 <code class="docutils literal notranslate"><span class="pre">txt</span></code> file name</p></th>
+<th class="head"><p>RLen1</p></th>
+<th class="head"><p>RLen2</p></th>
+<th class="head"><p>Model Name</p></th>
+<th class="head"><p>Added in</p></th>
+<th class="head"><p>Source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PacbOnso_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PacbOnsoL150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>PacBio Onso</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://downloads.pacbcloud.com/public/onso/2023Q3/WGS/hg002_30x_WGS/">PacBio</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MiSeq_v3_300bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MiSeqv3L300R1</span></code></p></td>
+<td><p>300</p></td>
+<td><p>300</p></td>
+<td><p>MiSeq v3</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR29636774">SRR29636774</a>, <a class="reference external" href="https://doi.org/10.1093/jac/dkaf130">DOI</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GA2X_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GA2XL150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>GenomeAnalyzer IIx</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR038223">ERR038223</a>; <a class="reference external" href="https://www.internationalgenome.org/data-portal/sample/HG00864">1KG</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GA2X_100bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GA2XL100R1</span></code></p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>GenomeAnalyzer IIx</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/?run=SRR933371">SRR933371</a>; <a class="reference external" href="https://doi.org/10.1128/mbio.00377-13">DOI</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HiSeq1500_250bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HiSeq1500L250R1</span></code></p></td>
+<td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>HiSeq 1500</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR3322785">ERR3322785</a>; <a class="reference external" href="https://doi.org/10.1128/JCM.00768-19">DOI</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BGISeq500_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BgiSeq500L150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>BGISeq-500</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR14979854">ERR14979854</a>, <a class="reference external" href="https://doi.org/10.21203/rs.3.rs-6673441/v1">DOI</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqT7_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqT7L150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>DNBSeq-T7</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR30016282">SRR30016282</a>, <a class="reference external" href="https://doi.org/10.1093/gigascience/giae099">DOI</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqG50_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DNBSG50L150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>DNBSeq-G50</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR30016282">SRR30016282</a>, <a class="reference external" href="https://doi.org/10.1038/s41598-025-27556-y">DOI</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqG400_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqG400L150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>DNBSeq-G400</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/MGISEQ/NA12878_1/">GIAB</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqG400_400bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DNBSeqG400L400R1</span></code></p></td>
+<td><p>400</p></td>
+<td><p>N/A</p></td>
+<td><p>DNBSeq-G400</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/ERR2888331">ERR2888331</a>, <a class="reference external" href="https://doi.org/10.1186/s12864-020-07255-w">DOI</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HiSeq4000_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HiSeq4kL150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>HiSeq 4000 (8B)</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/sra?run=SRR2664950">SRR2664950</a>, <a class="reference external" href="https://doi.org/10.1155/2016/4169587">DOI</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NextSeq500_150bp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NextSeq500L150R1</span></code></p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>NextSeq 500 (8B)</p></td>
+<td><p><a class="reference internal" href="News.html#v-1-4-0-section"><span class="std std-ref">1.4.0</span></a></p></td>
+<td><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR9733244">SRR9733244</a>, <a class="reference external" href="https://doi.org/10.3389/fbioe.2020.00817">DOI</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>List of all models by distinguished NGS sequencer manufacturers:</p>
 <ul class="simple">
 <li><p>Illumina (By production lane):</p>
-<ul>
-<li><p>[X] Genome Analyzer (PE44)</p></li>
-<li><p>[X] Genome Analyzer II (PE75)</p></li>
-<li><p>[X] Genome Analyzer IIx (PE150)</p></li>
-<li><p>[ ] Genome Analyzer IIe (PE100)</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> Genome Analyzer (PE44)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> Genome Analyzer II (PE75)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> Genome Analyzer IIx (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> Genome Analyzer IIe (PE100)</p>
 <ul>
 <li><p>This model is rarely used. We cannot find any publicly-available data for it.</p></li>
 </ul>
 </li>
-<li><p>[X] HiSeq 1000 (PE100)</p></li>
-<li><p>[X] HiSeq 2000 (PE100)</p></li>
-<li><p>[X] HiSeq X (PE150)</p></li>
-<li><p>[X] HiSeq 1500 (PE250)</p></li>
-<li><p>[ ] HiSeq 2500 (PE250)</p></li>
-<li><p>[ ] HiSeq 3000 (PE150)</p></li>
-<li><p>[X] HiSeq 4000 (PE150)</p></li>
-<li><p>[ ] MiniSeq (PE150 on High/Mid Output Kit, and PE100 on Rapid Kit)</p></li>
-<li><p>[X] MiSeq (PE250)</p></li>
-<li><p>[X] MiSeqv3 (PE300)</p></li>
-<li><p>[ ] MiSeq i100 (PE500)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> HiSeq 1000 (PE100)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> HiSeq 2000 (PE100)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> HiSeq X (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> HiSeq 1500 (PE250)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> HiSeq 2500 (PE250)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> HiSeq 3000 (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> HiSeq 4000 (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> MiniSeq (PE150 on High/Mid Output Kit, and PE100 on Rapid Kit)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> MiSeq (PE250)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> MiSeqv3 (PE300)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> MiSeq i100 (PE500)</p>
 <ul>
 <li><p>Status: No publicly-available data found for PE500.</p></li>
 </ul>
 </li>
-<li><p>[X] NextSeq 500 (PE150)</p></li>
-<li><p>[ ] NextSeq 550 (PE150)</p></li>
-<li><p>[ ] NextSeq 1000 (PE300)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> NextSeq 500 (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NextSeq 550 (PE150)</p></li>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NextSeq 1000 (PE300)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 4-bins.</p></li>
 </ul>
 </li>
-<li><p>[ ] NextSeq 2000 (PE300)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NextSeq 2000 (PE300)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 4-bins.</p></li>
 </ul>
 </li>
-<li><p>[ ] NovaSeq 5000 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NovaSeq 5000 (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] NovaSeq 6000 (PE250)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NovaSeq 6000 (PE250)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 4-bins.</p></li>
 </ul>
 </li>
-<li><p>[ ] NovaSeq X (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NovaSeq X (PE150)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 4-bins.</p></li>
 </ul>
 </li>
-<li><p>[ ] NovaSeq X Plus (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> NovaSeq X Plus (PE150)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 4-bins.</p></li>
 </ul>
 </li>
-<li><p>[ ] iSeq 100 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> iSeq 100 (PE150)</p>
 <ul>
 <li><p>Status: The current available datasets use quality score binning of 3- or 4-bins.</p></li>
 </ul>
@@ -571,59 +669,59 @@ New models from Illumina, BGI/MGI, and PacBio are added.</p>
 </ul>
 </li>
 <li><p>BGI/MGI:</p>
-<ul>
-<li><p>[ ] BGISEQ-500 (PE200)</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> BGISEQ-500 (PE200)</p>
 <ul>
 <li><p>Status: We now have PE150 only.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-E5 (SE100)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-E5 (SE100)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-E25 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-E25 (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[X] DNBSEQ-G50/BGISEQ-G50/BGISEQ-50/MGISEQ-200 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> DNBSEQ-G50/BGISEQ-G50/BGISEQ-50/MGISEQ-200 (PE150)</p>
 <ul>
 <li><p>Yes they are the same model.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-G99 (PE300)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-G99 (PE300)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-G400/MGISEQ-2000 (PE200/SE400)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-G400/MGISEQ-2000 (PE200/SE400)</p>
 <ul>
 <li><p>Status: We now have PE150 and SE400 only.</p></li>
 <li><p><a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=ERR4894594">ERR4894594</a> is a trimmed PE200 data, while <a class="reference external" href="https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=ERR4886095">ERR4886095</a> is a trimmed SE400 data. <a class="reference external" href="https://doi.org/10.46471/gigabyte.16">DOI</a>.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-T7 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-T7 (PE150)</p>
 <ul>
 <li><p>In Progress.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-T7 Plus (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-T7 Plus (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-T10 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-T10 (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-T10x4 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-T10x4 (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
 </li>
-<li><p>[ ] DNBSEQ-T20x2 (PE150)</p>
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox"  type="checkbox"> DNBSEQ-T20x2 (PE150)</p>
 <ul>
 <li><p>Status: No publicly-available data found.</p></li>
 </ul>
@@ -631,11 +729,11 @@ New models from Illumina, BGI/MGI, and PacBio are added.</p>
 </ul>
 </li>
 <li><p>PacBio:</p>
-<ul>
-<li><p>[X] Onso (PE150/SE200)</p></li>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><p><input class="task-list-item-checkbox" checked="checked"  type="checkbox"> Onso (PE150/SE200)</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://en.genemind.com/">GeneMind</a></p>
+<li><p><a class="reference external" href="https://en.genemind.com/">GeneMind</a>:</p>
 <ul>
 <li><p>Status: All GeneMind models uses quality binning.</p></li>
 </ul>
@@ -649,7 +747,6 @@ New models from Illumina, BGI/MGI, and PacBio are added.</p>
 <li><p>DNBSEQ-G400ER is a nanopore-based long read sequencer, so not included.</p></li>
 </ul>
 </li>
-<li><p>For Illumina Models: Latest Illumina models uses Quality Score Binning – Only 2, 11, 25, 37 are shown. See <a class="reference external" href="https://www.illumina.com/documents/products/whitepapers/whitepaper_datacompression.pdf">Illumina White paper</a>.</p></li>
 </ul>
 </section>
 <section id="shift-and-clip-parameters">

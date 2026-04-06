@@ -252,8 +252,8 @@
           <section class="tex2jax_ignore mathjax_ignore" id="art-modern-modernized-art-simulator-of-diverse-next-generation-sequencing-reads">
 <h1><code class="docutils literal notranslate"><span class="pre">art_modern</span></code>: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads<a class="headerlink" href="#art-modern-modernized-art-simulator-of-diverse-next-generation-sequencing-reads" title="Link to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> badges:
-<a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases"><img alt="GitHub Release" src="../_images/03cfafc80178b1efeb965e42c2c6e58e1f8b3898872d7699d3ae4a75f21e86a6.svg" /></a>
-<a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases/"><img alt="GitHub Downloads" src="../_images/cfadda62f08a5a4d28f4ac7bd745ae78bee5d6cb14d3afdeb22c6e88d00978c2.svg" /></a>
+<a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases"><img alt="GitHub Release" src="../_images/454f55195aa6a334e4fd4fbdd52e79ada79159ce235e4e8d3f095951312bdf0d.svg" /></a>
+<a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases/"><img alt="GitHub Downloads" src="../_images/338eced579e432b978332228923c917c31bd5851308bdaa9f29a89ea8e8a2e4a.svg" /></a>
 <a class="reference external" href="https://www.gnu.org/licenses/"><img alt="License" src="../_images/02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg" /></a>
 <a class="reference external" href="https://webkit.org/code-style-guidelines/"><img alt="Code style: WebKit" src="../_images/87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg" /></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> on BioConda: <a class="reference external" href="http://bioconda.github.io/recipes/art_modern/README.html"><img alt="Install with BioConda" src="https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg" /></a>
@@ -275,43 +275,45 @@
 <p><a class="reference external" href="https://surveillance.cancer.gov/genetic-simulation-resources/packages/art_modern/"><img alt="Catalogued on GSR" src="../_images/24f7d25e7780219dcf92a2e7ff463bb1b7846d7506c4baf25365e2c77a41bdbd.jpg" /></a></p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p>Here we introduce <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, a modern re-implementation of the popular <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">ART</a> simulator with enhanced performance and functionality. It can be used for anyone who wants to simulate sequencing data for their own research, like benchmarking of DNA- or RNA-Seq alignment algorithms, test whether the RNA-Seq pipeline built by your lab performs well or perform pressure testing of pipelines on a cluster.</p>
-<p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> supports ART-compatible error profiles. We also implemented a high-performance profile creator that creates ART-compatible profiles out of FASTQ, SAM, and BAM files.</p>
+<p>Here we introduce <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, a modern re-implementation of the popular <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">ART</a> simulator with enhanced performance and functionality. It can be used by anyone who wants to simulate sequencing data for their own research, such as benchmarking DNA- or RNA-Seq alignment algorithms, testing whether the RNA-Seq pipeline built by your lab performs well, or performing pressure testing of pipelines on a cluster.</p>
+<p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> supports ART-compatible error profiles. We also implemented a high-performance profile creator that generates ART-compatible profiles from FASTQ, SAM, and BAM files.</p>
+<p>The program comes with new profiles for Illumina models, as well as error profiles from other NGS sequencers such as BGI/MGI DNBSeq and PacBio Onso.</p>
 </section>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h3>
-<p><strong>NOTE</strong> Although we’re providing compiled binaries for Linux, we still recommend compiling the source code yourself for maximum performance.</p>
+<p><strong>NOTE:</strong> Although we’re providing compiled binaries for Linux, we still recommend compiling the source code yourself for maximum performance.</p>
 <section id="using-fully-static-build">
 <h4>Using Fully Static Build<a class="headerlink" href="#using-fully-static-build" title="Link to this heading">¶</a></h4>
-<p>In each release, there will be a file named <code class="docutils literal notranslate"><span class="pre">build_rel_with_dbg_alpine-x86_64.tar.gz</span></code> in the <a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases">Releases</a> section. The file contains fully static linked executable binaries built under x86_64 Alpine Linux, which should work on most x86_64 Linux distributions. Unzip it, and you’re good to go.</p>
-<p><strong>WARNING</strong> Static builds may lead to compromised security.</p>
-<p><strong>NOTE</strong> The fully static build supports <strong>NEITHER</strong> MPI <strong>NOR</strong> NCBI SRA files.</p>
+<p>In each release, there will be a file named <code class="docutils literal notranslate"><span class="pre">build_rel_with_dbg_alpine-x86_64.tar.gz</span></code> in the <a class="reference external" href="https://github.com/YU-Zhejian/art_modern/releases">Releases</a> section. The file contains fully static, linked executable binaries built on x86_64 Alpine Linux and should work on most x86_64 Linux distributions. Unzip it, and you’re good to go.</p>
+<p><strong>WARNING:</strong> Static builds may compromise security.</p>
+<p><strong>NOTE:</strong> The fully static build supports <strong>NEITHER</strong> MPI <strong>NOR</strong> NCBI SRA files.</p>
 </section>
 <section id="using-dpkg">
 <h4>Using <code class="docutils literal notranslate"><span class="pre">dpkg</span></code><a class="headerlink" href="#using-dpkg" title="Link to this heading">¶</a></h4>
 <p>If you use specific versions of Debian or Ubuntu, you can install <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> through pre-built DEB packages available with each release. Root privileges are required.</p>
-<p><strong>NOTE</strong> The DEB build does <strong>NOT</strong> support NCBI SRA files.</p>
+<p><strong>NOTE:</strong> The DEB build does <strong>NOT</strong> support NCBI SRA files.</p>
 </section>
 <section id="using-docker-podman-singularity">
 <h4>Using Docker/Podman/Singularity<a class="headerlink" href="#using-docker-podman-singularity" title="Link to this heading">¶</a></h4>
 <p>The Docker/Podman/Singularity containers generated by BioConda is available at <a class="reference external" href="https://quay.io/repository/biocontainers/art_modern">Quay.io</a> (<a class="reference external" href="https://quay.io/repository/biocontainers/art_modern-openmpi">MPI-enabled version</a>).</p>
 <p>A singularity example is provided below:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span>pull<span class="w"> </span>--name<span class="w"> </span>art_modern-1.3.2.sif<span class="w"> </span>docker://quay.io/biocontainers/art_modern:1.3.2--hb45bfb9_0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span>pull<span class="w"> </span>--name<span class="w"> </span>art_modern-1.3.2.sif<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>docker://quay.io/biocontainers/art_modern:1.3.2--hb45bfb9_0
 singularity<span class="w"> </span>run<span class="w"> </span>art_modern-1.3.2.sif<span class="w"> </span>art_modern<span class="w"> </span>--version
 </pre></div>
 </div>
 </section>
 <section id="using-conda">
 <h4>Using Conda<a class="headerlink" href="#using-conda" title="Link to this heading">¶</a></h4>
-<p><a class="reference external" href="https://docs.conda.io/">Conda</a> (or <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">Mamba</a>/<a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html">micromamba</a>) is a popular open-source package and environment management system that simplifies the installation and management of software packages and their dependencies. Before processing, make sure you’ve installed Conda &gt;=25.7.0 by <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code>. Then, to create an environment named <code class="docutils literal notranslate"><span class="pre">art_modern_bioconda</span></code> with the package installed:</p>
+<p><a class="reference external" href="https://docs.conda.io/">Conda</a> is a popular open-source package and environment management system that simplifies the installation and management of software packages and their dependencies. Before processing, make sure you’ve installed Conda equal to or later than 25.7.0 by <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code>. Then, to create an environment named <code class="docutils literal notranslate"><span class="pre">art_modern_bioconda</span></code> with the package installed:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>art_modern_bioconda<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>art_modern
 conda<span class="w"> </span>run<span class="w"> </span>--no-capture-output<span class="w"> </span>--live-stream<span class="w"> </span>-n<span class="w"> </span>art_modern_bioconda<span class="w"> </span>art_modern<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>Or, use <code class="docutils literal notranslate"><span class="pre">art_modern-openmpi</span></code> to install the MPI-enabled version.</p>
-<p><strong>NOTE</strong> The Conda build does <strong>NOT</strong> support NCBI SRA files.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">art_modern-openmpi</span></code> to install the MPI-enabled version.</p>
+<p><strong>NOTE:</strong> The Conda build does <strong>NOT</strong> support NCBI SRA files.</p>
 </section>
 <section id="compiling-the-source-code">
 <h4>Compiling the Source Code<a class="headerlink" href="#compiling-the-source-code" title="Link to this heading">¶</a></h4>
@@ -328,8 +330,8 @@ unzip<span class="w"> </span>art_modern-master.zip
 <span class="nb">cd</span><span class="w"> </span>art_modern-master
 </pre></div>
 </div>
-<p><strong>STRONGLY DISCOURAGED</strong> Change <code class="docutils literal notranslate"><span class="pre">master</span></code> to <code class="docutils literal notranslate"><span class="pre">devel</span></code> to compile the development version</p>
-<p>Ensure you have a C++ compiler that supports <a class="reference external" href="https://en.cppreference.com/w/cpp/17">C++17</a> installed on your computer (Preferably <a class="reference external" href="https://gcc.gnu.org/">GCC</a> &gt;= 9.5.0). Also check whether your <a class="reference external" href="https://cmake.org/">CMake</a>, <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a>, <a class="reference external" href="https://www.boost.org/">Boost C++ Library</a>, <a class="reference external" href="https://www.gnu.org/software/binutils/">GNU BinUtils</a>, <a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash</a>, <a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a>, <a class="reference external" href="https://www.python.org/">Python 3</a>, and minimal HTSLib dependencies (namely, <a class="reference external" href="https://www.zlib.net/">zlib</a> and <a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread</a>) are working.</p>
+<p><strong>STRONGLY DISCOURAGED:</strong> Change <code class="docutils literal notranslate"><span class="pre">master</span></code> to <code class="docutils literal notranslate"><span class="pre">devel</span></code> to compile the development version</p>
+<p>Ensure you have a C++ compiler that supports <a class="reference external" href="https://en.cppreference.com/w/cpp/17">C++17</a> installed on your computer (Preferably <a class="reference external" href="https://gcc.gnu.org/">GCC</a> &gt;= 9.5.0). Also,suppress check whether your <a class="reference external" href="https://cmake.org/">CMake</a>, <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a>, <a class="reference external" href="https://www.boost.org/">Boost C++ Library</a>, <a class="reference external" href="https://www.gnu.org/software/binutils/">GNU BinUtils</a>, <a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash</a>, <a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a>, <a class="reference external" href="https://www.python.org/">Python 3</a>, and minimal HTSLib dependencies (namely, <a class="reference external" href="https://www.zlib.net/">zlib</a> and <a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread</a>) are working.</p>
 <p>Build the project using:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>opt/build_release
 env<span class="w"> </span>-C<span class="w"> </span>opt/build_release<span class="w"> </span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
@@ -343,9 +345,9 @@ opt/build_release/art_modern<span class="w"> </span>--version
 </div>
 </section>
 </section>
-<section id="simulating-wgs-data-using-e-coli-genome">
-<h3>Simulating WGS Data using <em>E. coli</em> Genome<a class="headerlink" href="#simulating-wgs-data-using-e-coli-genome" title="Link to this heading">¶</a></h3>
-<p>Download <em>E. coli</em> reference genome from NCBI. Here, we’ll use the K-12 strand MG1655 sub-strand as an example.</p>
+<section id="simulating-wgs-data-using-the-e-coli-genome">
+<h3>Simulating WGS Data using the <em>E. coli</em> Genome<a class="headerlink" href="#simulating-wgs-data-using-the-e-coli-genome" title="Link to this heading">¶</a></h3>
+<p>Download the <em>E. coli</em> reference genome from NCBI. Here, we’ll use the K-12 strand MG1655 sub-strand as an example.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>opt/data/
 <span class="nv">ACCESSION</span><span class="o">=</span><span class="s2">&quot;GCF_000005845.2_ASM584v2&quot;</span>
 <span class="nv">BASEURL</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/genomes/all&quot;</span>
@@ -354,10 +356,10 @@ curl<span class="w"> </span>-L<span class="w">  </span><span class="se">\</span>
 <span class="w">    </span>&gt;<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
 
 gunzip<span class="w"> </span>-n<span class="w"> </span>-k<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz
-<span class="c1"># -n used to supress restoration of original timestamp.</span>
+<span class="c1"># -n used to supres restoration of original timestamp.</span>
 </pre></div>
 </div>
-<p>Now we can simulate WGS data using <em>E. coli</em> reference genome. Let’s start with single-end sequencing using HiSeq 2500 (which is the default <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> profile and can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--builtin_qual_file</span> <span class="pre">HiSeq2500_150bp</span></code>) with 250 bp read length (which is the longest read lengths supported by the profile and can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--read_len</span> <span class="pre">250</span></code>), 10X coverage, and all available threads (can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--parallel</span></code>).</p>
+<p>Now we can simulate WGS data using the <em>E. coli</em> reference genome. Let’s start with single-end sequencing using HiSeq 2500 (which is the default <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> profile and can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--builtin_qual_file</span> <span class="pre">HiSeq2500_150bp</span></code>) with 250 bp read length (which is the longest read lengths supported by the profile and can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--read_len</span> <span class="pre">250</span></code>), 10X coverage, and all available threads (can be set explicitly through <code class="docutils literal notranslate"><span class="pre">--parallel</span></code>).</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mode<span class="w"> </span>wgs<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--lc<span class="w"> </span>se<span class="w"> </span><span class="se">\</span>
@@ -378,16 +380,16 @@ gunzip<span class="w"> </span>-n<span class="w"> </span>-k<span class="w"> </spa
 <span class="w">    </span>--pe_frag_dist_std_dev<span class="w"> </span><span class="m">50</span>
 </pre></div>
 </div>
-<p>Please note that we have additionally specified a quality file for read 2 with the mean and standard deviation of fragment lengths, which are required for paired-end sequencing. The generated fragment length should follow a normal (Gaussian) distribution with desired mean and standard deviation.</p>
-<p><strong>NOTE</strong> The generated FASTQ file needed to be split into two FASTQ files and sorted for most pipelines. See <a class="reference internal" href="docs/FAQ.html#fastq-split-section"><span class="std std-ref">this section in the FAQ</span></a> for more details.</p>
+<p>Please note that we have additionally specified a quality file for read 2 with the mean and standard deviation of fragment lengths, which are required for paired-end sequencing. The generated fragment length should follow a normal (Gaussian) distribution with the desired mean and standard deviation.</p>
+<p><strong>NOTE:</strong> The generated FASTQ file needed to be split into two FASTQ files and sorted for most pipelines. See <a class="reference internal" href="docs/FAQ.html#fastq-split-section"><span class="std std-ref">this section in the FAQ</span></a> for more details.</p>
 </section>
 <section id="simulating-rna-seq-data-using-c-elegans-transcriptome">
 <h3>Simulating RNA-Seq Data using <em>C. Elegans</em> Transcriptome<a class="headerlink" href="#simulating-rna-seq-data-using-c-elegans-transcriptome" title="Link to this heading">¶</a></h3>
-<p>Simulating transcriptome is a little more complicated since each cDNA molecule has different counts. Strand-specific library technologies also generate RNA-Seq data on one strand only. You’re recommended to use <a class="reference external" href="https://pypi.org/project/YASIM">YASIM</a> or other high-level simulators to generate expression for each cDNA molecule. You can also convert transcript quantification results generated by <a class="reference external" href="https://subread.sourceforge.net/featureCounts.html">featureCounts</a>, <a class="reference external" href="https://htseq.readthedocs.io/en/latest/">htseq-count</a>, <a class="reference external" href="https://salmon.readthedocs.io/en/latest/">Salmon</a>, <a class="reference external" href="https://pachterlab.github.io/kallisto/">Kallisto</a> or <a class="reference external" href="https://github.com/alexdobin/STAR">STAR</a> to the format supported by <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>. The unified coverage model (i.e., like WGS) is also supported.</p>
+<p>Simulating the transcriptome is a bit more complicated, since each cDNA molecule has a different count. Strand-specific library technologies also generate RNA-Seq data from only one strand. You’re recommended to use <a class="reference external" href="https://pypi.org/project/YASIM">YASIM</a> or other high-level simulators to generate an expression for each cDNA molecule. You can also convert transcript quantification results generated by <a class="reference external" href="https://subread.sourceforge.net/featureCounts.html">featureCounts</a>, <a class="reference external" href="https://htseq.readthedocs.io/en/latest/">htseq-count</a>, <a class="reference external" href="https://salmon.readthedocs.io/en/latest/">Salmon</a>, <a class="reference external" href="https://pachterlab.github.io/kallisto/">Kallisto</a>, or <a class="reference external" href="https://github.com/alexdobin/STAR">STAR</a> to the format supported by <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>. The unified coverage model (i.e., like WGS) is also supported.</p>
 <p>Please note that cDNAs with insufficient length will be ignored. We also do not support circular RNA simulation.</p>
 <section id="unified-coverage">
 <h4>Unified Coverage<a class="headerlink" href="#unified-coverage" title="Link to this heading">¶</a></h4>
-<p>Following example samples 1000 long transcripts from reference <em>C. Elegans</em> transcriptome from <a class="reference external" href="https://genome.ucsc.edu/">UCSC Genome Browser</a> and performs a simulation using 10X unified coverage. You need to install <a class="reference external" href="https://github.com/lh3/seqtk">seqtk</a> and <a class="reference external" href="https://bioinf.shenwei.me/seqkit">seqkit</a> to run this example:</p>
+<p>Following example: samples 1000 long transcripts from the <em>C. elegans</em> transcriptome in the <a class="reference external" href="https://genome.ucsc.edu/">UCSC Genome Browser</a>, and performs a simulation using 10X unified coverage. You need to install <a class="reference external" href="https://github.com/lh3/seqtk">seqtk</a> and <a class="reference external" href="https://bioinf.shenwei.me/seqkit">seqkit</a> to run this example:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>https://hgdownload.soe.ucsc.edu/goldenPath/ce11/bigZips/mrna.fa.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>gzip<span class="w"> </span>-cdf<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>seqkit<span class="w"> </span>seq<span class="w"> </span>-m<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
@@ -404,14 +406,14 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 </section>
 <section id="unstranded-coverage">
 <h4>Unstranded Coverage<a class="headerlink" href="#unstranded-coverage" title="Link to this heading">¶</a></h4>
-<p>To simulate data with unstranded coverage information (i.e., same coverage on both strands), you need to provide an additional TSV file with one column of transcript ID and another column of coverage (in floating points). Please note that lines started by <code class="docutils literal notranslate"><span class="pre">#</span></code> will be ignored. An example of the coverage file (Depth rounded to 2 decimal for simplicity):</p>
+<p>To simulate data with unstranded coverage information (i.e., same coverage on both strands), you need to provide an additional TSV file with one column of transcript ID and another column of coverage (in floating points). Please note that lines started by <code class="docutils literal notranslate"><span class="pre">#</span></code> will be ignored. An example of the coverage file (Depth rounded to 2 decimal places for simplicity):</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NM_069135	6.69
 NR_056112	5.19
 NR_051843	3.45
 NR_066512	4.73
 </pre></div>
 </div>
-<p>The following example generates a coverage file using <a class="reference external" href="https://www.gnu.org/software/gawk/">GNU AWK</a> with random coverage ranging between 0 and 10 assigned to each cDNA molecule.</p>
+<p>The following example generates a coverage file using <a class="reference external" href="https://www.gnu.org/software/gawk/">GNU AWK</a>, with random coverage values ranging from 0 to 10 assigned to each cDNA molecule.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>samtools<span class="w"> </span>faidx<span class="w"> </span>opt/build_release/ce11_mrna_1000.fa
 awk<span class="w"> </span><span class="s1">&#39;BEGIN{print &quot;#ID\tCOV&quot;;}{printf &quot;%s\t%f\n&quot;, $1, (rand()*10);}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>&lt;<span class="w"> </span>opt/build_release/ce11_mrna_1000.fa.fai<span class="w"> </span><span class="se">\</span>
@@ -428,7 +430,7 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 </section>
 <section id="stranded-coverage">
 <h4>Stranded Coverage<a class="headerlink" href="#stranded-coverage" title="Link to this heading">¶</a></h4>
-<p>To simulate data with stranded coverage information (i.e., coverage on one strand is different from the other), you need to provide an additional TSV file with one column of transcript ID and two other columns of coverage in positive and negative strand (in floating points). An example of the coverage file:</p>
+<p>To simulate data with stranded coverage information (i.e., coverage on one strand is different from the other), you need to provide an additional TSV file with one column of transcript ID and two other columns of coverage on the positive and negative strands (in floating points). An example of the coverage file:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NM_069135	2.31	4.38
 NR_056112	3.47	1.72
 NR_051843	1.35	2.09
@@ -451,7 +453,7 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 </section>
 <section id="the-pbsim3-transcripts-input-format">
 <h4>The PBSIM3 Transcripts Input Format<a class="headerlink" href="#the-pbsim3-transcripts-input-format" title="Link to this heading">¶</a></h4>
-<p>The PBSIM3 Transcripts input format is a 4-column tab-delimited text file with transcript ID, sequence, and coverage on both strands. This file includes both sequence and coverage, so no additional coverage parameter is required. Similarly, sequences with insufficient length and lines started with <code class="docutils literal notranslate"><span class="pre">#</span></code> will be ignored. An example of the transcript input file is as follows (Sequences represented as <code class="docutils literal notranslate"><span class="pre">aaaa</span></code>):</p>
+<p>The PBSIM3 Transcripts input format is a 4-column tab-delimited text file with transcript ID, sequence, and coverage on both strands. This file includes both sequence and coverage, so no additional coverage parameter is required. Similarly, sequences that are too short and lines that start with <code class="docutils literal notranslate"><span class="pre">#</span></code> will be ignored. An example of the transcript input file is as follows (Sequences represented as <code class="docutils literal notranslate"><span class="pre">aaaa</span></code>):</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NR_056112	3.47	1.72	aaaa
 NR_051843	1.35	2.09	aaaa
 NR_066512	3.04	1.68	aaaa
@@ -459,7 +461,7 @@ NM_061905	0.96	1.39	aaaa
 NR_054174	3.59	4.92	aaaa
 </pre></div>
 </div>
-<p>The following example converts the FASTA file to the PBSIM3 Transcripts input format with the help of <a class="reference external" href="https://bioinf.shenwei.me/seqkit">seqkit</a> with random coverage generated using GNU AWK. Note that the <code class="docutils literal notranslate"><span class="pre">--i-type</span></code> parameter is required.</p>
+<p>The following example converts a FASTA file to the PBSIM3 Transcripts input format using <a class="reference external" href="https://bioinf.shenwei.me/seqkit">seqkit</a>, with random coverage generated using GNU AWK. Note that the <code class="docutils literal notranslate"><span class="pre">--i-type</span></code> parameter is required.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>seqkit<span class="w"> </span>fx2tab<span class="w"> </span>opt/build_release/ce11_mrna_1000.fa<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>awk<span class="w"> </span><span class="s1">&#39;BEGIN{print &quot;#ID\tCOV_POS\tCOV_NEG\tSEQ&quot;;}{printf &quot;%s\t%f\t%f\t%s\n&quot;, $1, (rand()*5), (rand()*5), $3;}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>&gt;<span class="w"> </span>opt/build_release/ce11_mrna_1000.fa.pbsim3_trans.tsv
@@ -476,7 +478,7 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 </section>
 <section id="template-based-simulation">
 <h3>Template-Based Simulation<a class="headerlink" href="#template-based-simulation" title="Link to this heading">¶</a></h3>
-<p>Template-based simulation is often used to introduce Illumina specific errors to cDNA molecules generated from some upstream simulator like <a class="reference external" href="https://camparee.readthedocs.io/en/latest/">CAMPAREE</a>. In this mode, single-end reads will be started from the first base of the template while paired-end/mate-pair reads will span the entire template. The template-based simulation mode also supports the PBSIM3 Transcripts format. For example:</p>
+<p>Template-based simulation is often used to introduce Illumina-specific errors into cDNA molecules generated by an upstream simulator such as <a class="reference external" href="https://camparee.readthedocs.io/en/latest/">CAMPAREE</a>. In this mode, single-end reads will start at the first base of the template, while paired-end/mate-pair reads will span the entire template. The template-based simulation mode also supports the PBSIM3 Transcripts format. For example:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--mode<span class="w"> </span>template<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--lc<span class="w"> </span>pe<span class="w"> </span><span class="se">\</span>
@@ -485,11 +487,11 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--i-type<span class="w"> </span>pbsim3_transcripts
 </pre></div>
 </div>
-<p>Please note that the mean and standard deviation of fragment length is not specified since in template-based simulation, a template is considered a fragment.</p>
-<p><strong>NOTE</strong> For coverage of the template mode:</p>
+<p>Please note that the mean and standard deviation of fragment length are not specified since in template-based simulation, a template is considered a fragment.</p>
+<p><strong>NOTE:</strong> For coverage of the template mode:</p>
 <ul class="simple">
-<li><p>If a unified coverage file is provided, the coverage will be interpreted as positive coverage instead of being divided equally into both strands.</p></li>
-<li><p>If a 2-column (unstranded) coverage file is provided, the coverage will be interpreted as positive coverage.</p></li>
+<li><p>If a unified coverage file is provided, the coverage will be interpreted as positive coverage rather than split equally between the strands.</p></li>
+<li><p>If a 2-column (unstranded) coverage file is provided, the coverage will be treated as positive.</p></li>
 <li><p>If a 3-column (stranded) coverage file or input in a format of <code class="docutils literal notranslate"><span class="pre">pvsim3_transcripts</span></code> is provided, the coverage will be interpreted as-is.</p></li>
 </ul>
 </section>
@@ -498,8 +500,8 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Link to this heading">¶</a></h2>
 <section id="using-unix-pipelines">
 <h3>Using UNIX Pipelines<a class="headerlink" href="#using-unix-pipelines" title="Link to this heading">¶</a></h3>
-<p>With UNIX pipelines, we can redirect the input and output of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> from/to another file/processes. Following example reads FASTA reference from <code class="docutils literal notranslate"><span class="pre">/dev/stdin</span></code> (Standard Input), and writes compressed FASTQ, FASTA, and sorted BAM files.</p>
-<p>This example requires <a class="reference external" href="https://www.gnu.org/software/gzip/">gzip</a>, <a class="reference external" href="https://zlib.net/pigz/">pigz</a>, <a class="reference external" href="https://github.com/samtools/samtools">SAMtools</a>, and <a class="reference external" href="https://tukaani.org/xz/">XZ Utils</a>. Note that the <code class="docutils literal notranslate"><span class="pre">--i-type</span></code> parameter is required since now, the simulator cannot tell the file format through its file extension.</p>
+<p>With UNIX pipelines, we can redirect the input and output of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>. Redirection can be done at both the input and output ends, with both files and processes. The following example reads FASTA reference from <code class="docutils literal notranslate"><span class="pre">/dev/stdin</span></code> (Standard Input), and writes compressed FASTQ, FASTA, and sorted BAM files.</p>
+<p>This example requires <a class="reference external" href="https://www.gnu.org/software/gzip/">gzip</a>, <a class="reference external" href="https://zlib.net/pigz/">pigz</a>, <a class="reference external" href="https://github.com/samtools/samtools">SAMtools</a>, and <a class="reference external" href="https://tukaani.org/xz/">XZ Utils</a>. Note that the <code class="docutils literal notranslate"><span class="pre">--i-type</span></code> parameter is required, since the simulator now cannot infer the file format from its file extension.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>zcat<span class="w"> </span>opt/data/GCF_000005845.2_ASM584v2_genomic.fna.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--mode<span class="w"> </span>wgs<span class="w"> </span><span class="se">\</span>
@@ -514,20 +516,20 @@ opt/build_release/art_modern<span class="w"> </span><span class="se">\</span>
 </pre></div>
 </div>
 <p>Please wait for a while for the compression to finish.</p>
-<p><strong>NOTE</strong> Pipelines and redirections are not supported in MPI mode mentioned below.</p>
-<p><strong>TIPS</strong> You may find program <a class="reference external" href="https://www.man7.org/linux/man-pages/man1/pv.1.html"><code class="docutils literal notranslate"><span class="pre">pv(1)</span></code></a> useful when working with pipelines.</p>
+<p><strong>NOTE</strong> Pipelines and redirections are not supported in the MPI mode mentioned below.</p>
+<p><strong>TIPS</strong> You may find the <a class="reference external" href="https://www.man7.org/linux/man-pages/man1/pv.1.html"><code class="docutils literal notranslate"><span class="pre">pv(1)</span></code></a> program useful when working with pipelines.</p>
 </section>
 <section id="using-mpi">
 <h3>Using MPI<a class="headerlink" href="#using-mpi" title="Link to this heading">¶</a></h3>
-<p>Message Passing Interface (<a class="reference external" href="https://www.mpi-forum.org/">MPI</a>) is a standard for parallel computing on a high-performance cluster (HPC). It allows processes to communicate with each other through intranet. If you’re working on a cluster with MPI installed, you can use the MPI version of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> to speed up the simulation by executing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> on different nodes in parallel.</p>
-<p><strong>NOTE</strong> Please consult your cluster administrator/cluster documentation before using MPI version, since some clusters may have special configurations and/or quota limitations.</p>
+<p>The Message Passing Interface (<a class="reference external" href="https://www.mpi-forum.org/">MPI</a>) is a standard for parallel computing on high-performance clusters (HPCs). It allows processes to communicate with each other through the intranet. If you’re working on a cluster with MPI installed, you can use the MPI version of <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> to speed up the simulation by executing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> on different nodes in parallel.</p>
+<p><strong>NOTE:</strong> Please consult your cluster administrator/cluster documentation before using the MPI version, since some clusters may have special configurations and/or quota limitations.</p>
 <p>See also:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://slurm.schedmd.com/mpi_guide.html">Documentation for MPI Integration in Slurm</a> if your cluster uses <a class="reference external" href="https://slurm.schedmd.com/">Slurm Workload Manager</a>.</p></li>
 </ul>
 <p>Documentations from MPI vendors:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.open-mpi.org/doc/">Open MPI Documentation</a>, especially <a class="reference external" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/index.html">Launching MPI applications</a> section.</p></li>
+<li><p><a class="reference external" href="https://www.open-mpi.org/doc/">Open MPI Documentation</a>, especially its <a class="reference external" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/index.html">Launching MPI applications</a> section.</p></li>
 <li><p><a class="reference external" href="https://www.mpich.org/documentation/">MPICH Documentation</a>.</p></li>
 <li><p><a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html?wapkw=MPI">Intel MPI Documentation</a>.</p></li>
 </ul>
@@ -577,8 +579,8 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 <section id="other-differences-between-mpi-and-non-mpi-versions">
 <h4>Other Differences Between MPI and Non-MPI Versions<a class="headerlink" href="#other-differences-between-mpi-and-non-mpi-versions" title="Link to this heading">¶</a></h4>
 <ul class="simple">
-<li><p>The simulator will not be able to support UNIX devices and/or redirections for input/output files. So, even if your input is enormous, you have to write it to a physical file first. However, as most HPC clusters use distributed file systems, this should not be a big problem.</p></li>
-<li><p>Logging issues: Only log messages from rank 0 process will be printed to standard error. Other ranks’ log messages will be written to disk (If environment variable <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> is not set) or discarded (If environment variable <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> is set).</p></li>
+<li><p>The simulator will not support UNIX devices or input/output file redirection. So, even if your input is enormous, you have to write it to a physical file first. However, as most HPC clusters use distributed file systems, this should not be a big problem.</p></li>
+<li><p>Logging issues: Only log messages from the rank 0 process will be printed to standard error. Other ranks’ log messages will be written to disk (If environment variable <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> is not set) or discarded (If environment variable <code class="docutils literal notranslate"><span class="pre">ART_NO_LOG_DIR</span></code> is set).</p></li>
 </ul>
 </section>
 </section>
@@ -607,37 +609,37 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 </pre></div>
 </div>
 <p>For complete usage information, see the <a class="reference internal" href="docs/Usage-apb.html#art-profile-builder-usage-section"><span class="std std-ref">full documentation</span></a>.</p>
-<p>By default, the program would <strong>NOT</strong> support building profiles from NCBI short-read archive (SRA). Use <code class="docutils literal notranslate"><span class="pre">-DWITH_NCBI_NGS=ON</span></code> to enable it. Additional libraries are required. See <a class="reference internal" href="docs/Install.html#optional-ncbi-ngs-components"><span class="std std-ref">this section in Installation instruction</span></a> for details.</p>
+<p>By default, the program would <strong>NOT</strong> support building profiles from the NCBI short-read archive (SRA). Use <code class="docutils literal notranslate"><span class="pre">-DWITH_NCBI_NGS=ON</span></code> to enable it. Additional libraries are required. See <a class="reference internal" href="docs/Install.html#optional-ncbi-ngs-components"><span class="std std-ref">this section in the installation instructions</span></a> for details.</p>
 </section>
 <section id="what-s-next">
 <h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Link to this heading">¶</a></h2>
-<p>The project provides diverse documentations to satisfy your needs.</p>
+<p>The project provides diverse documentation to satisfy your needs.</p>
 <ul class="simple">
 <li><p>If you want to build the software with different options, see <a class="reference internal" href="docs/Install.html"><span class="std std-doc">Install</span></a>.</p></li>
-<li><p>For a detailed guide on parameters and their combinations, see <a class="reference internal" href="docs/Usage-art_modern.html"><span class="std std-doc">Usage for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></span></a>, <a class="reference internal" href="docs/Usage-apb.html"><span class="std std-doc">Usage for <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></span></a> and <a class="reference internal" href="docs/FAQ.html"><span class="std std-doc">FAQ</span></a>.</p></li>
+<li><p>For a detailed guide on parameters and their combinations, see <a class="reference internal" href="docs/Usage-art_modern.html"><span class="std std-doc">Usage for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code></span></a>, <a class="reference internal" href="docs/Usage-apb.html"><span class="std std-doc">Usage for <code class="docutils literal notranslate"><span class="pre">art_profile_builder</span></code></span></a>, and <a class="reference internal" href="docs/FAQ.html"><span class="std std-doc">FAQ</span></a>.</p></li>
 <li><p>For developers, please refer to:</p>
 <ul>
-<li><p><a class="reference internal" href="docs/Contributing.html"><span class="std std-doc">Contributing</span></a> for software engineering tasks and contribution guidelines. See also <a class="reference internal" href="docs/CODE_OF_CONDUCT.html"><span class="std std-doc">Code of Conduct</span></a>.</p></li>
-<li><p><a class="reference internal" href="docs/Design.html"><span class="std std-doc">Design</span></a> for the latest design of the software.</p></li>
+<li><p><a class="reference internal" href="docs/Contributing.html"><span class="std std-doc">Contributing</span></a> to software engineering tasks and contribution guidelines. See also <a class="reference internal" href="docs/CODE_OF_CONDUCT.html"><span class="std std-doc">Code of Conduct</span></a>.</p></li>
+<li><p><a class="reference internal" href="docs/Design.html"><span class="std std-doc">Design</span></a> for the latest software design topics.</p></li>
 <li><p><a class="reference internal" href="docs/Copying.html"><span class="std std-doc">Copying</span></a> for third-party libraries and codes used in this project.</p></li>
-<li><p><a class="reference internal" href="docs/News.html"><span class="std std-doc">News</span></a> for changes over the project.</p></li>
+<li><p><a class="reference internal" href="docs/News.html"><span class="std std-doc">News</span></a> for changes to the project.</p></li>
 </ul>
 </li>
 <li><p>For a comparison of this project with other simulators, see <a class="reference external" href="https://github.com/YU-Zhejian/art_modern_benchmark_other_simulators">Benchmark</a>.</p></li>
-<li><p>The original ART documentation is copied to <a class="reference external" href="https://github.com/YU-Zhejian/art_modern/tree/master/docs/original_art_docs">here</a>.</p></li>
+<li><p>The original ART documentation is copied <a class="reference external" href="https://github.com/YU-Zhejian/art_modern/tree/master/docs/original_art_docs">here</a>.</p></li>
 </ul>
 </section>
 <section id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> is an accelerated version of ART – It does not revise ART’s algorithms. This would lead <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> inferior in the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> is an accelerated version of ART – It does not revise ART’s algorithms, which were published more than 10 years ago. This would lead <code class="docutils literal notranslate"><span class="pre">art_modern</span></code> to be inferior in the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> cannot simulate the Indel bias and GC bias of Illumina sequencers.</p></li>
-<li><p>The latest Illumina models uses <strong>Quality Score Binning.</strong> See <a class="reference external" href="https://www.illumina.com/documents/products/whitepapers/whitepaper_datacompression.pdf">Illumina White paper</a> and <a class="reference external" href="https://www.illumina.com/content/dam/illumina-marketing/documents/products/appnotes/novaseq-hiseq-q30-app-note-770-2017-010.pdf">Illumina documentation for quality binning on NovaSeq 6000 systems</a> for more details. <strong>WE ARE UNSURE WHETHER THE PROGRAM CAN RELIABLY SIMULATE SUCH DATA.</strong> Our current policy on such is to warn user if the provided quality profile have less than 10 bins, and reject the profile with less than 4 bins.</p></li>
+<li><p>The latest Illumina models use <strong>Quality Score Binning.</strong> See <a class="reference external" href="https://www.illumina.com/documents/products/whitepapers/whitepaper_datacompression.pdf">Illumina White paper</a> and <a class="reference external" href="https://www.illumina.com/content/dam/illumina-marketing/documents/products/appnotes/novaseq-hiseq-q30-app-note-770-2017-010.pdf">Illumina documentation for quality binning on NovaSeq 6000 systems</a> for more details. <strong>WE ARE UNSURE WHETHER THE PROGRAM CAN RELIABLY SIMULATE SUCH DATA.</strong> Our current policy on this is to warn the user if the provided quality profile has fewer than 10 bins and to reject the profile with fewer than 4 bins.</p></li>
 </ul>
 </section>
 <section id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">¶</a></h2>
-<p>This simulator is based on the works of <a class="reference external" href="mailto:whduke&#37;&#52;&#48;gmail&#46;com">Weichun Huang</a> <em>et al.</em>, under <a class="reference external" href="https://www.gnu.org/licenses/">GNU GPL v3</a> license. The software is originally distributed <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">here</a> with the following reference:</p>
+<p>This simulator is based on the work of <a class="reference external" href="mailto:whduke&#37;&#52;&#48;gmail&#46;com">Weichun Huang</a> <em>et al.</em>, under the <a class="reference external" href="https://www.gnu.org/licenses/">GNU GPL v3</a> license. The software is originally distributed <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">here</a> with the following reference:</p>
 <ul class="simple">
 <li><p>W. Huang, L. Li, J. R. Myers, and G. T. Marth, <em>ART: a next-generation sequencing read simulator</em>, Bioinformatics (Oxford, England), vol. 28, no. 4, pp. 593–594, Feb. 2012, DOI: <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btr708">10.1093/bioinformatics/btr708</a>.</p></li>
 </ul>
@@ -732,7 +734,7 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
 <li><a class="reference internal" href="#compiling-the-source-code">Compiling the Source Code</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#simulating-wgs-data-using-e-coli-genome">Simulating WGS Data using <em>E. coli</em> Genome</a></li>
+<li><a class="reference internal" href="#simulating-wgs-data-using-the-e-coli-genome">Simulating WGS Data using the <em>E. coli</em> Genome</a></li>
 <li><a class="reference internal" href="#simulating-rna-seq-data-using-c-elegans-transcriptome">Simulating RNA-Seq Data using <em>C. Elegans</em> Transcriptome</a><ul>
 <li><a class="reference internal" href="#unified-coverage">Unified Coverage</a></li>
 <li><a class="reference internal" href="#unstranded-coverage">Unstranded Coverage</a></li>

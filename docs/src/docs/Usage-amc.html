@@ -251,26 +251,27 @@
         <article role="main" id="furo-main-content">
           <section class="tex2jax_ignore mathjax_ignore" id="usage-of-am-compress">
 <span id="am-compress-usage-section"></span><h1>Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code><a class="headerlink" href="#usage-of-am-compress" title="Link to this heading">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">am_compress</span></code> is a compression tool that allows the user to compress arbitrary files to GZip and BGZip. Added in <a class="reference internal" href="News.html#v-1-3-4-section"><span class="std std-ref">1.3.4</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">am_compress</span></code> is a compression tool that allows users to compress arbitrary files to GZip and BGZip. Added in <a class="reference internal" href="News.html#v-1-3-4-section"><span class="std std-ref">1.3.4</span></a>.</p>
 <section id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">¶</a></h2>
-<p>This program in fact provides a user interface to <code class="docutils literal notranslate"><span class="pre">bgzf</span></code> data structure in HTSLib. Further compression algorithms can be added on request.</p>
-<p>The input buffer size is always 4kb.</p>
+<p>This program, in fact, provides a user interface to the <code class="docutils literal notranslate"><span class="pre">bgzf</span></code> data structure in HTSLib. Further compression algorithms can be added on request.</p>
+<p>The input buffer size is always 4 KB.</p>
 </section>
 <section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed</span></code>: Output file name of the compressed data stream.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-compression</span></code>: Compression algorithm. Can be <code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">bgzip</span></code> or <code class="docutils literal notranslate"><span class="pre">none</span></code>. If not set, will infer from extension.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-compression</span></code>: Compression algorithm. Can be <code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">bgzip</span></code>, or <code class="docutils literal notranslate"><span class="pre">none</span></code>. If not set, will infer from extension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-compression_level</span></code>: Compression level. Can be 1 (fastest) to 9 (best compression).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-buffer_size</span></code>: Buffer used for compression.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-num_threads</span></code>: Number of threads used in compression. Only used for BGZip algorithm.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--o-compressed-num_threads</span></code>: Number of threads used in compression. <strong>Only used for the BGZip algorithm.</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--i-file</span></code>: Input file.</p></li>
 </ul>
-<p>The program would emit warning if the output file extension does not match the desired algorithm.</p>
+<p>The program would emit a warning if the output file extension does not match the desired algorithm.</p>
 </section>
-<section id="usage-example">
-<h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">¶</a></h2>
+<section id="performance-metrics">
+<h2>Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">¶</a></h2>
+<p>The following code compares <code class="docutils literal notranslate"><span class="pre">am_compress</span></code>, <code class="docutils literal notranslate"><span class="pre">pigz</span></code>, <code class="docutils literal notranslate"><span class="pre">bgzip</span></code>, and Intel’s <code class="docutils literal notranslate"><span class="pre">igzip</span></code>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gzip<span class="w"> </span>--version
 <span class="c1"># gzip 1.12</span>
 <span class="c1"># Copyright (C) 2018 Free Software Foundation, Inc.</span>
@@ -417,7 +418,7 @@ igzip<span class="w"> </span>--version
 <li><a class="reference internal" href="#">Usage of <code class="docutils literal notranslate"><span class="pre">am_compress</span></code></a><ul>
 <li><a class="reference internal" href="#implementation">Implementation</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#usage-example">Usage Example</a></li>
+<li><a class="reference internal" href="#performance-metrics">Performance Metrics</a></li>
 </ul>
 </li>
 </ul>

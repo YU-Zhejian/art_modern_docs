@@ -251,24 +251,24 @@
         <article role="main" id="furo-main-content">
           <section class="tex2jax_ignore mathjax_ignore" id="installing-art-modern">
 <h1>Installing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code><a class="headerlink" href="#installing-art-modern" title="Link to this heading">¶</a></h1>
-<p>Here provides a detailed installation guide for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>.</p>
-<p><strong>NOTE</strong> All “at least” in this guide are inclusive.</p>
+<p>Here is a detailed installation guide for <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>.</p>
+<p><strong>NOTE:</strong> All “at least” in this guide are inclusive.</p>
 <section id="operating-system">
 <h2>Operating System<a class="headerlink" href="#operating-system" title="Link to this heading">¶</a></h2>
-<p>The project assumes <a class="reference external" href="https://en.wikipedia.org/wiki/X86-64">x86_64</a> (aka., Intel 64, AMD64, x64, with chips manufactured by Intel, AMD, VIA, Zhaoxin, etc.) platforms. Support on other platforms (including 32-bit CPUs) are not guaranteed.</p>
-<p>The project assumes modern GNU/Linux distributions that are still under official support. For example, Ubuntu 16.04 LTS (Xenial Xerus) had already reached its end-of-life in <a class="reference external" href="https://help.ubuntu.com/community/EOL#Ubuntu_16.04_Xenial_Xerus">Apr. 2021</a>. Other POSIX platforms like *BSD, and patent UNIX are theoretically supported but not tested. POSIX-on-Windows platforms like <a class="reference external" href="https://cygwin.com/">Cygwin</a>, <a class="reference external" href="https://www.msys2.org/">MSYS2</a>, <a class="reference external" href="https://sourceforge.net/projects/mingw/">MinGW</a>, <a class="reference external" href="https://www.mingw-w64.org/">MinGW-w64</a> are neither supported nor tested.</p>
+<p>The project assumes <a class="reference external" href="https://en.wikipedia.org/wiki/X86-64">x86_64</a> (aka Intel 64, AMD64, x64, with chips manufactured by Intel, AMD, VIA, Zhaoxin, etc.) platforms. Support on other platforms (including 32-bit CPUs) is not guaranteed.</p>
+<p>The project assumes modern GNU/Linux distributions that are still under official support. For example, Ubuntu 16.04 LTS (Xenial Xerus) had already reached its end-of-life in <a class="reference external" href="https://help.ubuntu.com/community/EOL#Ubuntu_16.04_Xenial_Xerus">Apr. 2021</a>. Other POSIX platforms like *BSD, and patent UNIX are theoretically supported but not tested. POSIX-on-Windows platforms like <a class="reference external" href="https://cygwin.com/">Cygwin</a>, <a class="reference external" href="https://www.msys2.org/">MSYS2</a>, <a class="reference external" href="https://sourceforge.net/projects/mingw/">MinGW</a>, and <a class="reference external" href="https://www.mingw-w64.org/">MinGW-w64</a> are neither supported nor tested.</p>
 </section>
 <section id="c-c-compilers">
 <h2>C/C++ Compilers<a class="headerlink" href="#c-c-compilers" title="Link to this heading">¶</a></h2>
 <section id="checking-c11-and-c-17-compatibility">
 <h3>Checking C11 and C++17 Compatibility<a class="headerlink" href="#checking-c11-and-c-17-compatibility" title="Link to this heading">¶</a></h3>
-<p>This project requires a working C++ compiler that supports C++17 and a working C compiler that supports C11. You may test whether your compiler (GCC, for example) supports such standard using:</p>
+<p>This project requires a working C++ compiler supporting C++17 and a working C compiler supporting C11. You may test whether your compiler (GCC, for example) supports this using:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;int main(){}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gcc<span class="w"> </span>--std<span class="o">=</span>c11<span class="w"> </span>-x<span class="w"> </span>c<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/dev/null
 <span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;int main(){}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>g++<span class="w"> </span>--std<span class="o">=</span>c++17<span class="w"> </span>-x<span class="w"> </span>c++<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/dev/null
 </pre></div>
 </div>
-<p><strong>NOTE</strong> This is a very rough test. The compiler may still fail to compile the project due to the lack of support of some specific features. In other words, if there is no error, the compiler <strong>MIGHT</strong> be supported. If there is an error, the compiler is definitely <strong>NOT</strong> supported.</p>
-<p><strong>NOTE</strong> The CMake build scripts inside this project contains a script that tests compiler compatibility, which will be automatically executed when configuring the project.</p>
+<p><strong>NOTE:</strong> This is a very rough test. The compiler may still fail to compile the project due to the lack of support for some specific features. In other words, if there is no error, the compiler <strong>MIGHT</strong> be supported. If there is an error, the compiler is definitely <strong>NOT</strong> supported.</p>
+<p><strong>NOTE:</strong> The CMake build scripts in this project include a test of compiler compatibility, which is automatically executed during project configuration.</p>
 <p>For a table of the minimum compiler version that supports those versions, see also:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.cppreference.com/w/c/11">This cppreference article for C11</a>.</p></li>
@@ -277,8 +277,8 @@
 </section>
 <section id="gcc">
 <h3>GCC<a class="headerlink" href="#gcc" title="Link to this heading">¶</a></h3>
-<p>GNU Compiler Collections (GCC) (<a class="reference external" href="https://gcc.gnu.org/">homepage</a>) is the most widely used compiler for GNU/Linux that provides the best compatibility and error-tolerance. At least <a class="reference external" href="https://gcc.gnu.org/gcc-7/changes.html#GCC7.4">7.4.0</a> is required.</p>
-<p><strong>NOTE</strong> GCC supports diverse programming languages. Please ensure that your GCC installation comes with C++ support. You need at least <code class="docutils literal notranslate"><span class="pre">g++</span></code> program (Test with <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>) and a working GNU C++ Standard Library (<a class="reference external" href="https://gcc.gnu.org/onlinedocs/libstdc++/"><code class="docutils literal notranslate"><span class="pre">libstdc++</span></code></a>).</p>
+<p>GNU Compiler Collection (GCC) (<a class="reference external" href="https://gcc.gnu.org/">homepage</a>) is the most widely used compiler for GNU/Linux that provides the best compatibility and error-tolerance. At least <a class="reference external" href="https://gcc.gnu.org/gcc-7/changes.html#GCC7.4">7.4.0</a> is required.</p>
+<p><strong>NOTE:</strong> GCC supports diverse programming languages. Please ensure that your GCC installation comes with C++ support. You need at least the <code class="docutils literal notranslate"><span class="pre">g++</span></code> program (Test with <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>) and a working GNU C++ Standard Library (<a class="reference external" href="https://gcc.gnu.org/onlinedocs/libstdc++/"><code class="docutils literal notranslate"><span class="pre">libstdc++</span></code></a>).</p>
 <p>See also:</p>
 <ul class="simple">
 <li><p>GCC support over <a class="reference external" href="https://gcc.gnu.org/projects/cxx-status.html#cxx17">C++17</a> and <a class="reference external" href="https://gcc.gnu.org/wiki/C11Status">C11</a>.</p></li>
@@ -287,8 +287,8 @@
 </section>
 <section id="clang">
 <h3>Clang<a class="headerlink" href="#clang" title="Link to this heading">¶</a></h3>
-<p><a class="reference external" href="https://clang.llvm.org/">Clang</a> is another popular compiler for GNU/Linux that uses Low-Level Virtual Machine (<a class="reference external" href="https://llvm.org/">LLVM</a>) toolchain. Also, the default C++ compiler for FreeBSD and Apple Mac OS X. At least <a class="reference external" href="https://releases.llvm.org/5.0.1/tools/clang/docs/ReleaseNotes.html">5.0.1</a> is required.</p>
-<p><strong>NOTE</strong> Clang may need GCC to work properly due to the need of the compiler runtime library (e.g., <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html"><code class="docutils literal notranslate"><span class="pre">libgcc</span></code>/<code class="docutils literal notranslate"><span class="pre">libgcc_s</span></code></a> and <a class="reference external" href="https://gcc.gnu.org/wiki/Atomic/GCCMM"><code class="docutils literal notranslate"><span class="pre">libatomic</span></code></a>). See <a class="reference external" href="https://clang.llvm.org/docs/Toolchain.html">this LLVM article</a> for detailed instructions on selecting GNU- or LLVM-based variants of each toolchain component for Clang.</p>
+<p><a class="reference external" href="https://clang.llvm.org/">Clang</a> is another popular compiler for GNU/Linux that uses the Low-Level Virtual Machine (<a class="reference external" href="https://llvm.org/">LLVM</a>) toolchain. Also, the default C++ compiler for FreeBSD and Apple Mac OS X. At least <a class="reference external" href="https://releases.llvm.org/5.0.1/tools/clang/docs/ReleaseNotes.html">5.0.1</a> is required.</p>
+<p><strong>NOTE</strong>: Clang may need GCC to work properly due to the need for the compiler runtime library (e.g., <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html"><code class="docutils literal notranslate"><span class="pre">libgcc</span></code>/<code class="docutils literal notranslate"><span class="pre">libgcc_s</span></code></a> and <a class="reference external" href="https://gcc.gnu.org/wiki/Atomic/GCCMM"><code class="docutils literal notranslate"><span class="pre">libatomic</span></code></a>). See <a class="reference external" href="https://clang.llvm.org/docs/Toolchain.html">this LLVM article</a> for detailed instructions on selecting GNU- or LLVM-based variants of each toolchain component for Clang.</p>
 <p>See also:</p>
 <ul class="simple">
 <li><p>Clang support over <a class="reference external" href="https://clang.llvm.org/cxx_status.html#cxx17">C++17</a> and <a class="reference external" href="https://clang.llvm.org/c_status.html#c11">C11</a>.</p></li>
@@ -298,9 +298,9 @@
 <section id="intel-oneapi-dpc-c-compiler">
 <h3>Intel OneAPI DPC++/C++ Compiler<a class="headerlink" href="#intel-oneapi-dpc-c-compiler" title="Link to this heading">¶</a></h3>
 <p>The compiler (<a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html">homepage</a>) can build accelerated binaries on Intel CPUs. Compatibilities on the latest version of this compiler will be tested.</p>
-<p><strong>NOTE</strong> Here we refer to the LLVM-based one (with programs named <code class="docutils literal notranslate"><span class="pre">icx</span></code> and <code class="docutils literal notranslate"><span class="pre">icpx</span></code>) instead of the old Intel C++ Compiler Classic (ICC, with programs named <code class="docutils literal notranslate"><span class="pre">icc</span></code> and <code class="docutils literal notranslate"><span class="pre">icpc</span></code>).</p>
-<p><strong>NOTE</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p>
-<p><strong>NOTE</strong> Distributing binaries built with this compiler may require you to comply with Intel’s license and/or breaking the GPL.</p>
+<p><strong>NOTE:</strong> Here we refer to the LLVM-based one (with programs named <code class="docutils literal notranslate"><span class="pre">icx</span></code> and <code class="docutils literal notranslate"><span class="pre">icpx</span></code>) instead of the old Intel C++ Compiler Classic (ICC, with programs named <code class="docutils literal notranslate"><span class="pre">icc</span></code> and <code class="docutils literal notranslate"><span class="pre">icpc</span></code>).</p>
+<p><strong>NOTE:</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p>
+<p><strong>NOTE</strong>: Distributing binaries built with this compiler may require you to comply with Intel’s license and/or break the GPL.</p>
 </section>
 <section id="other-compilers">
 <h3>Other Compilers<a class="headerlink" href="#other-compilers" title="Link to this heading">¶</a></h3>
@@ -309,7 +309,7 @@
 <li><p>Intel C++ Compiler Classic (ICC) <strong>MAY</strong> work with legacy systems and Boost libraries.</p></li>
 <li><p><a class="reference external" href="https://developer.nvidia.com/hpc-compilers">NVIDIA HPC compilers</a> should work as all versions of this compiler support C++17.</p>
 <ul>
-<li><p><strong>NOTE</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p></li>
+<li><p><strong>NOTE:</strong> CMake version higher than <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.20.html#compilers">3.20.0</a> is required to support this compiler.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://www.amd.com/en/developer/aocc.html">AMD Optimizing C/C++ and Fortran Compilers (AOCC)</a> should work as all versions of this compiler support C++17. Specifically,</p>
@@ -327,12 +327,12 @@
 <section id="cmake">
 <h3>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://cmake.org/">CMake</a> is a cross-platform build system. It is required to build the project. At least <a class="reference external" href="https://cmake.org/cmake/help/latest/release/3.17.html">3.17</a> is required.</p>
-<p><strong>NOTE</strong> Lots of EOL distributions do not ship with a recent version of CMake. You may download CMake 3.17 in a binary form for x86_64 GNU/Linux or Mac OS X from <a class="reference external" href="https://cmake.org/files/v3.17/">CMake officially-built binaries</a>.</p>
+<p><strong>NOTE:</strong> Lots of End-of-Life distributions do not ship with a recent version of CMake. You may download CMake 3.17 in a binary form for x86_64 GNU/Linux or Mac OS X from <a class="reference external" href="https://cmake.org/files/v3.17/">CMake’s officially-built binaries</a>.</p>
 </section>
-<section id="dependencies-of-cmake-build-system">
-<h3>Dependencies of CMake Build System<a class="headerlink" href="#dependencies-of-cmake-build-system" title="Link to this heading">¶</a></h3>
+<section id="dependencies-of-the-cmake-build-system">
+<h3>Dependencies of the CMake Build System<a class="headerlink" href="#dependencies-of-the-cmake-build-system" title="Link to this heading">¶</a></h3>
 <p>CMake requires a <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">CMake Generator</a>, which is used to perform the build. Under GNU/Linux and other POSIX systems (e.g., Mac OS X, FreeBSD), <a class="reference external" href="https://ninja-build.org/">Ninja</a> is preferred. <a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> is also acceptable. BSD-flavored <code class="docutils literal notranslate"><span class="pre">make</span></code> will <strong>NOT</strong> work.</p>
-<p>This project requires <a class="reference external" href="https://www.python.org/">Python</a> at least 3.7 when building the package, for embedding bundled Illumina profiles and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code>. Python is not required at runtime.</p>
+<p>This project requires <a class="reference external" href="https://www.python.org/">Python</a> at least 3.7 when building the package, for embedding bundled Illumina profiles, and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code>. Python is not required at runtime.</p>
 </section>
 <section id="linkers-assemblers-archivers-etc">
 <h3>Linkers, Assemblers, Archivers, etc<a class="headerlink" href="#linkers-assemblers-archivers-etc" title="Link to this heading">¶</a></h3>
@@ -340,74 +340,74 @@
 </section>
 <section id="c-library">
 <h3>C Library<a class="headerlink" href="#c-library" title="Link to this heading">¶</a></h3>
-<p>This project were tested working using <a class="reference external" href="https://www.gnu.org/software/libc/">GNU C Library</a> and <a class="reference external" href="https://musl.libc.org/">MUSL C Library</a>. Other C libraries are not tested. However, C libraries that satisfy POSIX.1-2008 and C11 should work.</p>
-<p><strong>NOTE</strong> <a class="reference external" href="https://libc.llvm.org/">LLVM C Library</a> is neither supported nor tested.</p>
-<p><strong>NOTE</strong> Most C libraries bundles a copy of POSIX threads library (<a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread(7)</a>, usually named <code class="docutils literal notranslate"><span class="pre">libpthread.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libpthread.a</span></code> if statically linked) and math library (Usually named <code class="docutils literal notranslate"><span class="pre">libm.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libm.a</span></code>). Those libraries are required by this project.</p>
-<p><strong>NOTE</strong> Here, we assume that <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindThreads.html"><code class="docutils literal notranslate"><span class="pre">FindThread</span></code></a> of CMake will find pthread.</p>
+<p>This project was tested using the <a class="reference external" href="https://www.gnu.org/software/libc/">GNU C Library</a> and the <a class="reference external" href="https://musl.libc.org/">MUSL C Library</a>. Other C libraries are not tested. However, C libraries that satisfy POSIX.1-2008 and C11 should work.</p>
+<p><strong>NOTE:</strong> The <a class="reference external" href="https://libc.llvm.org/">LLVM C Library</a> is neither supported nor tested.</p>
+<p><strong>NOTE:</strong> Most C libraries bundle a copy of the POSIX threads library (<a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread(7)</a>, usually named <code class="docutils literal notranslate"><span class="pre">libpthread.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libpthread.a</span></code> if statically linked) and math library (Usually named <code class="docutils literal notranslate"><span class="pre">libm.so</span></code> or <code class="docutils literal notranslate"><span class="pre">libm.a</span></code>). Those libraries are required by this project.</p>
+<p><strong>NOTE:</strong> Here, we assume that <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindThreads.html"><code class="docutils literal notranslate"><span class="pre">FindThread</span></code></a> of CMake will find pthread.</p>
 </section>
 <section id="pkgconf-or-pkg-config">
 <h3><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code> or <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code><a class="headerlink" href="#pkgconf-or-pkg-config" title="Link to this heading">¶</a></h3>
-<p>The project may take advantage <a class="reference external" href="https://www.freedesktop.org/wiki/Software/pkg-config/"><code class="docutils literal notranslate"><span class="pre">pkg-config</span></code></a> or its modern replacement (<strong>RECOMMENDED</strong>) <a class="reference external" href="https://github.com/pkgconf/pkgconf"><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code></a> to locate the dependencies. Installing such is <strong>HIGHLY</strong> recommended.</p>
-<p><strong>NOTE</strong> You may need to set up environment variable <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> to allow those tools to find the dependencies.</p>
+<p>The project may take advantage of <a class="reference external" href="https://www.freedesktop.org/wiki/Software/pkg-config/"><code class="docutils literal notranslate"><span class="pre">pkg-config</span></code></a> or its modern replacement (<strong>RECOMMENDED</strong>) <a class="reference external" href="https://github.com/pkgconf/pkgconf"><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code></a>, to locate the dependencies. Installing such is <strong>HIGHLY</strong> recommended.</p>
+<p><strong>NOTE:</strong> You may need to set the environment variable <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> to allow those tools to find the dependencies.</p>
 </section>
 <section id="command-line-utilities">
 <h3>Command-Line Utilities<a class="headerlink" href="#command-line-utilities" title="Link to this heading">¶</a></h3>
 <p>For Apple Mac OS X, FreeBSD, Alpine Linux, and other GNU/Linux distributions with obsolete packages, please consider checking the version of the following tools:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a> (At least 8.28) for the use of <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">-C</span></code> (introduced in 8.28) and <code class="docutils literal notranslate"><span class="pre">readlink</span> <span class="pre">-f</span></code> (introduced in 8.0).</p>
 <ul>
-<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU CoreUtils.</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a> (At least 8.28) for the use of <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">-C</span></code> (introduced in 8.28) and <code class="docutils literal notranslate"><span class="pre">readlink</span> <span class="pre">-f</span></code> (introduced in 8.0).</p>
+<ul class="simple">
+<li><p><strong>NOTE:</strong> CMake may have its own requirements on the version of GNU CoreUtils.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash</a> (At least 4.2) for the possible use of advanced array operations.</p>
-<ul>
-<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU Bash.</p></li>
+<ul class="simple">
+<li><p><strong>NOTE:</strong> CMake may have its own requirements on the version of GNU Bash.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> as the BSD variant is known to be incompatible.</p>
-<ul>
-<li><p><strong>NOTE</strong> CMake may have its own requirements on the version of GNU Make if you use GNU Make as CMake Generator.</p></li>
-</ul>
-</li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a>, as the BSD variant is known to be incompatible.</p>
+<ul class="simple">
+<li><p><strong>NOTE:</strong> CMake may have its own requirements on the version of GNU Make if you use GNU Make as CMake Generator.</p></li>
 </ul>
 <p>As your original system tools shipped with the operating system/BusyBox may <strong>NOT</strong> work.</p>
+</li>
+</ul>
 </section>
 </section>
 <section id="required-external-libraries">
 <h2>Required External Libraries<a class="headerlink" href="#required-external-libraries" title="Link to this heading">¶</a></h2>
-<p>Dependencies are those libraries or tools that should be installed on your system before building the project. If you’re using a personal computer with root privilege, consider installing them using your system’s package manager like <a class="reference external" href="https://wiki.debian.org/Apt">APT</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Yum">YUM</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Dnf">DNF</a>, <a class="reference external" href="https://wiki.archlinux.org/title/Pacman"><code class="docutils literal notranslate"><span class="pre">pacman</span></code></a>, and <a class="reference external" href="https://docs.conda.io/">Conda</a> etc. Otherwise, contact your system administrator for where to find them or build them from source.</p>
+<p>Dependencies are those libraries or tools that should be installed on your system before building the project. If you’re using a personal computer with root privilege, consider installing them using your system’s package manager like <a class="reference external" href="https://wiki.debian.org/Apt">APT</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Yum">YUM</a>, <a class="reference external" href="https://fedoraproject.org/wiki/Dnf">DNF</a>, <a class="reference external" href="https://wiki.archlinux.org/title/Pacman"><code class="docutils literal notranslate"><span class="pre">pacman</span></code></a>, and <a class="reference external" href="https://docs.conda.io/">Conda</a>, etc. Otherwise, contact your system administrator for where to find them or build them from source.</p>
 <section id="boost-c-library">
 <h3>Boost C++ Library<a class="headerlink" href="#boost-c-library" title="Link to this heading">¶</a></h3>
-<p><a class="reference external" href="https://www.boost.org/">Boost</a> is an umbrella project of diverse small modules that can be used independently. Except Boost header-only libraries, the compiled modules used in this project are:</p>
-<ul class="simple">
-<li><p>Essential header-only modules, including:</p>
+<p><a class="reference external" href="https://www.boost.org/">Boost</a> is an umbrella project of diverse small modules that can be used independently. Except for Boost header-only libraries, the compiled modules used in this project are:</p>
 <ul>
+<li><p>Essential header-only modules, including:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">boost/version.hpp</span></code>.</p></li>
-<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/math/doc/html/index.html">Math</a>. For calculation of the probability density function (PDF), cumulative distribution function (CDF), and inverse CDFs.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/math/doc/html/index.html">Math</a>. For the calculation of the probability density function (PDF), cumulative distribution function (CDF), and inverse CDFs.</p></li>
 <li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/exception/doc/boost-exception.html">Exception</a>. For better exception handling.</p></li>
-<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/algorithm/doc/html/index.html">Algorithm</a>. For simple string algorithm used in non-performance-critical situations.</p></li>
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/algorithm/doc/html/index.html">Algorithm</a>. For simple string algorithms used in non-performance-critical situations.</p></li>
 </ul>
 </li>
 <li><p>Essential modules that would be linked to the final executable:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/filesystem/">FileSystem</a>. See <a class="reference internal" href="Design.html#filesystem-section"><span class="std std-ref">this Design section</span></a> for why this module instead of C++17 <code class="docutils literal notranslate"><span class="pre">&lt;filesystem&gt;</span></code> is required.</p></li>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/filesystem/">FileSystem</a>. See <a class="reference internal" href="Design.html#filesystem-section"><span class="std std-ref">this Design section</span></a> for why this module, instead of C++17 <code class="docutils literal notranslate"><span class="pre">&lt;filesystem&gt;</span></code>, is required.</p></li>
 <li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/program_options/">Program Options</a>. For parsing command-line options.</p></li>
 <li><p><a class="reference external" href="https://www.boost.org/doc/libs/latest/libs/log/">Log</a>. For logging support.</p></li>
 </ul>
+<p><strong>NOTE:</strong> A boost module may depend on other boost modules in either header-only or compiled form. CMake should be able to find those dependencies automatically.</p>
+<p>Boost modules are found through <code class="docutils literal notranslate"><span class="pre">find_package(Boost</span> <span class="pre">...)</span></code> command of CMake. This usually requires the <code class="docutils literal notranslate"><span class="pre">BoostConfig.cmake</span></code> (Provided by Boost) or <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindBoost.html"><code class="docutils literal notranslate"><span class="pre">FindBoost.cmake</span></code></a> (provided by CMake) file. See <a class="reference internal" href="#boost-config-provided-by-boost-section"><code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code> CMake variable</a> mentioned below for details.</p>
 </li>
 </ul>
-<p><strong>NOTE</strong> A boost module may depend on other boost modules in either header-only or compiled form. CMake should be able to find those dependencies automatically.</p>
-<p>Boost modules are found through <code class="docutils literal notranslate"><span class="pre">find_package(Boost</span> <span class="pre">...)</span></code> command of CMake. This usually requires the presence of <code class="docutils literal notranslate"><span class="pre">BoostConfig.cmake</span></code> (Provided by Boost) or <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FindBoost.html"><code class="docutils literal notranslate"><span class="pre">FindBoost.cmake</span></code></a> (provided by CMake) file. See <a class="reference internal" href="#boost-config-provided-by-boost-section"><code class="docutils literal notranslate"><span class="pre">BOOST_CONFIG_PROVIDED_BY_BOOST</span></code> CMake variable</a> mentioned below for details.</p>
 </section>
 <section id="zlib">
 <h3>zlib<a class="headerlink" href="#zlib" title="Link to this heading">¶</a></h3>
-<p><a class="reference external" href="https://www.zlib.net/">zlib</a> performs compression and decompression bundled ART error profiles. At least <a class="reference internal" href="News.html#v-1-2-0-section"><span class="std std-ref">1.2.0</span></a> is required. zlib is also required by <a class="reference internal" href="#htslib-section">bundled HTSLib</a>.</p>
-<p>The project will firstly try to find zlib using <code class="docutils literal notranslate"><span class="pre">pkgconf</span></code>. That usually requires the presence of <code class="docutils literal notranslate"><span class="pre">zlib.pc</span></code> file. If failed, will fall back to <code class="docutils literal notranslate"><span class="pre">libz.so</span></code>/<code class="docutils literal notranslate"><span class="pre">libz.a</span></code> with optional version suffixes.</p>
+<p><a class="reference external" href="https://www.zlib.net/">zlib</a> performs compression and decompression of bundled ART error profiles. At least <a class="reference internal" href="News.html#v-1-2-0-section"><span class="std std-ref">1.2.0</span></a> is required. zlib is also required by <a class="reference internal" href="#htslib-section">bundled HTSLib</a>.</p>
+<p>The project will first try to find zlib using <code class="docutils literal notranslate"><span class="pre">pkgconf</span></code>. That usually requires <code class="docutils literal notranslate"><span class="pre">zlib.pc</span></code> file. If failed, will fall back to <code class="docutils literal notranslate"><span class="pre">libz.so</span></code>/<code class="docutils literal notranslate"><span class="pre">libz.a</span></code> with optional version suffixes.</p>
 </section>
 </section>
 <section id="optional-external-libraries">
 <h2>Optional External Libraries<a class="headerlink" href="#optional-external-libraries" title="Link to this heading">¶</a></h2>
-<p>The following dependencies are optional. You may choose to install them if you want to improve the performance, adaptability, or user-friendliness of the program.</p>
+<p>The following dependencies are optional. You may choose to install them to improve the program’s performance, adaptability, or user-friendliness.</p>
 <section id="optional-boost-components">
 <span id="id1"></span><h3>Optional Boost Components<a class="headerlink" href="#optional-boost-components" title="Link to this heading">¶</a></h3>
 <ul class="simple">
@@ -847,7 +847,7 @@
 </li>
 <li><a class="reference internal" href="#essential-tools-for-building">Essential Tools for Building</a><ul>
 <li><a class="reference internal" href="#cmake">CMake</a></li>
-<li><a class="reference internal" href="#dependencies-of-cmake-build-system">Dependencies of CMake Build System</a></li>
+<li><a class="reference internal" href="#dependencies-of-the-cmake-build-system">Dependencies of the CMake Build System</a></li>
 <li><a class="reference internal" href="#linkers-assemblers-archivers-etc">Linkers, Assemblers, Archivers, etc</a></li>
 <li><a class="reference internal" href="#c-library">C Library</a></li>
 <li><a class="reference internal" href="#pkgconf-or-pkg-config"><code class="docutils literal notranslate"><span class="pre">pkgconf</span></code> or <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code></a></li>

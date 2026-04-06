@@ -254,7 +254,7 @@
 <p>This guide covers several miscellaneous topics that may be of interest to users and developers of this software.</p>
 <section id="guide-on-fasta-format">
 <h2>Guide on FASTA Format<a class="headerlink" href="#guide-on-fasta-format" title="Link to this heading">¶</a></h2>
-<p>FASTA format can be parsed by all parsers. However, please keep in mind that for <code class="docutils literal notranslate"><span class="pre">memory</span></code> parser, the following kinds of FASTA files are supported:</p>
+<p>FASTA format can be parsed by all parsers. However, please keep in mind that for the <code class="docutils literal notranslate"><span class="pre">memory</span></code> parser, the following kinds of FASTA files are supported:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;one_line_fasta
 AAAAAAAAAAAAAAAAA
 &gt;multi_line_fasta
@@ -277,7 +277,7 @@ AAAAAAAA
 </pre></div>
 </div>
 <p>Also, note that all characters other than <code class="docutils literal notranslate"><span class="pre">ACGTacgt</span></code> will be regarded as <code class="docutils literal notranslate"><span class="pre">N</span></code>. We do <strong>NOT</strong> support IUPAC codes.</p>
-<p><strong>NOTE</strong> For <code class="docutils literal notranslate"><span class="pre">htslib</span></code> parser, identical line lengths (except the last line) inside a contig is assumed. That means the following FASTA file is legal for <code class="docutils literal notranslate"><span class="pre">htslib</span></code> parser:</p>
+<p><strong>NOTE:</strong> For the <code class="docutils literal notranslate"><span class="pre">htslib</span></code> parser, identical line lengths (except the last line) inside a contig are assumed. That means the following FASTA file is legal for <code class="docutils literal notranslate"><span class="pre">htslib</span></code> parser:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;chr1
 AAAAAAAAAAAA
 AAAA
@@ -298,41 +298,41 @@ AAAAAAAA
 AA
 </pre></div>
 </div>
-<p><strong>NOTE</strong> For read names, only characters before the first whitespace characters (space <code class="docutils literal notranslate"> </code>, tabs <code class="docutils literal notranslate"><span class="pre">\t</span></code>, etc.) are read. That is, the FASTA file:</p>
+<p><strong>NOTE:</strong> For read names, only characters before the first whitespace characters (space <code class="docutils literal notranslate"> </code>, tabs <code class="docutils literal notranslate"><span class="pre">\t</span></code>, etc.) are read. That is, the FASTA file:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;chr1 some attrs
 AAAAAATTTTTT
 &gt;chr2 more attrs
 AAAAAATTTTTT
 </pre></div>
 </div>
-<p>Will be parsed into identical data structure with:</p>
+<p>Will be parsed into an identical data structure with:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;chr1
 AAAAAATTTTTT
 &gt;chr2
 AAAAAATTTTTT
 </pre></div>
 </div>
-<p>Using empty file or <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> as input is allowed since <a class="reference internal" href="News.html#v-1-1-9-section"><span class="std std-ref">1.1.9</span></a>. It will generate empty FASTA/FASTQ/PWA files as output. Remember to specify <code class="docutils literal notranslate"><span class="pre">memory</span></code> or <code class="docutils literal notranslate"><span class="pre">stream</span></code> as <code class="docutils literal notranslate"><span class="pre">--i-parser</span></code> <code class="docutils literal notranslate"><span class="pre">--i_type</span></code> and do <strong>NOT</strong> use SAM/BAM output writer in this case (as SAM/BAM output writer will think you’re using streamed input and raise an exception).</p>
+<p>Using an empty file or <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> as input is allowed since <a class="reference internal" href="News.html#v-1-1-9-section"><span class="std std-ref">1.1.9</span></a>. It will generate empty FASTA/FASTQ/PWA files as output. Remember to specify <code class="docutils literal notranslate"><span class="pre">memory</span></code> or <code class="docutils literal notranslate"><span class="pre">stream</span></code> as <code class="docutils literal notranslate"><span class="pre">--i-parser</span></code> <code class="docutils literal notranslate"><span class="pre">--i_type</span></code> and do <strong>NOT</strong> use SAM/BAM output writer in this case (as SAM/BAM output writer will think you’re using streamed input and raise an exception).</p>
 </section>
 <section id="performance-hint">
 <h2>Performance Hint<a class="headerlink" href="#performance-hint" title="Link to this heading">¶</a></h2>
 <p>When building <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, set <a class="reference internal" href="Install.html#use-htslib-section"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">USE_HTSLIB</span></code></span></a> to the latest HTSLib available on your system. Please also make sure your HTSLib has been compiled with <code class="docutils literal notranslate"><span class="pre">-O3</span> <span class="pre">-mtune=native</span> <span class="pre">-march=native</span></code> and linked with <a class="reference external" href="https://github.com/ebiggers/libdeflate"><code class="docutils literal notranslate"><span class="pre">libdeflate</span></code></a>. Set <a class="reference internal" href="Install.html#cmake-build-type-section"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code></span></a> to <code class="docutils literal notranslate"><span class="pre">Release</span></code> or <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code>, and <a class="reference internal" href="Install.html#use-random-generator-section"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">USE_RANDOM_GENERATOR</span></code></span></a> to <code class="docutils literal notranslate"><span class="pre">ONEMKL</span></code> on Intel/AMD machines or <code class="docutils literal notranslate"><span class="pre">PCG</span></code>/<code class="docutils literal notranslate"><span class="pre">SYSTEM_PCG</span></code> on other machines.</p>
-<p>When executing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, please use <code class="docutils literal notranslate"><span class="pre">memory</span></code> for FASTA parser. Use solid state drive (SSDs) whenever possible. Also use as fewer output writers as possible.</p>
+<p>When executing <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, please use <code class="docutils literal notranslate"><span class="pre">memory</span></code> for the FASTA parser. Use solid state drive (SSDs) whenever possible. Also, use as few output writers as possible.</p>
 <p>SAM/BAM output writers are memory- and time-consuming due to compression. If you don’t need SAM/BAM output, please don’t enable it.</p>
 </section>
 <section id="platform-specific-notes">
 <h2>Platform-Specific Notes<a class="headerlink" href="#platform-specific-notes" title="Link to this heading">¶</a></h2>
 <section id="debian-ubuntu-linux-mint-or-other-debian-based-distributions">
 <h3>Debian, Ubuntu, Linux Mint, or Other Debian-Based Distributions<a class="headerlink" href="#debian-ubuntu-linux-mint-or-other-debian-based-distributions" title="Link to this heading">¶</a></h3>
-<p>For minimal build, install the following packages using APT:</p>
+<p>For a minimal build, install the following packages using APT:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>build-essential<span class="w"> </span>g++<span class="w"> </span>binutils<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libboost-all-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>make<span class="w"> </span>python3<span class="w"> </span>cmake<span class="w"> </span>sed<span class="w"> </span>grep<span class="w"> </span>coreutils
 </pre></div>
 </div>
-<p>Then work using <code class="docutils literal notranslate"><span class="pre">cmake</span></code> as usual. CMake will use bundled source codes for missing dependencies.</p>
-<p>For full-featured build (with external libraries and MPI support), install the following additional packages using APT:</p>
+<p>Then work using <code class="docutils literal notranslate"><span class="pre">cmake</span></code> as usual. CMake will use bundled source code for missing dependencies.</p>
+<p>For a full-featured build (with external libraries and MPI support), install the following additional packages using APT:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>install<span class="w"> </span>--no-install-recommends<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>liblzma-dev<span class="w"> </span>libbz2-dev<span class="w"> </span>libhts-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>pkgconf<span class="w"> </span><span class="se">\</span>
@@ -357,8 +357,8 @@ AAAAAATTTTTT
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">icu-static</span></code> is added to support Boost when performing static linking.</p>
-<p><strong>NOTE</strong> Please install the correct version of Boost static library.</p>
-<p><strong>NOTE</strong> <code class="docutils literal notranslate"><span class="pre">coreutils</span></code> is <strong>MANDATORY</strong> – Those shipped with BusyBox will <strong>NOT</strong> work.</p>
+<p><strong>NOTE</strong>: Please install the correct version of the Boost static library.</p>
+<p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">coreutils</span></code> is <strong>MANDATORY</strong> – Those shipped with BusyBox will <strong>NOT</strong> work.</p>
 </section>
 <section id="apple-mac-os-x">
 <h3>Apple Mac OS X<a class="headerlink" href="#apple-mac-os-x" title="Link to this heading">¶</a></h3>
@@ -367,9 +367,9 @@ AAAAAATTTTTT
 </pre></div>
 </div>
 <p>Alternatively, you may get the latest version <a class="reference external" href="https://developer.apple.com/download/all">here</a>. An Apple account is required.</p>
-<p>Download CMake from <a class="reference external" href="https://cmake.org/download/">here</a>. You should modify PATH in <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> to include the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory of the CMake installation. If you install the DMG image, it will commonly be located in <code class="docutils literal notranslate"><span class="pre">/Applications/CMake.app/Contents/bin/cmake</span></code>.</p>
+<p>Download CMake from <a class="reference external" href="https://cmake.org/download/">here</a>. You should modify PATH in <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> to include the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory of the CMake installation. If you install the DMG image, it is typically located in <code class="docutils literal notranslate"><span class="pre">/Applications/CMake.app/Contents/bin/cmake</span></code>.</p>
 <p>See the following section to build Boost from source.</p>
-<p>Apple Mac OS X comes with zlib and its development headers pre-installed.</p>
+<p>Apple macOS comes with zlib and its development headers pre-installed.</p>
 <p>You may also set up dependencies using <a class="reference external" href="https://docs.conda.io">Conda</a>, <a class="reference external" href="https://www.macports.org/">MacPorts</a> or <a class="reference external" href="https://brew.sh">HomeBrew</a>.</p>
 </section>
 <section id="msys2-mingw64">
@@ -436,7 +436,7 @@ mingw-w64-clang-x86_64-samtools
 </section>
 <section id="installing-boost-from-source">
 <h3>Installing Boost from Source<a class="headerlink" href="#installing-boost-from-source" title="Link to this heading">¶</a></h3>
-<p>If your system Boost library does not exist (e.g., on brand-new Apple Mac OS X), is too old (e.g., older than 1.65.0) or ABI incompatible (e.g., compiled with GCC, but you want to use Clang/LLVM), you may install Boost from source. Here is an example of installing Boost 1.89.0 using Clang/LLVM toolchain to <code class="docutils literal notranslate"><span class="pre">&quot;${HOME}&quot;/opt/boost-1.89.0-clang</span></code>:</p>
+<p>If your system Boost library does not exist (e.g., on brand-new Apple Mac OS X), is too old (e.g., older than 1.65.0), or ABI incompatible (e.g., compiled with GCC, but you want to use Clang/LLVM), you may install Boost from source. Here is an example of installing Boost 1.89.0 using Clang/LLVM toolchain to <code class="docutils literal notranslate"><span class="pre">&quot;${HOME}&quot;/opt/boost-1.89.0-clang</span></code>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume we&#39;re using Boost 1.89.0</span>
 curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>boost_1_89_0.tar.gz<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz
@@ -458,7 +458,7 @@ tar<span class="w"> </span>xvzf<span class="w"> </span>boost_1_89_0.tar.gz
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>build
 <span class="nb">cd</span><span class="w"> </span>build
 <span class="c1"># Set -DBoost_DIR accordingly.</span>
-<span class="c1"># Older CMake may have different behaviour.</span>
+<span class="c1"># Older CMake may have different behavior.</span>
 cmake<span class="w"> </span>..<span class="w"> </span>-DBoost_DIR<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">&quot;</span>/opt/boost-1.89.0-clang
 </pre></div>
 </div>
@@ -500,7 +500,7 @@ make<span class="w"> </span>install
 <span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
-<p>Install NCBI NGS SDK as a part of NCBI SRA Toolkit.</p>
+<p>Install NCBI NGS SDK as a part of the NCBI SRA Toolkit.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>sra-tools-3.3.0.zip<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>https://github.com/ncbi/sra-tools/archive/refs/tags/3.3.0.zip
 unzip<span class="w"> </span>sra-tools-3.3.0.zip

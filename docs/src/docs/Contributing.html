@@ -255,19 +255,19 @@
 <h2>Common Development-Oriented Tasks<a class="headerlink" href="#common-development-oriented-tasks" title="Link to this heading">¶</a></h2>
 <section id="create-development-environment">
 <h3>Create Development Environment<a class="headerlink" href="#create-development-environment" title="Link to this heading">¶</a></h3>
-<p>Except <a class="reference external" href="https://cmake.org">CMake</a> and other dependencies specified in <a class="reference internal" href="Install.html"><span class="std std-doc">Install</span></a>, the development scripts also require other dependencies. Install <a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a> (Or <a class="reference external" href="https://mamba.readthedocs.io/en/latest/">Mamba</a>/<a class="reference external" href="https://mamba.readthedocs.io/en/latest/micromamba.html">MicroMamba</a>), and then execute:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env/art_modern.yml
+<p>Except <a class="reference external" href="https://cmake.org">CMake</a> and other dependencies specified in <a class="reference internal" href="Install.html"><span class="std std-doc">Install</span></a>, the development scripts also require other dependencies. Install <a class="reference external" href="https://pixi.prefix.dev/">Pixi</a>, and then execute:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>s
 </pre></div>
 </div>
 </section>
 <section id="testing">
 <h3>Testing<a class="headerlink" href="#testing" title="Link to this heading">¶</a></h3>
-<p>Some individual modules can be tested using CMake CTest system. Execute <code class="docutils literal notranslate"><span class="pre">ctest</span></code> in your building directory to test them.</p>
+<p>Some individual modules can be tested using CMake’s CTest system. Execute <code class="docutils literal notranslate"><span class="pre">ctest</span></code> in your building directory to test them.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testsmall</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testsmall-release</span></code> to run the integration tests using executables produced in <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">debug</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code>.</p>
 </section>
 <section id="profiling">
 <h3>Profiling<a class="headerlink" href="#profiling" title="Link to this heading">¶</a></h3>
-<p>We have <code class="docutils literal notranslate"><span class="pre">./profile.sh</span> <span class="pre">${PROFILER}</span></code> to perform profiling of the software with profiler <code class="docutils literal notranslate"><span class="pre">${PROFILER}</span></code>. Profilers may include:</p>
+<p>We have <code class="docutils literal notranslate"><span class="pre">./profile.sh</span> <span class="pre">${PROFILER}</span></code> to profile the software with profiler <code class="docutils literal notranslate"><span class="pre">${PROFILER}</span></code>. Profilers may include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">intel-advisor</span></code> for Intel Advisor. Intel compilers with <code class="docutils literal notranslate"><span class="pre">-mtune=native</span></code> and <code class="docutils literal notranslate"><span class="pre">-O3</span></code> with <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code> mode will be used.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">intel-vtune</span></code> for Intel VTune Profiler. Intel compilers with <code class="docutils literal notranslate"><span class="pre">-mtune=native</span></code> and <code class="docutils literal notranslate"><span class="pre">-O3</span></code> with <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code> mode will be used.</p></li>
@@ -278,8 +278,8 @@
 <section id="building-documentations">
 <h3>Building Documentations<a class="headerlink" href="#building-documentations" title="Link to this heading">¶</a></h3>
 <p>Create the development environment and make the documentation through:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>art_modern
-make<span class="w"> </span>doc
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>doc
+make<span class="w"> </span>doc<span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python<span class="w"> </span><span class="nv">SHELL</span><span class="o">=</span>bash<span class="w"> </span><span class="c1"># under Windows</span>
 </pre></div>
 </div>
 <p>And the built documentations (HTML and PDF) should be in <code class="docutils literal notranslate"><span class="pre">doc/sphinx.d/_build/html</span></code> and <code class="docutils literal notranslate"><span class="pre">doc/sphinx.d/_build/latex</span></code> respectively. Note that for PDF output, you may need <a class="reference external" href="https://www.ctan.org/pkg/latexmk">latexmk</a> and a working up-to-date <a class="reference external" href="https://www.latex-project.org">LaTeX</a> distribution (e.g., <a class="reference external" href="https://www.tug.org/texlive/">TeXLive</a>, <a class="reference external" href="https://miktex.org/">MiKTeX</a>, <a class="reference external" href="https://tug.org/mactex/">MacTeX</a>) installed.</p>
@@ -289,7 +289,7 @@ make<span class="w"> </span>doc
 <h2>Release Cycle<a class="headerlink" href="#release-cycle" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Feature freeze: All new features merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p></li>
-<li><p>Code freeze: All <strong>production</strong> code changes (including bug fixes) merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code> to format the code. Ensure that integration test passes.</p></li>
+<li><p>Code freeze: All <strong>production</strong> code changes (including bug fixes) merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code> to format the code. Ensure that the integration test passes.</p></li>
 <li><p>Integration test: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testbuild</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testbuild-mpi</span></code> are executed using GCC, pure LLVM/Clang, and Intel OneAPI C++/DPC++ toolchain to ensure compatibility. Ensure <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">packing</span></code> passes without errors.</p></li>
 <li><p>Documentation freeze: All documentation changes merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Note:</p>
 <ul>
@@ -306,11 +306,11 @@ make<span class="w"> </span>doc
 <h2>Get Engaged<a class="headerlink" href="#get-engaged" title="Link to this heading">¶</a></h2>
 <section id="issues">
 <h3>Issues<a class="headerlink" href="#issues" title="Link to this heading">¶</a></h3>
-<p>You’re welcome to submit issues on GitHub if you’ve encountered any problems while using this software. You’re recommended to take advantage of the bug report templates, which will help us to understand your problem better. You may also submit issues if you’re unclear about the docs or have some ideas for improving the software itself.</p>
+<p>You’re welcome to submit issues on GitHub if you’ve encountered any problems while using this software. You’re recommended to use the bug report templates to help us better understand your problems. You may also submit issues if you’re unclear about the docs or have some ideas for improving the software itself.</p>
 </section>
 <section id="pull-requests-prs">
 <h3>Pull Requests (PRs)<a class="headerlink" href="#pull-requests-prs" title="Link to this heading">¶</a></h3>
-<p>You’re welcomed to send pull requests (PRs) to this project using the standard fork-and-pull-request workflow. However, please send an issue first to discuss the changes you’re going to make (except spelling &amp; punctuation &amp; grammar issues). Otherwise, we may not be able to accept your PR.</p>
+<p>You’re welcome to send pull requests (PRs) to this project using the standard fork-and-pull-request workflow. However, please send an issue first to discuss the changes you’re going to make (except spelling &amp; punctuation &amp; grammar issues). Otherwise, we may not be able to accept your PR.</p>
 <p>Before you send a PR, please make sure that:</p>
 <ul class="simple">
 <li><p>You’ve run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code> to format the code.</p></li>
@@ -361,8 +361,6 @@ make<span class="w"> </span>doc
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testsmall-debug-mpi"><code class="docutils literal notranslate"><span class="pre">testsmall-debug-mpi</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testsmall-release"><code class="docutils literal notranslate"><span class="pre">testsmall-release</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testsmall-release-mpi"><code class="docutils literal notranslate"><span class="pre">testsmall-release-mpi</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testsmall-conda"><code class="docutils literal notranslate"><span class="pre">testsmall-conda</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testsmall-conda-mpi"><code class="docutils literal notranslate"><span class="pre">testsmall-conda-mpi</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#raw-data"><code class="docutils literal notranslate"><span class="pre">raw_data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#clean"><code class="docutils literal notranslate"><span class="pre">clean</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="MakefileTargets.html#testbuild"><code class="docutils literal notranslate"><span class="pre">testbuild</span></code></a></li>
@@ -382,7 +380,6 @@ make<span class="w"> </span>doc
 <li class="toctree-l2"><a class="reference internal" href="TODO.html#important">IMPORTANT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TODO.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TODO.html#i-o-formats">I/O Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TODO.html#profiles">Profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TODO.html#simulate-allele-specific-expression">Simulate Allele-Specific Expression</a></li>
 </ul>
 </li>

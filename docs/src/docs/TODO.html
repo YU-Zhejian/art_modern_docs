@@ -255,7 +255,6 @@
 <h2>IMPORTANT<a class="headerlink" href="#important" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>For large-contigs test, the evenness of the coverage should be assessed.</p></li>
-<li><p>Perform large contig, many contig, and ultra deep tests.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">release</span></code> would fail on platforms without pkg-config, especially on Haiku OS and Debian GNU/Hurd.</p></li>
 <li><p>Add support for PE FASTA/FASTQ.</p></li>
 </ul>
@@ -265,9 +264,9 @@
 <ul class="simple">
 <li><p>I/O:</p>
 <ul>
-<li><p>The home-made “asynchronous IO” spent too much time in deallocating and creating new <code class="docutils literal notranslate"><span class="pre">std::unique_ptr</span></code>s. This problem is more obvious on smaller objects, like FASTA when being compared to FASTQ.</p></li>
-<li><p>Consider using the method implemented in <code class="docutils literal notranslate"><span class="pre">pigz</span></code>. That is, create a ring buffer that stores raw pointers to record datagrams that allows reusing.</p></li>
-<li><p>The current implementation passes too many small objects across the concurrent queue and I/O handlers, which is inefficient. This problem will be considerably worsen if POSIX AIO is used.</p></li>
+<li><p>The home-made “asynchronous IO” spent too much time in deallocating and creating new <code class="docutils literal notranslate"><span class="pre">std::unique_ptr</span></code>s. This problem is more obvious on smaller objects, like FASTA, when being compared to FASTQ.</p></li>
+<li><p>Consider using the method implemented in <code class="docutils literal notranslate"><span class="pre">pigz</span></code>. That is, create a ring buffer that stores raw pointers to record datagrams, which allows reusing.</p></li>
+<li><p>The current implementation passes too many small objects across the concurrent queue and I/O handlers, which is inefficient. This problem will be considerably worse if POSIX AIO is used.</p></li>
 </ul>
 </li>
 </ul>
@@ -278,12 +277,6 @@
 <li><p>Support circular genome or RNA?</p></li>
 <li><p>Support simulating BGI/MGISEQ reads and new Illumina models: Started.</p></li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">--i-nreads</span></code> to accurately specify the number of reads to simulate?</p></li>
-</ul>
-</section>
-<section id="profiles">
-<h2>Profiles<a class="headerlink" href="#profiles" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>The program should reject quality score profiles with less than 4 bins, and emit a warning if the quality score have less than 10 bins.</p></li>
 </ul>
 </section>
 <section id="simulate-allele-specific-expression">
@@ -351,7 +344,6 @@
 <li><a class="reference internal" href="#important">IMPORTANT</a></li>
 <li><a class="reference internal" href="#performance">Performance</a></li>
 <li><a class="reference internal" href="#i-o-formats">I/O Formats</a></li>
-<li><a class="reference internal" href="#profiles">Profiles</a></li>
 <li><a class="reference internal" href="#simulate-allele-specific-expression">Simulate Allele-Specific Expression</a></li>
 </ul>
 </li>

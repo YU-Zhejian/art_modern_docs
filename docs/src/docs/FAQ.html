@@ -253,8 +253,8 @@
 <h1>Frequently Asked Questions (FAQs)<a class="headerlink" href="#frequently-asked-questions-faqs" title="Link to this heading">¶</a></h1>
 <section id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">¶</a></h2>
-<section id="how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files">
-<span id="fastq-split-section"></span><h3>How to split produced pair-end/mate-pair sequencing results to 2 FASTQ files?<a class="headerlink" href="#how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files" title="Link to this heading">¶</a></h3>
+<section id="how-to-split-the-produced-pair-end-mate-pair-sequencing-results-into-2-fastq-files">
+<span id="fastq-split-section"></span><h3>How to split the produced pair-end/mate-pair sequencing results into 2 FASTQ files?<a class="headerlink" href="#how-to-split-the-produced-pair-end-mate-pair-sequencing-results-into-2-fastq-files" title="Link to this heading">¶</a></h3>
 <p>This can be done through <a class="reference external" href="https://github.com/lh3/seqtk"><code class="docutils literal notranslate"><span class="pre">seqtk</span></code></a>. For example, to split <code class="docutils literal notranslate"><span class="pre">a.fq</span></code>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read 1</span>
 seqtk<span class="w"> </span>seq<span class="w"> </span>a.fq<span class="w"> </span>-1<span class="w"> </span>&gt;<span class="w"> </span>a_1.fq
@@ -268,11 +268,11 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_1.fq<span class="w">
 seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w"> </span>&gt;<span class="w"> </span>a_sorted_2.fq
 </pre></div>
 </div>
-<p><strong>NOTE</strong> Please sort the generated FASTQ files using <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">sort</span></code> to ensure reads with the same name are in the same order.</p>
+<p><strong>NOTE:</strong> If you generate FASTQs through SAM, please sort the generated FASTQ files using <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">sort</span></code> to ensure reads with the same name are in the same order.</p>
 </section>
 <section id="how-to-add-adaptors-primers-to-the-reads">
 <h3>How to add adaptors &amp; primers to the reads?<a class="headerlink" href="#how-to-add-adaptors-primers-to-the-reads" title="Link to this heading">¶</a></h3>
-<p>Currently, there’s no support for such features in the simulator. However, you may manually chop your reference genome, add adaptors to them, and use template mode to introduce sequencing errors.</p>
+<p>Currently, there’s no support for such features in the simulator. However, you may manually chop your reference genome, add adaptors, and use the <code class="docutils literal notranslate"><span class="pre">template</span></code> mode to introduce sequencing errors.</p>
 </section>
 <section id="how-to-support-new-illumina-models">
 <h3>How to support new Illumina models?<a class="headerlink" href="#how-to-support-new-illumina-models" title="Link to this heading">¶</a></h3>
@@ -287,35 +287,11 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w">
 </section>
 <section id="does-this-program-support-cross-compilation">
 <h3>Does this program support cross-compilation?<a class="headerlink" href="#does-this-program-support-cross-compilation" title="Link to this heading">¶</a></h3>
-<p>Currently, it does not due to the extensive use of <code class="docutils literal notranslate"><span class="pre">test_run</span></code> in CMake scripts.</p>
+<p>Currently, it does not work due to the extensive use of <code class="docutils literal notranslate"><span class="pre">test_run</span></code> in CMake scripts.</p>
 </section>
 <section id="i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug">
 <h3>I am using platforms other than x86_64 (e.g., ARM, RISC-V, LoongArch, etc.), and spotted a bug<a class="headerlink" href="#i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug" title="Link to this heading">¶</a></h3>
-<p>Please submit a bug-report with instructions on how I may emulate your platform using free emulators like <a class="reference external" href="https://www.qemu.org/">QEMU</a>.</p>
-</section>
-</section>
-<section id="community">
-<h2>Community<a class="headerlink" href="#community" title="Link to this heading">¶</a></h2>
-<section id="i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report">
-<h3>I am new to GNU/Linux. How can I gather required information for a bug report?<a class="headerlink" href="#i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report" title="Link to this heading">¶</a></h3>
-<p>Where you may find the required information:</p>
-<ul>
-<li><p>Name and version of your current operating system in a human-readable way.</p>
-<p>You may find that out by reading <code class="docutils literal notranslate"><span class="pre">/etc/lsb-release</span></code> or use tools like <a class="reference external" href="https://github.com/dylanaraps/neofetch">neofetch</a>, <a class="reference external" href="https://github.com/KittyKatt/screenFetch">screenFetch</a>, or <a class="reference external" href="https://github.com/fastfetch-cli/fastfetch">fastfetch</a>.</p>
-</li>
-<li><p>Version of the kernel.</p>
-<p>Easy, just run <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code>, or <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/proc/version</span></code>.</p>
-</li>
-<li><p>Version of the compiler.</p>
-<ul class="simple">
-<li><p>If your CMake correctly identifies your compiler, you may put the first several lines of CMake output to the bug report.</p></li>
-<li><p>If you use GCC, it will be <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>.</p></li>
-<li><p>If you use LLVM Clang, it will be <code class="docutils literal notranslate"><span class="pre">clang++</span> <span class="pre">--version</span></code>.</p></li>
-<li><p>If you use Intel (R) OneAPI DPC++/C++ Compiler, it will be <code class="docutils literal notranslate"><span class="pre">icpx</span> <span class="pre">--version</span></code>. You may need to set environment variables through e.g., <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/intel/oneapi/setvars.sh</span></code> (if you install it in default location using APT), before invoking this command.</p></li>
-<li><p>Consult your compiler’s documentation for other compilers.</p></li>
-</ul>
-</li>
-</ul>
+<p>Please submit a bug report with instructions on how I can emulate your platform using free emulators like <a class="reference external" href="https://www.qemu.org/">QEMU</a>.</p>
 </section>
 </section>
 <section id="my-question-is-still-unanswered">
@@ -381,7 +357,7 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w">
             <ul>
 <li><a class="reference internal" href="#">Frequently Asked Questions (FAQs)</a><ul>
 <li><a class="reference internal" href="#simulation">Simulation</a><ul>
-<li><a class="reference internal" href="#how-to-split-produced-pair-end-mate-pair-sequencing-results-to-2-fastq-files">How to split produced pair-end/mate-pair sequencing results to 2 FASTQ files?</a></li>
+<li><a class="reference internal" href="#how-to-split-the-produced-pair-end-mate-pair-sequencing-results-into-2-fastq-files">How to split the produced pair-end/mate-pair sequencing results into 2 FASTQ files?</a></li>
 <li><a class="reference internal" href="#how-to-add-adaptors-primers-to-the-reads">How to add adaptors &amp; primers to the reads?</a></li>
 <li><a class="reference internal" href="#how-to-support-new-illumina-models">How to support new Illumina models?</a></li>
 </ul>
@@ -390,10 +366,6 @@ seqkit<span class="w"> </span>sort<span class="w"> </span>a_2.fq<span class="w">
 <li><a class="reference internal" href="#what-kinds-of-cpus-are-supported-by-the-simulator">What kinds of CPUs are supported by the simulator?</a></li>
 <li><a class="reference internal" href="#does-this-program-support-cross-compilation">Does this program support cross-compilation?</a></li>
 <li><a class="reference internal" href="#i-am-using-platforms-other-than-x86-64-e-g-arm-risc-v-loongarch-etc-and-spotted-a-bug">I am using platforms other than x86_64 (e.g., ARM, RISC-V, LoongArch, etc.), and spotted a bug</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#community">Community</a><ul>
-<li><a class="reference internal" href="#i-am-new-to-gnu-linux-how-can-i-gather-required-information-for-a-bug-report">I am new to GNU/Linux. How can I gather required information for a bug report?</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#my-question-is-still-unanswered">My question is still unanswered</a></li>

@@ -39,7 +39,7 @@ Use release-mpi or debug-mpi targets to build with MPI support.
 
 ### `PACKAGE_VERSION`
 
-**Help:** Package version, derived from the latest git tag if not set
+**Help:** Package version.
 
 ## Targets
 
@@ -145,18 +145,6 @@ Env. Flags:
 **Depends on:** `release-mpi`, `raw_data`
 
 **Help:** testsmall-release with MPI
-
-### `testsmall-conda`
-
-**Depends on:** `raw_data`
-
-**Help:** Run small tests with conda-installed art_modern
-
-### `testsmall-conda-mpi`
-
-**Depends on:** `raw_data`
-
-**Help:** testsmall-conda with MPI
 
 ### `raw_data`
 
