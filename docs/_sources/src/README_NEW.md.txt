@@ -2,17 +2,17 @@
 
 `art_modern` badges:
 [![GitHub Release](454f55195aa6a334e4fd4fbdd52e79ada79159ce235e4e8d3f095951312bdf0d.svg)](https://github.com/YU-Zhejian/art_modern/releases)
-[![GitHub Downloads](338eced579e432b978332228923c917c31bd5851308bdaa9f29a89ea8e8a2e4a.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
+[![GitHub Downloads](9666608b91106896d691c2d710f367c75fcc917b4d212061f6fa6bf528f3c6da.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
 [![License](02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg)](https://www.gnu.org/licenses/)
 [![Code style: WebKit](87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg)](https://webkit.org/code-style-guidelines/)
 
 `art_modern` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern/README.html)
-[![Conda Version](88a34973522f43ac69ae8beef14fa147a9a5a72a3e29a6b340e527f9848db1dd.svg)](https://anaconda.org/bioconda/art_modern)
-[![Conda Downloads](07db44832699f18c3527379da1b655a54fb5ce143186076f5e58bbb58598682e.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Version](2e208ba66c3a2179232ab5139721557e2811586b97f8673fd555d5ab69ae4483.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Downloads](e4e89c67cd4778d0ad81e2e64fa91e2c26c9ac2a1d3f6a6786c34701af2a3643.svg)](https://anaconda.org/bioconda/art_modern)
 
 `art_modern-openmpi` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern-openmpi/README.html)
-[![Conda Version](88a34973522f43ac69ae8beef14fa147a9a5a72a3e29a6b340e527f9848db1dd.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
-[![Conda Downloads](c7f341465d5cb194cea2558dfed2122890d9ae7f21f0ab93deab07ba06e6a70b.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Version](2e208ba66c3a2179232ab5139721557e2811586b97f8673fd555d5ab69ae4483.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Downloads](2d1265dff3f4b37afee72034b4db6ecc581df95e2c93da10b02c884f7195dcab.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
 
 `art-modern-utils` badges:
 [![GitHub Release](8022cf810dab756ddf60c3236e15db083dfc719681656a9a190541916490fea1.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
@@ -21,8 +21,8 @@
 
 `art-modern-utils` on PyPI:
 [![Python version](f9d50342dcc593cc5fbd8795660fff4d432f5b18b73613a39544dff8b0909567.svg)](https://www.python.org/downloads/)
-[![PyPI - Version](59a7393aef86085b6bbcb1f6d855f656c79df187e29c3110f98b3be06f6f4ffd.svg)](https://pypi.org/project/art-modern-utils/)
-[![PyPI - Downloads](90230550ec59ac5f35cabfa1a41a3f6be2972893c6fff035055bf2ed5bda52c6.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Version](0848988d097a30dc8b9940ccab98529a1cff210ef52e288e1c1dae3d87b275d5.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Downloads](0d692d2fb98868d3b099eb80aafefe9ff692de087d6e6df71fd3c9c6acacba28.svg)](https://pypi.org/project/art-modern-utils/)
 
 [![Docs on GitHub Pages](1935404f4900ad5aadc06cf68207a036c36ed1e35485a106c84d98a533c54ec7.svg)](https://yu-zhejian.github.io/art_modern_docs/index.html)
 [![bioRxiv](2b5cf5f6c13dc52dcf3066596e90da939b23dbbed80a2f7439e25d419b5440ea.svg)](https://doi.org/10.64898/2026.02.20.707060)
@@ -474,4 +474,4 @@ Following is the bioRxiv preprint of this work.
 
 ## Stargazers Over Time
 
-[![Stargazers over time](1560f8dcf3352d7a870866242f3d8d7ab9b4cc161046ae9682675eebfbca1b3d.svg)](https://starchart.cc/YU-Zhejian/art_modern)
+[![Stargazers over time](1969f474206dbacd745bbdb8b20ef1e214907419c628cb2db400315782bf639f.svg)](https://starchart.cc/YU-Zhejian/art_modern)
