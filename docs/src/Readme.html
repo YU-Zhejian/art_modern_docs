@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>art_modern: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads - art_modern 1.4.1 documentation</title>
+        <title>art_modern: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads - art_modern 1.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">art_modern 1.4.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">art_modern 1.5.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
-  <span class="sidebar-brand-text">art_modern 1.4.1 documentation</span>
+  <span class="sidebar-brand-text">art_modern 1.5.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -277,7 +277,7 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>Here we introduce <code class="docutils literal notranslate"><span class="pre">art_modern</span></code>, a modern re-implementation of the popular <a class="reference external" href="https://www.niehs.nih.gov/research/resources/software/biostatistics/art">ART</a> simulator with enhanced performance and functionality. It can be used by anyone who wants to simulate sequencing data for their own research, such as benchmarking DNA- or RNA-Seq alignment algorithms, testing whether the RNA-Seq pipeline built by your lab performs well, or performing pressure testing of pipelines on a cluster.</p>
 <p><code class="docutils literal notranslate"><span class="pre">art_modern</span></code> supports ART-compatible error profiles. We also implemented a high-performance profile creator that generates ART-compatible profiles from FASTQ, SAM, and BAM files.</p>
-<p>The program comes with new profiles for Illumina models, as well as error profiles from other NGS sequencers such as BGI/MGI DNBSeq and PacBio Onso.</p>
+<p>The program comes with new profiles for Illumina models, as well as error profiles from other NGS sequencers such as MGI Tech DNBSeq, Element Biosciences AVITI, and PacBio Onso.</p>
 </section>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
@@ -330,7 +330,6 @@ unzip<span class="w"> </span>art_modern-master.zip
 <span class="nb">cd</span><span class="w"> </span>art_modern-master
 </pre></div>
 </div>
-<p><strong>STRONGLY DISCOURAGED:</strong> Change <code class="docutils literal notranslate"><span class="pre">master</span></code> to <code class="docutils literal notranslate"><span class="pre">devel</span></code> to compile the development version</p>
 <p>Ensure you have a C++ compiler that supports <a class="reference external" href="https://en.cppreference.com/w/cpp/17">C++17</a> installed on your computer (Preferably <a class="reference external" href="https://gcc.gnu.org/">GCC</a> &gt;= 9.5.0). Also,suppress check whether your <a class="reference external" href="https://cmake.org/">CMake</a>, <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a>, <a class="reference external" href="https://www.boost.org/">Boost C++ Library</a>, <a class="reference external" href="https://www.gnu.org/software/binutils/">GNU BinUtils</a>, <a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash</a>, <a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU CoreUtils</a>, <a class="reference external" href="https://www.python.org/">Python 3</a>, and minimal HTSLib dependencies (namely, <a class="reference external" href="https://www.zlib.net/">zlib</a> and <a class="reference external" href="https://www.man7.org/linux/man-pages/man7/pthreads.7.html">pthread</a>) are working.</p>
 <p>Build the project using:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>opt/build_release
@@ -754,7 +753,7 @@ cmake<span class="w"> </span>--build<span class="w"> </span>opt/build_release-mp
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=350a9c04"></script>
+</div><script src="../_static/documentation_options.js?v=e0a75244"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

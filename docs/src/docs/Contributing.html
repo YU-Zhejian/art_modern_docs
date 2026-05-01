@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Toplevel Makefile Documentation" href="MakefileTargets.html"><link rel="prev" title="Design Topics" href="Design.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Developing &amp; Contributing - art_modern 1.4.1 documentation</title>
+        <title>Developing &amp; Contributing - art_modern 1.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">art_modern 1.4.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">art_modern 1.5.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">art_modern 1.4.1 documentation</span>
+  <span class="sidebar-brand-text">art_modern 1.5.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -288,17 +288,17 @@ make<span class="w"> </span>doc<span class="w"> </span><span class="nv">PYTHON</
 <section id="release-cycle">
 <h2>Release Cycle<a class="headerlink" href="#release-cycle" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Feature freeze: All new features merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p></li>
-<li><p>Code freeze: All <strong>production</strong> code changes (including bug fixes) merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code> to format the code. Ensure that the integration test passes.</p></li>
+<li><p>Feature freeze: All new features merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch.</p></li>
+<li><p>Code freeze: All <strong>production</strong> code changes (including bug fixes) merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code> to format the code. Ensure that the integration test passes.</p></li>
 <li><p>Integration test: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testbuild</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">testbuild-mpi</span></code> are executed using GCC, pure LLVM/Clang, and Intel OneAPI C++/DPC++ toolchain to ensure compatibility. Ensure <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">packing</span></code> passes without errors.</p></li>
-<li><p>Documentation freeze: All documentation changes merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Note:</p>
+<li><p>Documentation freeze: All documentation changes merged into the <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch. Note:</p>
 <ul>
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">News.md</span></code>.</p></li>
 <li><p>Update version number in <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
 <li><p>Ensure <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">cleandoc</span></code> passes without errors.</p></li>
 </ul>
 </li>
-<li><p>Release: The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is merged into the main branch, tagged with a new version number.</p></li>
+<li><p>Release: The <code class="docutils literal notranslate"><span class="pre">devel</span></code> branch is merged into the main branch, tagged with a new version number.</p></li>
 <li><p>Generate artifacts: Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">packing</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">cleandoc</span></code>.</p></li>
 </ul>
 </section>
@@ -470,7 +470,7 @@ make<span class="w"> </span>doc<span class="w"> </span><span class="nv">PYTHON</
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=350a9c04"></script>
+</div><script src="../../_static/documentation_options.js?v=e0a75244"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

@@ -1,18 +1,18 @@
 # `art_modern`: Modernized ART Simulator of Diverse Next-Generation Sequencing Reads
 
 `art_modern` badges:
-[![GitHub Release](454f55195aa6a334e4fd4fbdd52e79ada79159ce235e4e8d3f095951312bdf0d.svg)](https://github.com/YU-Zhejian/art_modern/releases)
-[![GitHub Downloads](9666608b91106896d691c2d710f367c75fcc917b4d212061f6fa6bf528f3c6da.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
+[![GitHub Release](b9990a2c33c0130f0d90add9effd889aa4a599f021b049b585dbbf4d37e195e0.svg)](https://github.com/YU-Zhejian/art_modern/releases)
+[![GitHub Downloads](329e7ded65a287707fe45d174947f130e249ced3aed6d6c6c2172fe7e993df8f.svg)](https://github.com/YU-Zhejian/art_modern/releases/)
 [![License](02b96ffb3e19615e23348929290b5758c8453d5bdb63189823bc7fe52b6055c0.svg)](https://www.gnu.org/licenses/)
 [![Code style: WebKit](87fe3ef7fc5757ec32b8829a52a6a0ad779be6f16a2f03df4cbf67b57dbf9f84.svg)](https://webkit.org/code-style-guidelines/)
 
 `art_modern` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern/README.html)
-[![Conda Version](2e208ba66c3a2179232ab5139721557e2811586b97f8673fd555d5ab69ae4483.svg)](https://anaconda.org/bioconda/art_modern)
-[![Conda Downloads](e4e89c67cd4778d0ad81e2e64fa91e2c26c9ac2a1d3f6a6786c34701af2a3643.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Version](022178ee521fcaedd2b27ac03ccd410bff613216b0629f6071af9b68dc9a7e4d.svg)](https://anaconda.org/bioconda/art_modern)
+[![Conda Downloads](e7e82f0d0f8100d22706febcf3b84d4a06e4dcc3e0b58f6c2930379a73c1f2d1.svg)](https://anaconda.org/bioconda/art_modern)
 
 `art_modern-openmpi` on BioConda: [![Install with BioConda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/art_modern-openmpi/README.html)
-[![Conda Version](2e208ba66c3a2179232ab5139721557e2811586b97f8673fd555d5ab69ae4483.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
-[![Conda Downloads](2d1265dff3f4b37afee72034b4db6ecc581df95e2c93da10b02c884f7195dcab.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Version](022178ee521fcaedd2b27ac03ccd410bff613216b0629f6071af9b68dc9a7e4d.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
+[![Conda Downloads](d0af9585a16727c90428f43adc8918ac16f9e3dbdacf8225bf5c876838cf4e22.svg)](https://anaconda.org/bioconda/art_modern-openmpi)
 
 `art-modern-utils` badges:
 [![GitHub Release](8022cf810dab756ddf60c3236e15db083dfc719681656a9a190541916490fea1.svg)](https://github.com/YU-Zhejian/art_modern_utils/releases)
@@ -22,7 +22,7 @@
 `art-modern-utils` on PyPI:
 [![Python version](f9d50342dcc593cc5fbd8795660fff4d432f5b18b73613a39544dff8b0909567.svg)](https://www.python.org/downloads/)
 [![PyPI - Version](0848988d097a30dc8b9940ccab98529a1cff210ef52e288e1c1dae3d87b275d5.svg)](https://pypi.org/project/art-modern-utils/)
-[![PyPI - Downloads](0d692d2fb98868d3b099eb80aafefe9ff692de087d6e6df71fd3c9c6acacba28.svg)](https://pypi.org/project/art-modern-utils/)
+[![PyPI - Downloads](214e3118f32c7350ac3d48466ba13e260f51b5243c0ef801f9946a01b406b7f1.svg)](https://pypi.org/project/art-modern-utils/)
 
 [![Docs on GitHub Pages](1935404f4900ad5aadc06cf68207a036c36ed1e35485a106c84d98a533c54ec7.svg)](https://yu-zhejian.github.io/art_modern_docs/index.html)
 [![bioRxiv](2b5cf5f6c13dc52dcf3066596e90da939b23dbbed80a2f7439e25d419b5440ea.svg)](https://doi.org/10.64898/2026.02.20.707060)
@@ -35,7 +35,7 @@ Here we introduce `art_modern`, a modern re-implementation of the popular [ART](
 
 `art_modern` supports ART-compatible error profiles. We also implemented a high-performance profile creator that generates ART-compatible profiles from FASTQ, SAM, and BAM files.
 
-The program comes with new profiles for Illumina models, as well as error profiles from other NGS sequencers such as BGI/MGI DNBSeq and PacBio Onso.
+The program comes with new profiles for Illumina models, as well as error profiles from other NGS sequencers such as MGI Tech DNBSeq, Element Biosciences AVITI, and PacBio Onso.
 
 ## Quick Start
 
@@ -100,8 +100,6 @@ curl -L -o art_modern-master.zip \
 unzip art_modern-master.zip
 cd art_modern-master
 ```
-
-**STRONGLY DISCOURAGED:** Change `master` to `devel` to compile the development version
 
 Ensure you have a C++ compiler that supports [C++17](https://en.cppreference.com/w/cpp/17) installed on your computer (Preferably [GCC](https://gcc.gnu.org/) >= 9.5.0). Also,suppress check whether your [CMake](https://cmake.org/), [GNU Make](https://www.gnu.org/software/make/), [Boost C++ Library](https://www.boost.org/), [GNU BinUtils](https://www.gnu.org/software/binutils/), [GNU Bash](https://www.gnu.org/software/bash/), [GNU CoreUtils](https://www.gnu.org/software/coreutils/), [Python 3](https://www.python.org/), and minimal HTSLib dependencies (namely, [zlib](https://www.zlib.net/) and [pthread](https://www.man7.org/linux/man-pages/man7/pthreads.7.html)) are working.
 
@@ -474,4 +472,4 @@ Following is the bioRxiv preprint of this work.
 
 ## Stargazers Over Time
 
-[![Stargazers over time](1969f474206dbacd745bbdb8b20ef1e214907419c628cb2db400315782bf639f.svg)](https://starchart.cc/YU-Zhejian/art_modern)
+[![Stargazers over time](2f2d9d870a46f3cdef2c3cb99848527ca146ba0742a3562001b6e1099c12591d.svg)](https://starchart.cc/YU-Zhejian/art_modern)
